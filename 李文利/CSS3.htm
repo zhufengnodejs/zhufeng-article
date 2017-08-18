@@ -1,0 +1,2360 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 12">
+<meta name=Originator content="Microsoft Word 12">
+<link rel=File-List href="CSS3.files/filelist.xml">
+<link rel=Edit-Time-Data href="CSS3.files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Apache POI</o:Author>
+  <o:LastAuthor>Administrator</o:LastAuthor>
+  <o:Revision>3</o:Revision>
+  <o:TotalTime>1</o:TotalTime>
+  <o:Created>2017-08-18T12:34:00Z</o:Created>
+  <o:LastSaved>2017-08-18T12:34:00Z</o:LastSaved>
+  <o:Pages>7</o:Pages>
+  <o:Words>637</o:Words>
+  <o:Characters>3631</o:Characters>
+  <o:Lines>30</o:Lines>
+  <o:Paragraphs>8</o:Paragraphs>
+  <o:CharactersWithSpaces>4260</o:CharactersWithSpaces>
+  <o:Version>12.00</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<link rel=themeData href="CSS3.files/themedata.thmx">
+<link rel=colorSchemeMapping href="CSS3.files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-US</w:LidThemeOther>
+  <w:LidThemeAsian>ZH-CN</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:DontVertAlignCellWithSp/>
+   <w:DontBreakConstrainedForcedTables/>
+   <w:DontVertAlignInTxbx/>
+   <w:Word11KerningPairs/>
+   <w:CachedColBalance/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <w:DoNotOptimizeForBrowser/>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+  DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="267">
+  <w:LsdException Locked="false" Priority="0" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 9"/>
+  <w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" Priority="10" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" Priority="11" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" Priority="22" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Table Grid"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-alt:SimSun;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 680460288 22 0 262145 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:1;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:0 0 0 0 0 0;}
+@font-face
+	{font-family:微软雅黑;
+	panose-1:2 11 5 3 2 2 4 2 2 4;
+	mso-font-charset:134;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-2147483001 672087122 22 0 262175 0;}
+@font-face
+	{font-family:"\@微软雅黑";
+	panose-1:2 11 5 3 2 2 4 2 2 4;
+	mso-font-charset:134;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-2147483001 672087122 22 0 262175 0;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 680460288 22 0 262145 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:10.5pt;
+	mso-bidi-font-size:11.0pt;
+	font-family:"微软雅黑","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+h1
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"标题 1 Char";
+	mso-style-next:正文;
+	margin-top:17.0pt;
+	margin-right:0cm;
+	margin-bottom:16.5pt;
+	margin-left:0cm;
+	line-height:240%;
+	mso-pagination:lines-together;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:22.0pt;
+	font-family:"微软雅黑","sans-serif";
+	mso-font-kerning:22.0pt;}
+h2
+	{mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-link:"标题 2 Char";
+	mso-style-next:正文;
+	margin-top:13.0pt;
+	margin-right:0cm;
+	margin-bottom:13.0pt;
+	margin-left:0cm;
+	line-height:173%;
+	mso-pagination:lines-together;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:16.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:宋体;
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;}
+h3
+	{mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-link:"标题 3 Char";
+	mso-style-next:正文;
+	margin-top:13.0pt;
+	margin-right:0cm;
+	margin-bottom:13.0pt;
+	margin-left:0cm;
+	line-height:173%;
+	mso-pagination:lines-together;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:16.0pt;
+	font-family:"微软雅黑","sans-serif";}
+h4
+	{mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-link:"标题 4 Char";
+	mso-style-next:正文;
+	margin-top:14.0pt;
+	margin-right:0cm;
+	margin-bottom:14.5pt;
+	margin-left:0cm;
+	line-height:156%;
+	mso-pagination:lines-together;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	font-size:14.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:宋体;
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;}
+h5
+	{mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-link:"标题 5 Char";
+	mso-style-next:正文;
+	margin-top:14.0pt;
+	margin-right:0cm;
+	margin-bottom:14.5pt;
+	margin-left:0cm;
+	line-height:156%;
+	mso-pagination:lines-together;
+	page-break-after:avoid;
+	mso-outline-level:5;
+	font-size:14.0pt;
+	font-family:"微软雅黑","sans-serif";}
+h6
+	{mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-link:"标题 6 Char";
+	mso-style-next:正文;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.2pt;
+	margin-left:0cm;
+	line-height:133%;
+	mso-pagination:lines-together;
+	page-break-after:avoid;
+	mso-outline-level:6;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:宋体;
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;}
+p.MsoHeading7, li.MsoHeading7, div.MsoHeading7
+	{mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-link:"标题 7 Char";
+	mso-style-next:正文;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.2pt;
+	margin-left:0cm;
+	line-height:133%;
+	mso-pagination:lines-together;
+	page-break-after:avoid;
+	mso-outline-level:7;
+	font-size:12.0pt;
+	font-family:"微软雅黑","sans-serif";
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:bold;}
+p.MsoHeading8, li.MsoHeading8, div.MsoHeading8
+	{mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-link:"标题 8 Char";
+	mso-style-next:正文;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.2pt;
+	margin-left:0cm;
+	line-height:133%;
+	mso-pagination:lines-together;
+	page-break-after:avoid;
+	mso-outline-level:8;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:宋体;
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;}
+p.MsoHeading9, li.MsoHeading9, div.MsoHeading9
+	{mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-link:"标题 9 Char";
+	mso-style-next:正文;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.2pt;
+	margin-left:0cm;
+	line-height:133%;
+	mso-pagination:lines-together;
+	page-break-after:avoid;
+	mso-outline-level:9;
+	font-size:10.5pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:宋体;
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-link:"页眉 Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:center;
+	mso-pagination:none;
+	tab-stops:center 207.65pt right 415.3pt;
+	layout-grid-mode:char;
+	border:none;
+	mso-border-bottom-alt:solid windowtext .75pt;
+	padding:0cm;
+	mso-padding-alt:0cm 0cm 1.0pt 0cm;
+	font-size:9.0pt;
+	font-family:"微软雅黑","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-link:"页脚 Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	tab-stops:center 207.65pt right 415.3pt;
+	layout-grid-mode:char;
+	font-size:9.0pt;
+	font-family:"微软雅黑","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-priority:10;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"标题 Char";
+	mso-style-next:正文;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	text-align:center;
+	mso-pagination:none;
+	mso-outline-level:1;
+	font-size:16.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:宋体;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	font-weight:bold;}
+p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
+	{mso-style-priority:11;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"副标题 Char";
+	mso-style-next:正文;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	text-align:center;
+	line-height:130%;
+	mso-pagination:none;
+	mso-outline-level:2;
+	font-size:16.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:宋体;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	mso-font-kerning:14.0pt;
+	font-weight:bold;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-link:"批注框文本 Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:9.0pt;
+	font-family:"微软雅黑","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+span.1Char
+	{mso-style-name:"标题 1 Char";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"标题 1";
+	mso-ansi-font-size:22.0pt;
+	mso-bidi-font-size:22.0pt;
+	mso-font-kerning:22.0pt;
+	font-weight:bold;}
+span.2Char
+	{mso-style-name:"标题 2 Char";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"标题 2";
+	mso-ansi-font-size:16.0pt;
+	mso-bidi-font-size:16.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:宋体;
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	font-weight:bold;}
+span.3Char
+	{mso-style-name:"标题 3 Char";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"标题 3";
+	mso-ansi-font-size:16.0pt;
+	mso-bidi-font-size:16.0pt;
+	font-weight:bold;}
+span.4Char
+	{mso-style-name:"标题 4 Char";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"标题 4";
+	mso-ansi-font-size:14.0pt;
+	mso-bidi-font-size:14.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:宋体;
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	font-weight:bold;}
+span.5Char
+	{mso-style-name:"标题 5 Char";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"标题 5";
+	mso-ansi-font-size:14.0pt;
+	mso-bidi-font-size:14.0pt;
+	font-weight:bold;}
+span.6Char
+	{mso-style-name:"标题 6 Char";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"标题 6";
+	mso-ansi-font-size:12.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:宋体;
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	font-weight:bold;}
+span.7Char
+	{mso-style-name:"标题 7 Char";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"标题 7";
+	mso-ansi-font-size:12.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-weight:bold;}
+span.8Char
+	{mso-style-name:"标题 8 Char";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"标题 8";
+	mso-ansi-font-size:12.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:宋体;
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;}
+span.9Char
+	{mso-style-name:"标题 9 Char";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"标题 9";
+	mso-bidi-font-size:10.5pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:宋体;
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;}
+span.Char
+	{mso-style-name:"标题 Char";
+	mso-style-priority:10;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:标题;
+	mso-ansi-font-size:16.0pt;
+	mso-bidi-font-size:16.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:宋体;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	font-weight:bold;}
+span.Char0
+	{mso-style-name:"副标题 Char";
+	mso-style-priority:11;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:副标题;
+	mso-ansi-font-size:16.0pt;
+	mso-bidi-font-size:16.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:宋体;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	mso-font-kerning:14.0pt;
+	font-weight:bold;}
+span.Char1
+	{mso-style-name:"批注框文本 Char";
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:批注框文本;
+	mso-ansi-font-size:9.0pt;
+	mso-bidi-font-size:9.0pt;}
+span.Char2
+	{mso-style-name:"页眉 Char";
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:页眉;
+	mso-ansi-font-size:9.0pt;
+	mso-bidi-font-size:9.0pt;}
+span.Char3
+	{mso-style-name:"页脚 Char";
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:页脚;
+	mso-ansi-font-size:9.0pt;
+	mso-bidi-font-size:9.0pt;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	mso-ascii-font-family:微软雅黑;
+	mso-fareast-font-family:微软雅黑;
+	mso-hansi-font-family:微软雅黑;
+	mso-font-kerning:0pt;}
+ /* Page Definitions */
+ @page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;
+	mso-footnote-separator:url("CSS3.files/header.htm") fs;
+	mso-footnote-continuation-separator:url("CSS3.files/header.htm") fcs;
+	mso-endnote-separator:url("CSS3.files/header.htm") es;
+	mso-endnote-continuation-separator:url("CSS3.files/header.htm") ecs;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:42.55pt;
+	mso-footer-margin:49.6pt;
+	mso-paper-source:0;
+	layout-grid:15.6pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:1232352982;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-430658624 67698703 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l0:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:21.0pt;
+	text-indent:-21.0pt;}
+@list l0:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-text:"%2\)";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:42.0pt;
+	text-indent:-21.0pt;}
+@list l0:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	margin-left:63.0pt;
+	text-indent:-21.0pt;}
+@list l0:level4
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:84.0pt;
+	text-indent:-21.0pt;}
+@list l1
+	{mso-list-id:1972323967;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1492542300 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F06C;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:21.0pt;
+	text-indent:-21.0pt;
+	font-family:Wingdings;}
+@list l1:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:\F06E;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:42.0pt;
+	text-indent:-21.0pt;
+	font-family:Wingdings;}
+@list l1:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F075;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:63.0pt;
+	text-indent:-21.0pt;
+	font-family:Wingdings;}
+@list l1:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F06C;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:84.0pt;
+	text-indent:-21.0pt;
+	font-family:Wingdings;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:普通表格;
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.5pt;
+	mso-bidi-font-size:11.0pt;
+	font-family:"微软雅黑","sans-serif";}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="3074"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="2"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=ZH-CN style='tab-interval:21.0pt'>
+
+<div class=WordSection1 style='layout-grid:15.6pt'>
+
+<p class=MsoNormal align=center style='text-align:center'><a
+name=82bjaq1502329326850></a><span style='font-size:14.0pt;mso-bidi-font-size:
+11.0pt;color:#DF402A'>第三天</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><a
+name=16cjjb1502329374811></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=29ebgd1502329374811></a><span style='font-size:12.0pt;
+mso-bidi-font-size:11.0pt;color:#DF402A'>一、<b style='mso-bidi-font-weight:normal'><span
+lang=EN-US>CSS</span>选择器</b></span></p>
+
+<p class=MsoNormal><a name=35mwxi1502332013724></a><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:11.0pt;color:#DF402A'>nth-child()</span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt'> </span><span
+style='font-size:12.0pt;mso-bidi-font-size:11.0pt'>根据父元素的第几个子元素</span></p>
+
+<p class=MsoNormal><a name=77natu1502329738393></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="Drawing_x0020_0" o:spid="_x0000_i1089" type="#_x0000_t75"
+ alt="clipboard.png" style='width:414.75pt;height:86.25pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image001.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=115
+src="CSS3.files/image002.gif" alt=clipboard.png v:shapes="Drawing_x0020_0"><![endif]></span></p>
+
+<p class=MsoNormal><a name=15pyxj1502329374811></a>三奇 四偶</p>
+
+<p class=MsoNormal><a name=95lgol1502329767110></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_1"
+ o:spid="_x0000_i1088" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:78.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image003.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=105
+src="CSS3.files/image004.gif" alt=clipboard.png v:shapes="Drawing_x0020_1"><![endif]></span></p>
+
+<p class=MsoNormal><a name=55tvkc1502329767110></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=72noyw1502329774269></a><span lang=EN-US>CSS3 </span>选择器</p>
+
+<p class=MsoNormal><a name=22njgf1502330114517></a>在<span lang=EN-US> CSS </span>中，选择器是一种模式，用于选择需要添加样式的元素。</p>
+
+<p class=MsoNormal><a name=79jkbr1502330393358></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=26giwr1502330352857></a><span lang=EN-US
+style='color:#DF402A'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='color:#DF402A'>选择器<span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>例子<span lang=EN-US><span style='mso-tab-count:1'> </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>例子描述<span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>CSS</span></span></p>
+
+<p class=MsoNormal><a name=51swin1502330333876></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_2"
+ o:spid="_x0000_i1087" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:132.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image005.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=177
+src="CSS3.files/image006.gif" alt=clipboard.png v:shapes="Drawing_x0020_2"><![endif]></span></p>
+
+<p class=MsoNormal><a name=48rvvz1502330503445></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=4ynys1502330503445></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_3"
+ o:spid="_x0000_i1086" type="#_x0000_t75" alt="clipboard.png" style='width:414pt;
+ height:120.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image007.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=552 height=161
+src="CSS3.files/image008.gif" alt=clipboard.png v:shapes="Drawing_x0020_3"><![endif]></span></p>
+
+<p class=MsoNormal><a name=45xvvw1502330149945></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=89mbbu1502330149973></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=33zpha1502330149997></a><span lang=EN-US>CSS3 </span>属性选择器</p>
+
+<p class=MsoNormal><a name=4ubsi1502330889089></a><span style='color:#DF402A'>属性只能是<span
+class=SpellE><span lang=EN-US>li</span></span><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp; </span></span>这个值<span class=SpellE><span
+lang=EN-US>li</span></span>和<span lang=EN-US> - </span>连接并作为开头</span></p>
+
+<p class=MsoNormal><a name=29wavl1502331044382></a><span lang=EN-US
+style='color:#DF402A'><span style='mso-spacerun:yes'>&nbsp;</span><span
+class=SpellE>li</span>[class |=<span class=SpellE>li</span>]</span><span
+lang=EN-US>{ background-color: <span class=SpellE>lightsalmon</span>; }</span></p>
+
+<p class=MsoNormal><a name=61yrwq1502331014299></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_4"
+ o:spid="_x0000_i1085" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:129pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image009.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=172
+src="CSS3.files/image010.gif" alt=clipboard.png v:shapes="Drawing_x0020_4"><![endif]></span></p>
+
+<p class=MsoNormal><a name=77rjea1502331022428></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=59zlvn1502331022428></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_5"
+ o:spid="_x0000_i1084" type="#_x0000_t75" alt="clipboard.png" style='width:415.5pt;
+ height:66pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image011.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=554 height=88
+src="CSS3.files/image012.gif" alt=clipboard.png v:shapes="Drawing_x0020_5"><![endif]></span></p>
+
+<p class=MsoNormal><a name=77xfmr1502331105593></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=63arbf1502331126390></a><span style='color:#DF402A'>除了<span
+class=SpellE><span lang=EN-US>li</span></span>类名是<span lang=EN-US> li2</span>的 其它颜色都变</span></p>
+
+<p class=MsoNormal><a name=31bnfc1502331106521></a><span lang=EN-US
+style='color:#DF402A'><span style='mso-spacerun:yes'>&nbsp;</span><span
+class=SpellE>li:not</span>(.li2)</span><span lang=EN-US>{background-color: <span
+class=SpellE>lightblue</span>;}</span></p>
+
+<p class=MsoNormal><a name=45bfab1502331105593></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_6"
+ o:spid="_x0000_i1083" type="#_x0000_t75" alt="clipboard.png" style='width:414pt;
+ height:122.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image013.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=552 height=163
+src="CSS3.files/image014.gif" alt=clipboard.png v:shapes="Drawing_x0020_6"><![endif]></span></p>
+
+<p class=MsoNormal><a name=23bzus1502331163521></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=94jblv1502331163521></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_7"
+ o:spid="_x0000_i1082" type="#_x0000_t75" alt="clipboard.png" style='width:415.5pt;
+ height:66pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image015.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=554 height=88
+src="CSS3.files/image016.gif" alt=clipboard.png v:shapes="Drawing_x0020_7"><![endif]></span></p>
+
+<p class=MsoNormal><a name=85netb1502330150130></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=72lzjh1502331271160></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=80lcof1502330150153></a><span style='color:#DF402A'>如果有多个<span
+lang=EN-US>li1 </span>会选择第一个</span></p>
+
+<p class=MsoNormal><a name=82veai1502331284765></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_8"
+ o:spid="_x0000_i1081" type="#_x0000_t75" alt="clipboard.png" style='width:415.5pt;
+ height:30.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image017.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=554 height=41
+src="CSS3.files/image018.gif" alt=clipboard.png v:shapes="Drawing_x0020_8"><![endif]></span></p>
+
+<p class=MsoNormal><a name=72aniq1502331489352></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=90ddfq1502331504380></a><span style='color:#DF402A'>区别</span></p>
+
+<p class=MsoNormal><a name=20uaba1502331489352></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_9"
+ o:spid="_x0000_i1080" type="#_x0000_t75" alt="clipboard.png" style='width:414pt;
+ height:40.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image019.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=552 height=54
+src="CSS3.files/image020.gif" alt=clipboard.png v:shapes="Drawing_x0020_9"><![endif]></span></p>
+
+<p class=MsoNormal><a name=40wgse1502331286148></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=49igmy1502331455241></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_10"
+ o:spid="_x0000_i1079" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:115.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image021.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=154
+src="CSS3.files/image022.gif" alt=clipboard.png v:shapes="Drawing_x0020_10"><![endif]></span></p>
+
+<p class=MsoNormal><a name=25akds1502330150208></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=38sely1502331975392></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=85kgop1502331975530></a><span lang=EN-US
+style='color:#DF402A'>ES6 </span><span style='color:#DF402A'>的<span lang=EN-US>for
+of</span></span></p>
+
+<p class=MsoNormal><a name=36lhir1502331650669></a><span style='color:#DF402A'>将每一组<span
+lang=EN-US> key value </span>以数组形式遍历出来</span></p>
+
+<p class=MsoNormal><a name=83pwtr1502331648579></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_11"
+ o:spid="_x0000_i1078" type="#_x0000_t75" alt="clipboard.png" style='width:414pt;
+ height:60pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image023.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=552 height=80
+src="CSS3.files/image024.gif" alt=clipboard.png v:shapes="Drawing_x0020_11"><![endif]></span></p>
+
+<p class=MsoNormal><a name=60hrss1502331690567></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=96bwud1502331690567></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_12"
+ o:spid="_x0000_i1077" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:47.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image025.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=63
+src="CSS3.files/image026.gif" alt=clipboard.png v:shapes="Drawing_x0020_12"><![endif]></span></p>
+
+<p class=MsoNormal><a name=60jbsv1502331690567></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=7frtj1502331696221></a>只有具备<span class=SpellE><span
+lang=EN-US style='color:#DF402A'>iterator</span></span><span lang=EN-US
+style='color:#DF402A'> </span>迭代器接口的才可以使用<span lang=EN-US> for of</span></p>
+
+<p class=MsoNormal><a name=98zkob1502332096791></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_13"
+ o:spid="_x0000_i1076" type="#_x0000_t75" alt="clipboard.png" style='width:414pt;
+ height:122.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image027.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=552 height=163
+src="CSS3.files/image028.gif" alt=clipboard.png v:shapes="Drawing_x0020_13"><![endif]></span></p>
+
+<p class=MsoNormal><a name=75ucjk1502332112074></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=30dxom1502332112074></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_14"
+ o:spid="_x0000_i1075" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:61.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image029.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=82
+src="CSS3.files/image030.gif" alt=clipboard.png v:shapes="Drawing_x0020_14"><![endif]></span></p>
+
+<p class=MsoNormal><a name=1ylub1502331692616></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=50oufe1502331692642></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=50jptm1502331692664></a><span style='font-size:12.0pt;
+mso-bidi-font-size:11.0pt;color:#DF402A'>二、<b style='mso-bidi-font-weight:normal'><span
+lang=EN-US>border-radius</span></b></span></p>
+
+<p class=MsoNormal><a name=2krst1502332120490></a><span lang=EN-US>border-radius:
+50%;<span style='mso-spacerun:yes'>&nbsp; </span></span><span style='color:
+#DF402A'>上<span lang=EN-US><span style='mso-spacerun:yes'>&nbsp; </span></span>右<span
+lang=EN-US><span style='mso-spacerun:yes'>&nbsp; </span></span>下<span
+lang=EN-US><span style='mso-spacerun:yes'>&nbsp; </span></span>左</span></p>
+
+<p class=MsoNormal><a name=10odpk1502331692692></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=3liym1502332408548></a><span lang=EN-US>border-radius:(</span>顺时针方向<span
+lang=EN-US>)</span></p>
+
+<p class=MsoNormal><a name=98bfnf1502332403297></a>四个值<span lang=EN-US>:</span>左上<span
+lang=EN-US><span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span>右上<span
+lang=EN-US><span style='mso-spacerun:yes'>&nbsp; </span></span>右下<span
+lang=EN-US><span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span>左下</p>
+
+<p class=MsoNormal><a name=70kbwu1502332403297></a>三个值<span lang=EN-US>:</span>左上<span
+lang=EN-US><span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span>右上<span
+lang=EN-US>/</span>左下<span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span></span>右下</p>
+
+<p class=MsoNormal><a name=10ubey1502332403297></a>两个值<span lang=EN-US>:</span>左上<span
+lang=EN-US>/</span>右下<span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span>右上<span lang=EN-US>/</span>左下</p>
+
+<p class=MsoNormal><a name=73ycur1502332403297></a><span lang=EN-US>1</span>个值<span
+lang=EN-US>:</span>左上<span lang=EN-US><span style='mso-spacerun:yes'>&nbsp;
+</span></span>右上<span lang=EN-US><span style='mso-spacerun:yes'>&nbsp; </span></span>右下<span
+lang=EN-US><span style='mso-spacerun:yes'>&nbsp; </span></span>左下</p>
+
+<p class=MsoNormal><a name=31ahik1502332576943></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=30rmlt1502332403297></a><span style='color:#DF402A'>圆角：</span>项目中的应用（焦点<span
+lang=EN-US>/banner/</span>轮播图 小圆点称为分页器），项目实战中的应用：标签 价格等</p>
+
+<p class=MsoNormal><a name=89adfw1502332965977></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_15"
+ o:spid="_x0000_i1074" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:47.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image031.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=63
+src="CSS3.files/image032.gif" alt=clipboard.png v:shapes="Drawing_x0020_15"><![endif]></span></p>
+
+<p class=MsoNormal><a name=43nekl1502332965977></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=47hbmx1502332403297></a><span style='color:#DF402A'>椭圆：</span>垂直半径<span
+lang=EN-US>=hei/2<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span>水平半径<span
+lang=EN-US>=wid/2</span></p>
+
+<p class=MsoNormal><a name=51wkgb1502332863164></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_16"
+ o:spid="_x0000_i1073" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:120pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image033.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=160
+src="CSS3.files/image034.gif" alt=clipboard.png v:shapes="Drawing_x0020_16"><![endif]></span></p>
+
+<p class=MsoNormal><a name=37acbl1502332403297></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=62imgz1502332864140></a><span style='color:#DF402A'>半圆：</span><span
+class=SpellE><span lang=EN-US>wid/hei</span></span><span lang=EN-US>=2<span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span>border-<span class=SpellE>radius:hei</span>
+<span class=SpellE>hei</span> 0 <span class=SpellE>0</span></span></p>
+
+<p class=MsoNormal><a name=93rzbu1502332629130></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_17"
+ o:spid="_x0000_i1072" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:117.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image035.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=157
+src="CSS3.files/image036.gif" alt=clipboard.png v:shapes="Drawing_x0020_17"><![endif]></span></p>
+
+<p class=MsoNormal><a name=81zvga1502332629130></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=68snek1502331692743></a><span style='color:#DF402A'>扇形：</span><span
+lang=EN-US>100%<span style='mso-spacerun:yes'>&nbsp; </span>0<span
+style='mso-spacerun:yes'>&nbsp; </span><span class=SpellE>0</span><span
+style='mso-spacerun:yes'>&nbsp; </span><span class=SpellE>0</span></span></p>
+
+<p class=MsoNormal><a name=52wtce1502333055497></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_18"
+ o:spid="_x0000_i1071" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:69.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image037.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=93
+src="CSS3.files/image038.gif" alt=clipboard.png v:shapes="Drawing_x0020_18"><![endif]></span></p>
+
+<p class=MsoNormal><a name=48ugdq1502333280356></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=49vfvy1502333304342></a><span style='color:#DF402A'>叶形：</span></p>
+
+<p class=MsoNormal><a name=16rtlq1502333301541></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_19"
+ o:spid="_x0000_i1070" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:61.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image039.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=82
+src="CSS3.files/image040.gif" alt=clipboard.png v:shapes="Drawing_x0020_19"><![endif]></span></p>
+
+<p class=MsoNormal><a name=38gxjc1502333301541></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=9glmf1502333280356></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_20"
+ o:spid="_x0000_i1069" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:66pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image041.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=88
+src="CSS3.files/image042.gif" alt=clipboard.png v:shapes="Drawing_x0020_20"><![endif]></span></p>
+
+<p class=MsoNormal><a name=69izxt1502333280356></a><span style='color:#DF402A'>兼容写法快捷键
+</span><span lang=EN-US><span style='mso-spacerun:yes'>&nbsp;</span>border-<span
+class=SpellE>ra</span><span style='mso-spacerun:yes'>&nbsp; </span></span>回车</p>
+
+<p class=MsoNormal><a name=87hcjy1502333508893></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_21"
+ o:spid="_x0000_i1068" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:54pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image043.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=72
+src="CSS3.files/image044.gif" alt=clipboard.png v:shapes="Drawing_x0020_21"><![endif]></span></p>
+
+<p class=MsoNormal><a name=57phbo1502333538892></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=74xwhc1502333538892></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_22"
+ o:spid="_x0000_i1067" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:66pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image045.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=88
+src="CSS3.files/image046.gif" alt=clipboard.png v:shapes="Drawing_x0020_22"><![endif]></span></p>
+
+<p class=MsoNormal><a name=1zang1502333386515></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=33fbku1502333386542></a><b style='mso-bidi-font-weight:
+normal'><span style='font-size:12.0pt;mso-bidi-font-size:11.0pt;color:#DF402A'>浏览器私有前缀</span></b></p>
+
+<p class=MsoNormal style='margin-left:21.0pt;text-indent:-21.0pt;mso-list:l1 level1 lfo1'><a
+name=52lzmv1502333581784></a><![if !supportLists]><span lang=EN-US
+style='font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings'><span style='mso-list:Ignore'>l<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></span><![endif]><span lang=EN-US>-<span class=SpellE>webkit</span>-<span
+style='mso-spacerun:yes'>&nbsp; </span></span>谷歌 和<span lang=EN-US> safari </span>同用一个前缀</p>
+
+<p class=MsoNormal style='margin-left:21.0pt;text-indent:-21.0pt;mso-list:l1 level1 lfo1'><a
+name=40pfiz1502333593170></a><![if !supportLists]><span lang=EN-US
+style='font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings'><span style='mso-list:Ignore'>l<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></span><![endif]><span lang=EN-US>-<span class=SpellE>moz</span>-<span
+style='mso-spacerun:yes'>&nbsp; </span></span>火狐</p>
+
+<p class=MsoNormal style='margin-left:21.0pt;text-indent:-21.0pt;mso-list:l1 level1 lfo1'><a
+name=23yitf1502333609206></a><![if !supportLists]><span lang=EN-US
+style='font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings'><span style='mso-list:Ignore'>l<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></span><![endif]><span lang=EN-US>-ms-<span
+style='mso-spacerun:yes'>&nbsp; </span>IE</span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt;text-indent:-21.0pt;mso-list:l1 level1 lfo1'><a
+name=31wnnb1502333616301></a><![if !supportLists]><span lang=EN-US
+style='font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings'><span style='mso-list:Ignore'>l<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></span><![endif]><span lang=EN-US>-o- </span>欧朋</p>
+
+<p class=MsoNormal><a name=79iqdf1502333386569></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=84ldvv1502333386596></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=91stoj1502333386626></a><span style='font-size:12.0pt;
+mso-bidi-font-size:11.0pt;color:#DF402A'>三、渐变</span></p>
+
+<p class=MsoNormal><a name=34njld1502333386654></a><span style='color:#DF402A'>（<span
+lang=EN-US>1</span>）线性渐变 </span>默认是从上到下</p>
+
+<p class=MsoNormal><a name=76sikh1502335583768></a><span lang=EN-US
+style='color:#DF402A'>1</span><span style='color:#DF402A'>、从上到下</span></p>
+
+<p class=MsoNormal><a name=88wxrs1502335437171></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_23"
+ o:spid="_x0000_i1066" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:108.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image047.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=145
+src="CSS3.files/image048.gif" alt=clipboard.png v:shapes="Drawing_x0020_23"><![endif]></span></p>
+
+<p class=MsoNormal><a name=73nrxh1502335451165></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=16bpry1502335588647></a><span lang=EN-US
+style='color:#DF402A'>2</span><span style='color:#DF402A'>、从左到右</span></p>
+
+<p class=MsoNormal><a name=94cvra1502335451165></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_24"
+ o:spid="_x0000_i1065" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:108.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image049.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=145
+src="CSS3.files/image050.gif" alt=clipboard.png v:shapes="Drawing_x0020_24"><![endif]></span></p>
+
+<p class=MsoNormal><a name=33orop1502335509964></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=52hgdj1502335595737></a><span lang=EN-US
+style='color:#DF402A'>3</span><span style='color:#DF402A'>、对角渐变</span></p>
+
+<p class=MsoNormal><a name=62wddt1502335509964></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_25"
+ o:spid="_x0000_i1064" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:108.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image051.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=145
+src="CSS3.files/image052.gif" alt=clipboard.png v:shapes="Drawing_x0020_25"><![endif]></span></p>
+
+<p class=MsoNormal><a name=61fkvt1502335509964></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=12kyyd1502335626694></a><span lang=EN-US>4</span>、<span
+style='color:#DF402A'>使用角度</span></p>
+
+<p class=MsoNormal><a name=71sqqo1502335625421></a>如果你想要在渐变的方向上做更多的控制，你可以定义一个角度，而不用预定义方向</p>
+
+<p class=MsoNormal><a name=52zflc1502335638326></a>（<span lang=EN-US>to bottom</span>、<span
+lang=EN-US>to top</span>、<span lang=EN-US>to right</span>、<span lang=EN-US>to left</span>、<span
+lang=EN-US>to bottom right</span>，等等）</p>
+
+<p class=MsoNormal><a name=28yxyx1502335732225></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_26"
+ o:spid="_x0000_i1063" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:66pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image053.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=88
+src="CSS3.files/image054.gif" alt=clipboard.png v:shapes="Drawing_x0020_26"><![endif]></span></p>
+
+<p class=MsoNormal><a name=77cbne1502335768630></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=86tjkd1502335768630></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_27"
+ o:spid="_x0000_i1062" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:87.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image055.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=117
+src="CSS3.files/image056.gif" alt=clipboard.png v:shapes="Drawing_x0020_27"><![endif]></span></p>
+
+<p class=MsoNormal><a name=97adhz1502336696423></a><span lang=EN-US
+style='color:#DF402A'>deg </span><span style='color:#DF402A'>度</span></p>
+
+<p class=MsoNormal><a name=79dxsr1502336696423></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_28"
+ o:spid="_x0000_i1061" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:25.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image057.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=34
+src="CSS3.files/image058.gif" alt=clipboard.png v:shapes="Drawing_x0020_28"><![endif]></span></p>
+
+<p class=MsoNormal><a name=1pnka1502336773681></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=4dgxt1502336773681></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_29"
+ o:spid="_x0000_i1060" type="#_x0000_t75" alt="clipboard.png" style='width:137.25pt;
+ height:90.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image059.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=183 height=121
+src="CSS3.files/image060.gif" alt=clipboard.png v:shapes="Drawing_x0020_29"><![endif]></span></p>
+
+<p class=MsoNormal><a name=94idye1502336710021></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=73rqla1502336813789></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_30"
+ o:spid="_x0000_i1059" type="#_x0000_t75" alt="clipboard.png" style='width:174.75pt;
+ height:145.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image061.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=233 height=194
+src="CSS3.files/image062.gif" alt=clipboard.png v:shapes="Drawing_x0020_30"><![endif]></span></p>
+
+<p class=MsoNormal><a name=28wvmt1502336788174></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=48wsdv1502336790231></a><span style='font-size:10.0pt;
+mso-bidi-font-size:11.0pt;color:gray;background:white;mso-highlight:white'>角度是指水平线和渐变线之间的角度，逆时针方向计算。换句话说，<span
+lang=EN-US>0deg </span>将创建一个从下到上的渐变，<span lang=EN-US>90deg </span>将创建一个从左到右的渐变。</span></p>
+
+<p class=MsoNormal><a name=7fbei1502336849098></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=14etju1502336849310></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=46vqkh1502336849492></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=15gfoi1502336851518></a><span lang=EN-US
+style='color:#DF402A'>5</span><span style='color:#DF402A'>、使用多个颜色</span></p>
+
+<p class=MsoNormal><a name=5drqh1502335632343></a><span lang=EN-US>background:-webkit-linear-gradient(<span
+style='color:#DF402A'>lightblue,lightpink,lightgreen</span>); </span>可以放多个颜色</p>
+
+<p class=MsoNormal><a name=49otoo1502336095782></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_31"
+ o:spid="_x0000_i1058" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:24pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image063.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=32
+src="CSS3.files/image064.gif" alt=clipboard.png v:shapes="Drawing_x0020_31"><![endif]></span></p>
+
+<p class=MsoNormal><a name=79qrxv1502335632372></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=53asjo1502336374206></a><span lang=EN-US
+style='color:#DF402A'>6</span><span style='color:#DF402A'>、重复的线性渐变</span></p>
+
+<p class=MsoNormal><a name=63kbgn1502335632398></a><span lang=EN-US
+style='color:#DF402A'>repeating-linear-gradient<span
+style='mso-spacerun:yes'>&nbsp; </span></span>一个重复的线性渐变 相当于图片里的 平铺</p>
+
+<p class=MsoNormal><a name=59falj1502335632422></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=12mngb1502337323401></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=79kvkk1502337323659></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=57ifro1502335632448></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=58foxg1502335632475></a><span style='color:#DF402A'>（<span
+lang=EN-US>1</span>）径向渐变</span></p>
+
+<p class=MsoNormal><a name=68rhsy1502335632534></a><span lang=EN-US>1</span>、设置形状<span
+lang=EN-US><span style='mso-spacerun:yes'>&nbsp; </span></span>形状为<span
+style='color:#DF402A'>圆形</span>的径向渐变</p>
+
+<p class=MsoNormal><a name=89jkvi1502337667292></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_32"
+ o:spid="_x0000_i1057" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:23.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image065.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=31
+src="CSS3.files/image066.gif" alt=clipboard.png v:shapes="Drawing_x0020_32"><![endif]></span></p>
+
+<p class=MsoNormal><a name=55grtn1502335632589></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=59spyo1502335632624></a>形状为<span style='color:#DF402A'>椭圆</span>的径向渐变</p>
+
+<p class=MsoNormal><a name=73xrmf1502337770865></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_33"
+ o:spid="_x0000_i1056" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:23.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image067.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=31
+src="CSS3.files/image068.gif" alt=clipboard.png v:shapes="Drawing_x0020_33"><![endif]></span></p>
+
+<p class=MsoNormal><a name=52gncd1502337770865></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=29bwcs1502338168600></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=34jgmc1502338207160></a><span lang=EN-US>circle at
+center</span></p>
+
+<p class=MsoNormal><a name=22wwmt1502337969546></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_34"
+ o:spid="_x0000_i1055" type="#_x0000_t75" alt="clipboard.png" style='width:415.5pt;
+ height:33pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image069.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=554 height=44
+src="CSS3.files/image070.gif" alt=clipboard.png v:shapes="Drawing_x0020_34"><![endif]></span></p>
+
+<p class=MsoNormal><a name=27pdne1502338047514></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=21jahq1502338209528></a><span lang=EN-US>circle at
+50% 60px</span></p>
+
+<p class=MsoNormal><a name=12lncq1502338047514></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_35"
+ o:spid="_x0000_i1054" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:35.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image071.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=47
+src="CSS3.files/image072.gif" alt=clipboard.png v:shapes="Drawing_x0020_35"><![endif]></span></p>
+
+<p class=MsoNormal><a name=60cebw1502338158803></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=14boty1502338199767></a><span lang=EN-US>closest-side
+at 50px <span class=SpellE>50px</span><span style='mso-spacerun:yes'>&nbsp;
+</span></span><span style='color:#DF402A'>最近边</span><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp; </span></span>通过<span lang=EN-US>at </span>控制中心点的偏移</p>
+
+<p class=MsoNormal><a name=89hozv1502338158803></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_36"
+ o:spid="_x0000_i1053" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:32.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image073.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=43
+src="CSS3.files/image074.gif" alt=clipboard.png v:shapes="Drawing_x0020_36"><![endif]></span></p>
+
+<p class=MsoNormal><a name=42agql1502338158803></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=57khbq1502338447197></a><span lang=EN-US>closest-corner<span
+style='mso-spacerun:yes'>&nbsp; </span></span>比上面的那个中心扩散虚度大</p>
+
+<p class=MsoNormal><a name=56vsmg1502338445329></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_37"
+ o:spid="_x0000_i1052" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:34.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image075.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=46
+src="CSS3.files/image076.gif" alt=clipboard.png v:shapes="Drawing_x0020_37"><![endif]></span></p>
+
+<p class=MsoNormal><a name=26iibn1502338249714></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=90qswq1502338646709></a><span lang=EN-US>farthest-side
+at 50px <span class=SpellE>50px</span><span style='mso-spacerun:yes'>&nbsp;
+</span></span><span style='color:#DF402A'>最远边<span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp; </span></span>他的扩散不受边界影响</span></p>
+
+<p class=MsoNormal><a name=89zbsk1502338781360></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_38"
+ o:spid="_x0000_i1051" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:33pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image077.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=44
+src="CSS3.files/image078.gif" alt=clipboard.png v:shapes="Drawing_x0020_38"><![endif]></span></p>
+
+<p class=MsoNormal><a name=65fpke1502338913886></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=48tjsm1502338914859></a><span lang=EN-US>farthest-corner<span
+style='mso-spacerun:yes'>&nbsp; </span></span>靠近最远的角</p>
+
+<p class=MsoNormal><a name=71rfuo1502338913886></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_39"
+ o:spid="_x0000_i1050" type="#_x0000_t75" alt="clipboard.png" style='width:414pt;
+ height:33.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image079.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=552 height=45
+src="CSS3.files/image080.gif" alt=clipboard.png v:shapes="Drawing_x0020_39"><![endif]></span></p>
+
+<p class=MsoNormal><a name=77vnbr1502339270469></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=4tdft1502341127640></a><span lang=EN-US>+_+</span>晕人的圆圈图</p>
+
+<p class=MsoNormal><a name=89ahzi1502339270469></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_40"
+ o:spid="_x0000_i1049" type="#_x0000_t75" alt="clipboard.png" style='width:415.5pt;
+ height:36pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image081.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=554 height=48
+src="CSS3.files/image082.gif" alt=clipboard.png v:shapes="Drawing_x0020_40"><![endif]></span></p>
+
+<p class=MsoNormal><a name=8zkgi1502338936502></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=6lpxh1502339294786></a><span style='font-size:12.0pt;
+mso-bidi-font-size:11.0pt;color:#DF402A'>四、<span lang=EN-US>background</span></span></p>
+
+<p class=MsoNormal><a name=66sgen1502339588955></a>不写的话 默认是图片的自身大小</p>
+
+<p class=MsoNormal><a name=64sjra1502339599738></a><span lang=EN-US>background-size:<span
+style='color:#DF402A'> contain;</span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>按照比例 <span style='color:#DF402A'>等比缩放</span></p>
+
+<p class=MsoNormal><a name=86vqzg1502339553633></a><span lang=EN-US>background-size:
+<span style='color:#DF402A'>cover;<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style='color:#DF402A'>铺满</span></p>
+
+<p class=MsoNormal><a name=68miux1502339649637></a><span lang=EN-US>background-size:
+<span style='color:#DF402A'>100px <span class=SpellE>100px</span>;<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span>手工<span
+style='color:#DF402A'>指定</span>宽高</p>
+
+<p class=MsoNormal><a name=67bfqv1502339707886></a><span lang=EN-US>background-size:
+<span style='color:#DF402A'>100% 100%;</span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='color:#DF402A'>继承容器</span>宽高</p>
+
+<p class=MsoNormal><a name=61yrdu1502339928037></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_41"
+ o:spid="_x0000_i1048" type="#_x0000_t75" alt="clipboard.png" style='width:415.5pt;
+ height:82.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image083.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=554 height=110
+src="CSS3.files/image084.gif" alt=clipboard.png v:shapes="Drawing_x0020_41"><![endif]></span></p>
+
+<p class=MsoNormal><a name=79xhol1502339499910></a><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>默认<span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>等比缩放<span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>铺满<span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>手工指定<span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>继承容器</p>
+
+<p class=MsoNormal><a name=49zfxl1502338937035></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=91cipj1502338937065></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=43ebeo1502338937094></a><span style='color:#DF402A'>背景图的定位</span></p>
+
+<p class=MsoNormal><a name=37qokc1502340120478></a><span lang=EN-US>background-origin:
+<span style='color:#DF402A'>padding-box<span style='mso-spacerun:yes'>&nbsp;
+</span></span><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span
+style='color:#DF402A'>默认</span>是<span lang=EN-US>padding-box<span
+style='mso-spacerun:yes'>&nbsp; </span></span>默认点是左上边<span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp; </span></span><span style='color:#DF402A'>不压边</span></p>
+
+<p class=MsoNormal><a name=77wufy1502338937123></a><span lang=EN-US>background-origin:
+<span style='color:#DF402A'>border-box; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span>从<span
+style='color:#DF402A'>边框</span>做为起点 <span style='color:#DF402A'><span
+style='mso-spacerun:yes'>&nbsp;</span>压边</span></p>
+
+<p class=MsoNormal><a name=71drqc1502338937152></a><span lang=EN-US>background-origin:
+<span style='color:#DF402A'>content-box;<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span>展现在内容区域
+不包含填充也不包含边框</p>
+
+<p class=MsoNormal><a name=21rpjo1502338937171></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=3xpkh1502338937208></a><span style='color:#DF402A'>裁剪</span></p>
+
+<p class=MsoNormal><a name=86edlx1502340843310></a><span lang=EN-US>background-clip:
+<span style='color:#DF402A'>border-box;<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='mso-spacerun:yes'>&nbsp;</span></span>默认值<span
+lang=EN-US><span style='mso-spacerun:yes'>&nbsp; </span></span>铺满整个 裁剪掉<span
+style='color:#DF402A'>溢出整个容器</span>的部分</p>
+
+<p class=MsoNormal><a name=35cjhl1502340994967></a><span lang=EN-US>background-clip:<span
+style='color:#DF402A'> padding-box;<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span
+style='color:#DF402A'>裁剪掉</span>边缘内边框<span style='color:#DF402A'>溢出部分</span> <span
+style='color:gray'>但是不会影响到缩放</span></p>
+
+<p class=MsoNormal><a name=33fjgz1502340921001></a><span lang=EN-US>background-clip:
+<span style='color:#DF402A'>content-box;<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style='color:#DF402A'>裁剪溢出</span>内容部分</p>
+
+<p class=MsoNormal><a name=36clga1502341369929></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=65ktey1502341801262></a><span lang=EN-US>background-attachment:
+<span style='color:#DF402A'>scroll;<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span
+style='color:#DF402A'>默认的<span lang=EN-US><span style='mso-spacerun:yes'>&nbsp;
+</span></span></span>和滚动条一起动</p>
+
+<p class=MsoNormal><a name=64kjrt1502341641481></a><span lang=EN-US>background-attachment:
+<span style='color:#DF402A'>fixed;</span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>将图片固定在背景上不动</p>
+
+<p class=MsoNormal><a name=26gtec1502341757036></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_42"
+ o:spid="_x0000_i1047" type="#_x0000_t75" alt="clipboard.png" style='width:415.5pt;
+ height:107.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image085.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=554 height=143
+src="CSS3.files/image086.gif" alt=clipboard.png v:shapes="Drawing_x0020_42"><![endif]></span></p>
+
+<p class=MsoNormal><a name=84mdtu1502341757036></a><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='color:gray'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span><span
+style='color:gray'>这个动<span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>后面的背景不动</span></p>
+
+<p class=MsoNormal><a name=56maqj1502349141333></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=30ntbo1502349141480></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=6efwi1502349141639></a><span style='font-size:12.0pt;
+mso-bidi-font-size:11.0pt;color:#DF402A'>五、阴影</span></p>
+
+<p class=MsoNormal><a name=11wyii1502349143626></a><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp; </span>box-shadow:<span style='color:#DF402A'>3px
+3px 15px 20px red inset;<span style='mso-spacerun:yes'>&nbsp; </span></span><span
+style='mso-spacerun:yes'>&nbsp;</span></span>一共六个参数</p>
+
+<p class=MsoNormal style='margin-left:21.0pt;text-indent:-21.0pt;mso-list:l1 level1 lfo2'><a
+name=61zfau1502349481561></a><![if !supportLists]><span lang=EN-US
+style='font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings'><span style='mso-list:Ignore'>l<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></span><![endif]><span lang=EN-US>x<span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span>水平方向位置</p>
+
+<p class=MsoNormal style='margin-left:21.0pt;text-indent:-21.0pt;mso-list:l1 level1 lfo2'><a
+name=20itmk1502349507271></a><![if !supportLists]><span lang=EN-US
+style='font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings'><span style='mso-list:Ignore'>l<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></span><![endif]><span lang=EN-US>y<span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span>垂直方向位置</p>
+
+<p class=MsoNormal style='margin-left:21.0pt;text-indent:-21.0pt;mso-list:l1 level1 lfo2'><a
+name=82ssmu1502349512654></a><![if !supportLists]><span lang=EN-US
+style='font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings'><span style='mso-list:Ignore'>l<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></span><![endif]><span lang=EN-US>blur<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>模糊度</p>
+
+<p class=MsoNormal style='margin-left:21.0pt;text-indent:-21.0pt;mso-list:l1 level1 lfo2'><a
+name=24xfba1502349524413></a><![if !supportLists]><span lang=EN-US
+style='font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings'><span style='mso-list:Ignore'>l<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></span><![endif]><span lang=EN-US>spread<span
+style='mso-spacerun:yes'>&nbsp; </span></span>阴影尺寸</p>
+
+<p class=MsoNormal style='margin-left:21.0pt;text-indent:-21.0pt;mso-list:l1 level1 lfo2'><a
+name=80aoqv1502349533400></a><![if !supportLists]><span lang=EN-US
+style='font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings'><span style='mso-list:Ignore'>l<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></span><![endif]><span lang=EN-US>color<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span>阴影颜色</p>
+
+<p class=MsoNormal style='margin-left:21.0pt;text-indent:-21.0pt;mso-list:l1 level1 lfo2'><a
+name=52qrsl1502349544520></a><![if !supportLists]><span lang=EN-US
+style='font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings'><span style='mso-list:Ignore'>l<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></span><![endif]><span lang=EN-US>inset<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span>可选 内部阴影<span
+lang=EN-US><span style='mso-spacerun:yes'>&nbsp; </span></span><span
+style='color:gray'>默认是外部阴影</span></p>
+
+<p class=MsoNormal><a name=43efkf1502349494926></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=91notu1502349377612></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_43"
+ o:spid="_x0000_i1046" type="#_x0000_t75" alt="clipboard.png" style='width:2in;
+ height:123.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image087.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=192 height=165
+src="CSS3.files/image088.gif" alt=clipboard.png v:shapes="Drawing_x0020_43"><![endif]></span></p>
+
+<p class=MsoNormal><a name=0ihsi1502349377612></a><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span>outset<span
+style='mso-spacerun:yes'>&nbsp; </span></span>外阴影<span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span></p>
+
+<p class=MsoNormal><a name=19oflp1502349575923></a><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span>inset<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span></span>内阴影</p>
+
+<p class=MsoNormal><a name=45qrne1502349877660></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=83qmsv1502349877828></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=92boda1502349877973></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=67cgaz1502349878119></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=40enwv1502349878271></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=24hfmx1502349878420></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=26dnjq1502349881344></a><span style='color:#DF402A'>文字阴影</span></p>
+
+<p class=MsoNormal><a name=14rckx1502349905129></a><span lang=EN-US>text-shadow:<span
+style='color:#DF402A'> 3px <span class=SpellE>3px</span> 10px red;<span
+style='mso-spacerun:yes'>&nbsp; </span></span></span>它只有四个参数</p>
+
+<p class=MsoNormal style='margin-left:21.0pt;text-indent:-21.0pt;mso-list:l1 level1 lfo3'><a
+name=37uqss1502349932505></a><![if !supportLists]><span lang=EN-US
+style='font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings'><span style='mso-list:Ignore'>l<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></span><![endif]><span lang=EN-US>x<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>水平位置</p>
+
+<p class=MsoNormal style='margin-left:21.0pt;text-indent:-21.0pt;mso-list:l1 level1 lfo3'><a
+name=74njsx1502349944778></a><![if !supportLists]><span lang=EN-US
+style='font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings'><span style='mso-list:Ignore'>l<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></span><![endif]><span lang=EN-US>y<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>垂直位置</p>
+
+<p class=MsoNormal style='margin-left:21.0pt;text-indent:-21.0pt;mso-list:l1 level1 lfo3'><a
+name=33rpjf1502349950972></a><![if !supportLists]><span lang=EN-US
+style='font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings'><span style='mso-list:Ignore'>l<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></span><![endif]><span lang=EN-US>blur<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>模糊度</p>
+
+<p class=MsoNormal style='margin-left:21.0pt;text-indent:-21.0pt;mso-list:l1 level1 lfo3'><a
+name=81wbhe1502349958087></a><![if !supportLists]><span lang=EN-US
+style='font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings'><span style='mso-list:Ignore'>l<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></span><![endif]><span lang=EN-US>color<span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span>阴影颜色</p>
+
+<p class=MsoNormal><a name=64yurp1502349879986></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_44"
+ o:spid="_x0000_i1045" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:52.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image089.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=70
+src="CSS3.files/image090.gif" alt=clipboard.png v:shapes="Drawing_x0020_44"><![endif]></span></p>
+
+<p class=MsoNormal><a name=57jzpt1502349891313></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=22lpch1502349891313></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_45"
+ o:spid="_x0000_i1044" type="#_x0000_t75" alt="clipboard.png" style='width:162.75pt;
+ height:27pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image091.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=217 height=36
+src="CSS3.files/image092.gif" alt=clipboard.png v:shapes="Drawing_x0020_45"><![endif]></span></p>
+
+<p class=MsoNormal><a name=41bxdm1502349891313></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=41hcwh1502350170136></a><span style='color:#DF402A'>文字边框</span></p>
+
+<p class=MsoNormal><a name=2pasw1502350170300></a><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;</span>-webkit-text-stroke:<span
+style='color:#DF402A'>1px red;</span></span></p>
+
+<p class=MsoNormal><a name=79xcwj1502350190768></a><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;</span>letter-spacing:<span style='color:#DF402A'>
+3px;<span style='mso-spacerun:yes'>&nbsp; </span></span></span>间距</p>
+
+<p class=MsoNormal><a name=30xmlc1502350162631></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_46"
+ o:spid="_x0000_i1043" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:80.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image093.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=107
+src="CSS3.files/image094.gif" alt=clipboard.png v:shapes="Drawing_x0020_46"><![endif]></span></p>
+
+<p class=MsoNormal><a name=20pmmc1502350214363></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=36ltle1502350214363></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_47"
+ o:spid="_x0000_i1042" type="#_x0000_t75" alt="clipboard.png" style='width:146.25pt;
+ height:28.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image095.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=195 height=38
+src="CSS3.files/image096.gif" alt=clipboard.png v:shapes="Drawing_x0020_47"><![endif]></span></p>
+
+<p class=MsoNormal><a name=28usly1502350002605></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=91okhv1502350233391></a><span style='color:#DF402A'>边框可以用图片</span></p>
+
+<p class=MsoNormal><a name=7ucgk1502350497847></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_48"
+ o:spid="_x0000_i1041" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:258pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image097.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=344
+src="CSS3.files/image098.gif" alt=clipboard.png v:shapes="Drawing_x0020_48"><![endif]></span></p>
+
+<p class=MsoNormal><a name=71ucgq1502350002638></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=15lklj1502350002788></a><span style='color:#DF402A'>蒙层</span></p>
+
+<p class=MsoNormal><a name=76ruhx1502350002820></a><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;</span>background:<span style='color:#DF402A'> <span
+class=SpellE>url</span>(&quot;./mask-<span class=SpellE>pic.jpeg</span>&quot;)
+no-repeat center;</span></span></p>
+
+<p class=MsoNormal><a name=99qskn1502350981552></a><span lang=EN-US>-<span
+class=SpellE>webkit</span>-mask-image:<span style='color:#DF402A'> <span
+class=SpellE>url</span>(<span class=SpellE>mask.png</span>);<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='mso-spacerun:yes'>&nbsp;</span></span>盖住的图片</p>
+
+<p class=MsoNormal><a name=61xnqq1502350981552></a><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;</span>-<span class=SpellE>webkit</span>-mask-repeat:
+<span style='color:#DF402A'>no-repeat;<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>不平铺</p>
+
+<p class=MsoNormal><a name=43zjro1502350981552></a><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;</span>-<span class=SpellE>webkit</span>-mask-position:
+<span style='color:#DF402A'>0 <span class=SpellE>0</span>;<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style='color:#DF402A'>蒙层的</span>默认位置<span
+lang=EN-US><span style='mso-spacerun:yes'>&nbsp; </span></span><span
+style='color:gray'>数值变化 蒙层位置变化</span></p>
+
+<p class=MsoNormal><a name=25jrkg1502351031564></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_49"
+ o:spid="_x0000_i1040" type="#_x0000_t75" alt="clipboard.png" style='width:71.25pt;
+ height:109.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image099.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=95 height=146
+src="CSS3.files/image100.gif" alt=clipboard.png v:shapes="Drawing_x0020_49"><![endif]></span></p>
+
+<p class=MsoNormal><a name=28opox1502350002882></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=41hatm1502351040583></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_50"
+ o:spid="_x0000_i1039" type="#_x0000_t75" alt="clipboard.png" style='width:129pt;
+ height:82.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image101.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=172 height=110
+src="CSS3.files/image102.gif" alt=clipboard.png v:shapes="Drawing_x0020_50"><![endif]></span></p>
+
+<p class=MsoNormal><a name=42nbaq1502351040584></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=85dwqg1502351114891></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=98plrp1502351115035></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=18qwpd1502351115174></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=14wxbz1502351115331></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=44dbaz1502351115501></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=60xnae1502351115692></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=19gbta1502351134872></a><span style='font-size:12.0pt;
+mso-bidi-font-size:11.0pt;color:#DF402A'>六、锚点</span></p>
+
+<p class=MsoNormal><a name=91ptbr1502351796066></a><b style='mso-bidi-font-weight:
+normal'><span lang=EN-US><span style='mso-spacerun:yes'>&nbsp;</span>:target</span></b></p>
+
+<p class=MsoNormal><a name=68prsm1502351800303></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=39copq1502351598436></a><span lang=EN-US>&lt;a<span
+style='color:#DF402A'> <span class=SpellE>href</span>=&quot;#li1&quot;</span>&gt;li1&lt;/a&gt;<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&lt;a <span
+class=SpellE><span style='color:#DF402A'>href</span></span><span
+style='color:#DF402A'>=&quot;#li2&quot;</span>&gt;li2&lt;/a&gt;</span></p>
+
+<p class=MsoNormal><a name=64ftyq1502351609995></a><span lang=EN-US>&lt;<span
+class=SpellE>ul</span>&gt;<span style='mso-spacerun:yes'>&nbsp; </span>&lt;<span
+class=SpellE>li</span> <span style='color:#DF402A'>id=&quot;li1&quot;</span>&gt;11&lt;/<span
+class=SpellE>li</span>&gt;<span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;
+</span>&lt;<span class=SpellE>li</span> id=&quot;li2&quot;&gt;22&lt;/<span
+class=SpellE>li</span>&gt;<span style='mso-spacerun:yes'>&nbsp; </span>&lt;/<span
+class=SpellE>ul</span>&gt;</span></p>
+
+<p class=MsoNormal><a name=87bvqo1502351597103></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_51"
+ o:spid="_x0000_i1038" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:40.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image103.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=54
+src="CSS3.files/image104.gif" alt=clipboard.png v:shapes="Drawing_x0020_51"><![endif]></span></p>
+
+<p class=MsoNormal><a name=53tcvl1502351597103></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=48ckdd1502351464171></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_52"
+ o:spid="_x0000_i1037" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:170.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image105.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=227
+src="CSS3.files/image106.gif" alt=clipboard.png v:shapes="Drawing_x0020_52"><![endif]></span></p>
+
+<p class=MsoNormal><a name=52nver1502351473395></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=27ezdj1502351473395></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_53"
+ o:spid="_x0000_i1036" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:58.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image107.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=78
+src="CSS3.files/image108.gif" alt=clipboard.png v:shapes="Drawing_x0020_53"><![endif]></span></p>
+
+<p class=MsoNormal><a name=62buak1502351521856></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=23jtin1502351521856></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_54"
+ o:spid="_x0000_i1035" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:206.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image109.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=275
+src="CSS3.files/image110.gif" alt=clipboard.png v:shapes="Drawing_x0020_54"><![endif]></span></p>
+
+<p class=MsoNormal><a name=96iwxv1502351135405></a>就是当前选中哪一个 就让哪一个有样式<span
+lang=EN-US><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span>可以用<b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-bidi-font-size:11.0pt;color:#DF402A'> :target </span></b><b
+style='mso-bidi-font-weight:normal'><span style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt'>写选项卡</span></b></p>
+
+<p class=MsoNormal><a name=0ible1502351135450></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=21urqi1502351135477></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=87ahqy1502351135502></a><span style='font-size:12.0pt;
+mso-bidi-font-size:11.0pt;color:#DF402A'>七、<span lang=EN-US>transition</span>过渡动画</span></p>
+
+<p class=MsoNormal><a name=64igwb1502503024432></a>就是从一个<span class=SpellE><span
+lang=EN-US>css</span></span>样式属性<span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span>过渡到<span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span>目标样式属性的效果</p>
+
+<p class=MsoNormal><a name=65blzq1502351135527></a>快捷键 <span lang=EN-US
+style='color:#DF402A'>trans </span><span style='color:#DF402A'>回车</span></p>
+
+<p class=MsoNormal><a name=44mjxg1502352558463></a><span lang=EN-US>transition:<span
+style='color:#DF402A'> all 1s linear 1s; </span><span
+style='mso-spacerun:yes'>&nbsp;</span></span>过渡时间<span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp; </span></span>运动方式</p>
+
+<p class=MsoNormal><a name=72xepq1502353689601></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_55"
+ o:spid="_x0000_i1034" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:66.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image111.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=89
+src="CSS3.files/image112.gif" alt=clipboard.png v:shapes="Drawing_x0020_55"><![endif]></span></p>
+
+<p class=MsoNormal><a name=71adbj1502352968847></a><span lang=EN-US>transition-property:
+<span style='color:#DF402A'>left;</span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>需要过渡的样式属性 可以写成 <u><span lang=EN-US style='color:#DF402A'><span
+style='mso-spacerun:yes'>&nbsp;</span>all </span></u><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;</span></span>也可以单独写<span class=SpellE><span
+lang=EN-US>letf</span></span><span lang=EN-US> top </span>等</p>
+
+<p class=MsoNormal><a name=88uhii1502353698277></a><span lang=EN-US>transition-duration:
+<span style='color:#DF402A'>1s;</span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>过渡时间</p>
+
+<p class=MsoNormal><a name=55uyiw1502353698277></a><span lang=EN-US>transition-timing-function:<span
+style='color:#DF402A'> linear;</span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span></span>运动曲线</p>
+
+<p class=MsoNormal><a name=74rchd1502353707502></a><span style='color:#DF402A'>运动方式</span>
+<span lang=EN-US style='color:#46ACC8'>linear ease ease-in ease-out ease-in-out
+cubic-<span class=SpellE>bezier</span></span><span lang=EN-US>(</span>贝塞尔曲线<span
+lang=EN-US>)</span></p>
+
+<p class=MsoNormal><a name=88bfvg1502353698277></a><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;</span>transition-delay: <span style='color:
+#DF402A'>1s;<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>延迟<span lang=EN-US>1</span>秒之后再执行</p>
+
+<p class=MsoNormal><a name=70lpcf1502352969254></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=20qkqb1502352954414></a>贝塞尔曲线 网址</p>
+
+<p class=MsoNormal><a name=76eekp1502352600180></a><span lang=EN-US><a
+href="http://cubic-bezier.com/#0,.89,1,.4"><span style='color:#003884'>http://cubic-bezier.com/#0,.89,1,.4</span></a><span
+style='color:#393939'> </span></span></p>
+
+<p class=MsoNormal><a name=73iddv1502352617929></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=50nigg1502503260346></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=42utyo1502352618245></a>过渡动画</p>
+
+<p class=MsoNormal><a name=37whwo1502353389274></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_56"
+ o:spid="_x0000_i1033" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:192pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image113.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=553 height=256
+src="CSS3.files/image114.gif" alt=clipboard.png v:shapes="Drawing_x0020_56"><![endif]></span></p>
+
+<p class=MsoNormal><a name=62ubsm1502353429010></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=17ceqr1502353429010></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_57"
+ o:spid="_x0000_i1032" type="#_x0000_t75" alt="clipboard.png" style='width:414pt;
+ height:124.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image115.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=552 height=166
+src="CSS3.files/image116.gif" alt=clipboard.png v:shapes="Drawing_x0020_57"><![endif]></span></p>
+
+<p class=MsoNormal><a name=58dhkt1502353442986></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=7ouge1502353442986></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_58"
+ o:spid="_x0000_i1031" type="#_x0000_t75" alt="clipboard.png" style='width:126pt;
+ height:75.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image117.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=168 height=101
+src="CSS3.files/image118.gif" alt=clipboard.png v:shapes="Drawing_x0020_58"><![endif]></span></p>
+
+<p class=MsoNormal><a name=15wdin1502353460489></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=93ktwr1502353460489></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_59"
+ o:spid="_x0000_i1030" type="#_x0000_t75" alt="clipboard.png" style='width:236.25pt;
+ height:72.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image119.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=315 height=97
+src="CSS3.files/image120.gif" alt=clipboard.png v:shapes="Drawing_x0020_59"><![endif]></span></p>
+
+<p class=MsoNormal><a name=73dscs1502352565466></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=35ybri1502354629662></a>当鼠标离开的时候 还会回到原点<span
+lang=EN-US><span style='mso-spacerun:yes'>&nbsp; </span></span>只有<span
+lang=EN-US>hover</span>滑过的时候才有过渡效果<span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp; </span></span></p>
+
+<p class=MsoNormal><a name=27rvmh1502503102826></a><span style='color:#DF402A'>！！！</span>隐藏元素切换显示的时候<span
+lang=EN-US><span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span>是没有过渡效果的</p>
+
+<p class=MsoNormal><a name=1zmmt1502503483887></a><span lang=EN-US
+style='color:#DF402A'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='color:#DF402A'>页面刚开始加载的时候<span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>是没有过渡效果的<span
+lang=EN-US><span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span></span>给他事件或<span
+lang=EN-US>hover</span>才会动</p>
+
+<p class=MsoNormal><a name=98vdat1502510121231></a><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>无法控制他的旋转次数 他只有开始和结束</p>
+
+<p class=MsoNormal><a name=49tebc1502503103014></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=40fsla1502503752042></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=92mjfb1502503076493></a><span style='font-size:12.0pt;
+mso-bidi-font-size:11.0pt;color:#DF402A'>八、<span lang=EN-US>transform</span></span></p>
+
+<p class=MsoNormal><a name=59ljzh1502355130500></a><span lang=EN-US>transform:<span
+style='color:#DF402A'> scale(2.0);<span style='mso-spacerun:yes'>&nbsp; </span></span></span>缩放的倍数</p>
+
+<p class=MsoNormal><a name=25gnil1502354643658></a>实际上宽度并没有改变 只是视觉上变化了</p>
+
+<p class=MsoNormal><a name=1kdpe1502355119736></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_60"
+ o:spid="_x0000_i1029" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:246pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image121.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=553 height=328
+src="CSS3.files/image122.gif" alt=clipboard.png v:shapes="Drawing_x0020_60"><![endif]></span></p>
+
+<p class=MsoNormal><a name=14bcvw1502355167643></a>鼠标移上后 <span
+style='color:#DF402A'>匀速放大<span lang=EN-US>2</span>倍 </span></p>
+
+<p class=MsoNormal><a name=20gvmh1502355167643></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_61"
+ o:spid="_x0000_i1028" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:100.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image123.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=553 height=134
+src="CSS3.files/image124.gif" alt=clipboard.png v:shapes="Drawing_x0020_61"><![endif]></span></p>
+
+<p class=MsoNormal><a name=40tnzs1502354646340></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=41jppf1502354646373></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=17myvl1502354646399></a><span lang=EN-US>transform: <span
+style='color:#DF402A'>scale(2.0) rotate(-360deg)</span> <span style='color:
+#DF402A'>translate(100px,100px) skew(45deg); </span></span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt;text-indent:-21.0pt;mso-list:l1 level1 lfo4'><a
+name=89anbc1502355295692></a><![if !supportLists]><span lang=EN-US
+style='font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings'><span style='mso-list:Ignore'>l<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></span><![endif]><span lang=EN-US style='color:#DF402A'>scale<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>缩放比例<span lang=EN-US><span style='mso-spacerun:yes'>&nbsp;&nbsp;
+</span></span>小于<span lang=EN-US>1</span>是缩小<span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>大于<span
+lang=EN-US>1</span>是放大<span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span>等于<span
+lang=EN-US>1</span>是原始比例</p>
+
+<p class=MsoNormal style='margin-left:21.0pt;text-indent:-21.0pt;mso-list:l1 level1 lfo4'><a
+name=24ieep1502355297699></a><![if !supportLists]><span lang=EN-US
+style='font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings'><span style='mso-list:Ignore'>l<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></span><![endif]><span lang=EN-US style='color:#DF402A'>rotate<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>旋转<span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>deg</span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt;text-indent:-21.0pt;mso-list:l1 level1 lfo4'><a
+name=60fleu1502355416909></a><![if !supportLists]><span lang=EN-US
+style='font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings'><span style='mso-list:Ignore'>l<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></span><![endif]><span lang=EN-US style='color:#DF402A'>translate<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span></span>平移<span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='color:gray'>参数（</span><span lang=EN-US>x</span>轴<span lang=EN-US> y</span>轴）</p>
+
+<p class=MsoNormal style='margin-left:21.0pt;text-indent:-21.0pt;mso-list:l1 level1 lfo4'><a
+name=14nylj1502355712394></a><![if !supportLists]><span lang=EN-US
+style='font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings'><span style='mso-list:Ignore'>l<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></span><![endif]><span lang=EN-US style='color:#DF402A'>skew<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>倾斜<span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='color:gray'>参数（</span><span lang=EN-US>x</span>轴水平方向<span lang=EN-US> y</span>轴垂直方向）写一个参数是<span
+class=SpellE><span lang=EN-US>xy</span></span><span lang=EN-US> </span>都倾斜</p>
+
+<p class=MsoNormal><a name=77qrvp1502355695540></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_62"
+ o:spid="_x0000_i1027" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:80.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image125.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=553 height=107
+src="CSS3.files/image126.gif" alt=clipboard.png v:shapes="Drawing_x0020_62"><![endif]></span></p>
+
+<p class=MsoNormal><a name=81blxx1502354646463></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=88qdsn1502354646479></a><span class=SpellE><span
+lang=EN-US style='color:#DF402A'>js</span></span><span style='color:#DF402A'>中如何控制<span
+lang=EN-US>translate</span></span></p>
+
+<p class=MsoNormal><a name=67omuy1502355951761></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_63"
+ o:spid="_x0000_i1026" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:60.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image127.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=553 height=81
+src="CSS3.files/image128.gif" alt=clipboard.png v:shapes="Drawing_x0020_63"><![endif]></span></p>
+
+<p class=MsoNormal><a name=78jzkc1502354646543></a>把他的值 设置在行内样式上了 记得加上前缀</p>
+
+<p class=MsoNormal><a name=94ocwv1502355980364></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=30mvck1502356630172></a>用<span lang=EN-US>translate </span>做轮播图原理
+</p>
+
+<p class=MsoNormal><a name=61ggzd1502356624935></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_64"
+ o:spid="_x0000_i1025" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:111.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="CSS3.files/image129.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=553 height=149
+src="CSS3.files/image130.gif" alt=clipboard.png v:shapes="Drawing_x0020_64"><![endif]></span></p>
+
+<p class=MsoNormal><a name=57ruei1502354646570></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=61tnko1502354646582></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=66tmlo1502354646608></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=44otqu1502354646648></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=47ttoi1502354646664></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=1nhyd1502354646693></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

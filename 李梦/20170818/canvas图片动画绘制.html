@@ -1,0 +1,75 @@
+<!DOCTYPE html><html><head><title>canvas 图片动画绘制</title><meta charset='utf-8'><link href='https://dn-maxiang.qbox.me/res-min/themes/marxico.css' rel='stylesheet'><style></style></head><body><div id='preview-contents' class='note-content'>
+                        
+                    
+
+
+
+<h3 id="canvas-图片动画绘制">canvas 图片动画绘制</h3>
+
+
+
+<h5 id="绘制简单图像">绘制简单图像</h5>
+
+<ul><li>语法: CanvasRenderingContext2D.drawImage( img, dx, dy )</li>
+<li>描述: <br>
+<ul>
+<li>使用三个参数, 允许在画布上的 任意位置 绘制图片.</li>
+<li>参数 img 是指图片对象. 可以是 img 标签, 或者是 video 标签, 已经另一个 canvas 等.</li>
+<li>需要注意的是如果直接添加 img 对象是不可以的, 需要等待其加载.</li>
+<li>准备一张网络图片, 绘制, 便于查看其加载过程.</li></ul></li>
+</ul>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs qml"><span class="hljs-comment">// 随便从百度中搜索 '美女头像', 记录一个链接地址</span><br><span class="hljs-built_in">var</span> <span class="hljs-built_in">url</span> = <span class="hljs-string">'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3289155966,3850025949&amp;fm=116&amp;gp=0.jpg'</span>;<br><span class="hljs-comment">// 创建 img 对象</span><br><span class="hljs-built_in">var</span> img = <span class="hljs-keyword">new</span> Image(); <span class="hljs-comment">// 就是 img 标签</span><br><span class="hljs-comment">// 设置 src 属性为 图片</span><br>img.src = <span class="hljs-built_in">url</span>;<br><span class="hljs-comment">// 绘图</span><br>ctx.drawImage( img, <span class="hljs-number">100</span>, <span class="hljs-number">100</span> );<br></code></pre>
+
+
+
+<h5 id="在指定区域内绘制图像">在指定区域内绘制图像</h5>
+
+<ul><li>语法: CanvasRenderingContext2D.drawImage( img, dx, dy, dWidth, dHeight )</li>
+<li>描述: <br>
+<ul>
+<li>参数 dWidth, dHeight 表示绘制的矩形区域. 绘制的 dx, dy 坐标决定了开始.</li>
+<li>该方法绘制的图像会在指定范围内被压缩显示.</li>
+<li>将上面的图绘制在 100 * 100 的范围内.  ctx.drawImage( img, 100, 100, 100, 100 );</li></ul></li>
+</ul>
+
+
+
+<h5 id="绘制任意图像">绘制任意图像</h5>
+
+<ul><li>语法: CanvasRenderingContext2D.drawImage( img, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight )</li>
+<li>描述: 这里的带有 s 前缀的参数就是指图源的矩形区域. <br>
+<ul>
+<li>例如将图片的 ( 100, 100, 300, 200 ) 处的内容绘制到页面的 ( 100, 100, 300, 200 ) 的位置.        </li>
+<li>ctx.drawImage( img, 100, 100, 300, 200,  100, 100, 300, 200 );</li></ul></li>
+</ul>
+
+
+
+<h5 id="绘制动画">绘制动画</h5>
+
+<ul><li>有了图片部分绘制的功能, 我们就可以尝试绘制动画了. 准备一张图片</li>
+<li>然后开始的时候绘制第一行的第一张图. 计算它的坐标与宽高</li>
+</ul>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs actionscript"><span class="hljs-keyword">var</span> img = <span class="hljs-keyword">new</span> Image();<br>img.src = <span class="hljs-string">'./imgs士兵(1).png'</span><br>img.onload = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{<br><span class="hljs-keyword">var</span> width = img.width / <span class="hljs-number">4</span>;<br><span class="hljs-keyword">var</span> height = img.heigth / <span class="hljs-number">4</span>;<br><span class="hljs-comment">// 第一张图的顶点是 0, 0, 宽高是 width, height</span><br>};<br></code></pre>
+
+<p>那么第一行的第二张图就是 ( 0, width, width, height ), 第三张就是 ( 0, width * 2, width, height ). 因此第一行的第 i 张图就是</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs ebnf"><span class="hljs-attribute">var x</span> = 0;<br><span class="hljs-attribute">var y</span> = width * ( i - 1 );<br></code></pre>
+
+<p>同理得到, 第 j 列的 x 坐标是 height * ( j - 1 )</p>
+
+<p>现在绘制第一张图</p>
+
+<pre class="prettyprint hljs-dark"><code class="hljs maxima">...<br><span class="hljs-built_in">var</span> img = <span class="hljs-built_in">new</span> Image();<br>img.src = './imgs/士兵(<span class="hljs-number">1</span>).png'<br>img.onload = function () {<br>    <span class="hljs-built_in">var</span> <span class="hljs-built_in">width</span> = img.<span class="hljs-built_in">width</span> / <span class="hljs-number">4</span>;<br>    <span class="hljs-built_in">var</span> <span class="hljs-built_in">height</span> = img.<span class="hljs-built_in">height</span> / <span class="hljs-number">4</span>;<br><br>    ctx.drawImage( img, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-built_in">width</span>, <span class="hljs-built_in">height</span>, <span class="hljs-number">100</span>, <span class="hljs-number">100</span>, <span class="hljs-built_in">width</span>, <span class="hljs-built_in">height</span> ); <br>};<br></code></pre>
+
+<p>现在要求, 每隔 200 毫秒就切换一张图片, 现在只考虑第一行的图片.</p>
+
+<pre class="prettyprint hljs-dark"><code class="hljs maxima"><span class="hljs-built_in">var</span> img = <span class="hljs-built_in">new</span> Image();<br>img.src = './imgs/士兵(<span class="hljs-number">1</span>).png'<br>img.onload = function () {<br>    <span class="hljs-built_in">var</span> <span class="hljs-built_in">width</span> = img.<span class="hljs-built_in">width</span> / <span class="hljs-number">4</span>;<br>    <span class="hljs-built_in">var</span> <span class="hljs-built_in">height</span> = img.<span class="hljs-built_in">height</span> / <span class="hljs-number">4</span>;<br><br>    <span class="hljs-built_in">var</span> i = <span class="hljs-number">0</span>;<br>    setInterval(function () {<br>        ctx.clearRect( <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, cas.<span class="hljs-built_in">width</span>, cas.<span class="hljs-built_in">height</span> );<br>        ctx.drawImage( img, <span class="hljs-built_in">width</span> * (i++ <span class="hljs-symbol">%</span> <span class="hljs-number">4</span>), <span class="hljs-number">0</span>, <span class="hljs-built_in">width</span>, <span class="hljs-built_in">height</span>, <span class="hljs-number">100</span>, <span class="hljs-number">100</span>, <span class="hljs-built_in">width</span>, <span class="hljs-built_in">height</span> );<br>    }, <span class="hljs-number">200</span> );<br>};<br></code></pre></div></body></html>

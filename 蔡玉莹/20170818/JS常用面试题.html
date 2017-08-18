@@ -1,0 +1,148 @@
+<!DOCTYPE html><html><head><title>Untitled</title><meta charset='utf-8'><link href='https://dn-maxiang.qbox.me/res-min/themes/marxico.css' rel='stylesheet'><style></style></head><body><div id='preview-contents' class='note-content'>
+                        
+                    
+
+<ol><li rel="1">JS循坏语句？ for/ while /do while</li>
+<li rel="2">JS基本的条件语句？  if else/switch/</li>
+</ol>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs xquery">    <span class="hljs-keyword">if</span>(){<br>        }<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(){<br>                    }<span class="hljs-keyword">else</span>{<br>       }<br></code></pre>
+
+<ol start="3"><li rel="3">JS有哪些数据类型？</li>
+</ol>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs typescript">    基本数据类型(<span class="hljs-built_in">number</span>/<span class="hljs-built_in">string</span>/<span class="hljs-built_in">boolean</span>/<span class="hljs-literal">null</span>/<span class="hljs-literal">undefined</span>)<br>    引用数据类型(<span class="hljs-function"><span class="hljs-keyword">function</span>/<span class="hljs-title">object</span>)</span><br></code></pre>
+
+<ol start="4"><li rel="4">基本数据类型和引用数据类型的区别？ <br>
+一个是值引用，一个是指针引用</li>
+<li rel="5">undefined和null的区别？ <br>
+undefined是未定义，null是空的。</li>
+<li rel="6">isNaN是什么？判断是不是有效数字，是就返回flase，否则返回true。</li>
+<li rel="7">基本数据类型是通过栈内存来存放数据的，引用数据类型是通过堆内存来存放数据的。</li>
+<li rel="8">基本数据类型用什么来判断是哪种数据类型？引用数据类型用什么来判断是哪种类型？ <br>
+typeof/  instanceof</li>
+<li rel="9">aruments[n]是类数组，还有一个属性length</li>
+<li rel="10"><p>this关键字怎么找？ <br>
+  this：this是当前行为的主体  <br>
+  context:上下文（也就是活动的范围） <br>
+  付帅去饭店吃饭：饭店那个屋子是上下文，也就是活动的范围，付帅是this，是当前吃饭这件事的主体 </p>
+
+<p>this是谁和在哪执行和在哪定义没有半毛钱关系 <br>
+   a. 给元素绑定事件，函数中的this就是当前被绑定事件的元素 <br>
+   b. 函数执行，里面的this这样找：看函数名之前有没有”.”，有的话”.”之前是谁this就是谁，没有就是window  <br>
+   c. 不管自执行函数写在哪，里面的this就是window <br>
+   d. 构造函数模式中的this是当前的实例 <br>
+   e. 我们还可以使用call和apply强制改变函数中的this，第一个参数写谁，this就是谁(不写、null、undefined除外—&gt;window)</p></li>
+<li rel="11"><p>获取页面元素的方法：document称为上下文，context可以限定当前获取元素的范围；</p>
+
+<ul>
+<li>document.getElementByIdx_x(“id”);id上下文只能是document</li>
+<li>document.getElementsByTagName_r(“标签名”);</li>
+<li>document.getElementByClassName(“”);通过类名获取一组元素，得到类数组；</li>
+<li>document.getElementByName(“”);通过元素name属性值来获取一组元素；  得到类数组；</li>
+<li>document.documentElement 获取html元素</li>
+<li>document.body 获取body元素</li>
+<li>document.documentElement.clientWidth || document.body.clientWidth 兼容所有浏览器获取当前屏幕宽度；       </li>
+<li>document.documentElement.clientHeight || document.body.clientHeight 兼容所有浏览器获取当前屏幕高度；</li>
+<li>在移动端获取元素的常用方法（IE6～8不兼容：document.querySelector()      document.querySelectorAll()</li>
+<li>动态创建一个元素节点：createlement</li></ul></li>
+</ol>
+
+<p>7种获取关系的属性</p>
+
+<ul><li>.childNodes：   获取所有子节点</li>
+<li>.children： 获取所有元素子节点</li>
+<li>.parentNode：获取父亲节点</li>
+<li>.previousSibling：获取上一个哥哥节点</li>
+<li>.nextSibling：获取下一个弟弟节点</li>
+<li>.firstChild：获取所有子节点中的第一个</li>
+<li>.lastChild：获取所有子节点的最后一个</li>
+</ul>
+
+<p>动态操作元素标签： 7种</p>
+
+<ul><li>document.createElement_x:创建一个元素标签对象</li>
+<li>容器.appendChild:把这个元素添加到指定容器的末尾位置</li>
+<li>oldEle.parentNode.insertBefore(new,old)：在old之前插入</li>
+<li>oldEle.parentNode.removeChild()：删除元素；</li>
+<li>oldEle.parentNode.replaceChild(new,old)  替换；</li>
+<li>.cloneNode(false)  克隆元素   true：子孙元素也克隆；  false：不克隆； 默认是false</li>
+<li><p>获取：console.log(clo.getAttribute(“xx”));   删除 removeAttribute(“xx”);</p>
+
+<ol>
+<li rel="12">对闭包的理解：在函数执行的时候，用形成一个私有作用域，来保护里面的私有变量不受外界的干扰，我们把函数的这种保护的机制叫做闭包！(简单写一个闭包的例子 )</li>
+<li rel="13">谈谈你对DOM2级事件兼容性问题以及对事件的理解？</li>
+<li rel="14">原型链的查找机制是什么？ <br>
+首先在自己的私有中查找，如果有就是私有的属性，没有的话通过<strong>proto</strong>找对应类的prototype，如果有的话就是公有的属性，如果原型中也没有呢，则继续根据原型上的<strong>proto</strong>找到基类Object的prototype，如果基类原型也没有，就报错了—&gt;我们把这一级级的查找方式叫做原型链 <br>
+     hasOwnProperty：检测某一个属性是否是这个对象的私有属性，只能检测私有的，私有没有就是flase(不管公有的有木有)。 <br>
+     instanceof：用来检测某一个实例是否属于某一个类</li>
+<li rel="15">面向对象：类的继承、封装、多态； </li></ol></li>
+</ul>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs javascript">        面向对象的继承有两种方法：原型链和call--&gt;<span class="hljs-number">8</span><br>        a)原型链继承：<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">A</span>(<span class="hljs-params"></span>) </span>{<br>                                     <span class="hljs-keyword">this</span>.x = <span class="hljs-number">100</span>;<br>                                    }<br>                                   A.prototype = {<br>                                          <span class="hljs-attr">constructor</span>: A,<br>                                          <span class="hljs-attr">a</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>                                              <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.x);<br>                                          }<br>                                    };<br>                                 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">B</span>(<span class="hljs-params"></span>) </span>{<br>                                     <span class="hljs-keyword">this</span>.x = <span class="hljs-number">10</span>;<br>                                 }<br>                                 B.prototype = <span class="hljs-keyword">new</span> A;原型继承<br>                                 <span class="hljs-keyword">var</span> b = <span class="hljs-keyword">new</span> B;<br>                                 b.a();<span class="hljs-keyword">this</span>--&gt;b  <span class="hljs-number">10</span><br>           b)call继承：<br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">A</span>(<span class="hljs-params"></span>) </span>{<br>            <span class="hljs-keyword">this</span>.x = <span class="hljs-number">100</span>;<br>        }<br>        A.prototype = {<br>            <span class="hljs-attr">constructor</span>: A,<br>            <span class="hljs-attr">a</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>                <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"ok"</span>);<br>            }<br>        };<br>        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">B</span>(<span class="hljs-params"></span>) </span>{<br>            A.call(<span class="hljs-keyword">this</span>);call继承<br>            对象冒充，和我们的call原理一样<br>            <span class="hljs-keyword">this</span>.fn = A;<br>            <span class="hljs-keyword">this</span>.fn();<br>            <span class="hljs-keyword">delete</span> <span class="hljs-keyword">this</span>.fn;<br>        }<br>        <span class="hljs-keyword">var</span> b = <span class="hljs-keyword">new</span> B;<br>        <span class="hljs-built_in">console</span>.log(b.x);<br>        b.a();<br><br></code></pre>
+
+<ol start="16"><li rel="16"><p>cookie、localStorage、sessionStorage 的区别： <br>
+  cookie 客户端–&gt; 前端浏览存储的东西有过期时间–&gt;浏览器关闭还在 –&gt;有默认的存储时间 <br>
+  localStorage  客户端–&gt;永久存在 没有过期时间 没有大小限制 –&gt;浏览器关闭还在(通过全局对象localStorage访问、会持久保存在浏览器的数据库中，除非用户手动清除或者使用相关的API清除数据 ) <br>
+  sessionStorage(不推荐使用) 服务器–&gt; 永久存在 没有过期时间 没有大小限制 –&gt;浏览器关闭不存在(通过全局对象sessionStorage访问、当浏览器关闭之后就清除数据，不会持久保存)</p>
+
+<ol>
+<li rel="17">JSON： <br>
+1) 将json格式的对象，转化为json格式的字符串（JSON.stringify()–对象转化为字符串）在IE6-7中不兼容 <br>
+  console.log(JSON.stringify(obj));//不兼容 <br>
+2) 将json格式的字符串，转化为json格式的对象：（JSON.parse()–字符串转化为对象）在IE6-7下不兼容 <br>
+  var jsonobj=JSON.parse(str); <br>
+  不兼容我们用eval来处理，但是别忘记手动的加上() <br>
+  var jsonobj=eval_r(“(“+str+”)”);</li>
+<li rel="18"><p>移动端优化： <br>
+1)减少资源请求 <br>
+  压缩合并css和js文件，一个页面只引入一个css和一个js  (基于nodejs，应用grunt自动化项目管理平台实现css和js的压缩合并) <br>
+2) 减小资源请求的大小 <br>
+   a) 尽量不使用框架或者插件，都用原生的来实现；及时用也是改过后用，把没用的去掉 <br>
+   b) 图片压缩 <br>
+   c) 图片延迟加载：开始所有的图片都用一张默认图占位(是一张背景图片，最好控制在10kb以内)，等到页面加载完成后，我们让当前能够显示的区域内，动态创建一个img标签，把真实的地址给它，当加载成功后，我们把当前图片放入指定容器中即可，随着页面滚动进行处理! <br>
+3) 做数据缓存</p></li>
+<li rel="19"><p>1) ajax： <br>
+        a) 创建一个对象–&gt;XMLHttpRequest <br>
+        b) open一个连接地址，并且设置请求方式和同步/异步（请求方式：get、post、delete、put ） <br>
+        c) 监听onreadystatechange事件 <br>
+        d) send(); <br>
+b-2) get请求和post请求的区别： <br>
+      a) 大小限制问题：get以url方式请求(chrom 8k,ff 7k,ie 2k)，post(没有大小限制) <br>
+      b) 响应主体：get没主体(主体为空)，post(设置响应请求头) <br>
+      c) get存在缓存，post不存在缓存 <br>
+      d) get存在过期时间 <br>
+      e) get不安全，post安全(不常用，post比较慢) <br>
+b-3) 同步异步：async true异步  false同步 <br>
+c-4) readyState  加载完成==4 <br>
+      status HTTP网络请求状态码： 200 成功  <br>
+301(永久重定向) 302(临时重定向)  304(上一次和本次请求未发生任何的改变) <br>
+400(缺少请求的参数) 404(没有找到请求页面) 417(上传资源文件过大) <br>
+500(未知的服务器错误)</p></li>
+<li rel="20"><p>闭包：一个外部函数执行时会返回一个内部的函数，这个内部函数可以访问到外部函数的私有变量，这个内部函数就被称为闭包 <br>
+     闭包也是个函数，它有权访问包含它的函数中的私有变量</p></li></ol></li>
+</ol>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs abnf">fn1( ){<br>   var i = <span class="hljs-number">1</span><span class="hljs-comment">;</span><br>   fn2(){ console.log( i )<span class="hljs-comment">; }</span><br>   return fn2<span class="hljs-comment">;</span><br>}<br>fn1是fn2的外部函数，也叫包含函数<br><br></code></pre>
+
+<ol start="21"><li rel="21">其中按钮的高度固定为40px，按钮的宽度固定为60px，字体大小根据宽度自适应。</li>
+</ol>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs maxima"><span class="hljs-built_in">var</span> maxHeight=<span class="hljs-number">40</span>;       //固定高度 <br><span class="hljs-built_in">var</span> maxWidth=<span class="hljs-number">60</span>;        //固定宽度<br><span class="hljs-built_in">var</span> <span class="hljs-built_in">height</span>=[];<br><span class="hljs-built_in">var</span> <span class="hljs-built_in">width</span>=[];<br><span class="hljs-built_in">var</span> button=document.getElementsByTagName_r(<span class="hljs-string">"input"</span>);<br><span class="hljs-keyword">for</span>(<span class="hljs-built_in">var</span> i=<span class="hljs-number">0</span>;i<br>button[i].<span class="hljs-built_in">style</span>.fontSize=<span class="hljs-string">"8px"</span>;<br><span class="hljs-built_in">height</span>[i]=button[i].offsetHeight;<br><span class="hljs-built_in">width</span>[i]=button[i].offsetWidth;<br><span class="hljs-keyword">while</span>(parseInt(<span class="hljs-built_in">height</span>[i])<br>button[i].<span class="hljs-built_in">style</span>.fontSize=parseInt(button[i].<span class="hljs-built_in">style</span>.fontSize)+<span class="hljs-number">1</span>+<span class="hljs-string">"px"</span>;<br><span class="hljs-built_in">height</span>[i]=button[i].offsetHeight;<br><span class="hljs-built_in">width</span>[i]=button[i].offsetWidth;<br>          }<br>button[i].<span class="hljs-built_in">style</span>.<span class="hljs-built_in">width</span>=<span class="hljs-string">"60px"</span>;<br>button[i].<span class="hljs-built_in">style</span>.<span class="hljs-built_in">height</span>=<span class="hljs-string">"40px"</span>;<br>}<br></code></pre>
+
+<ol start="22"><li rel="22"></li>
+</ol>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs typescript"><span class="hljs-keyword">var</span> a1,a2=<span class="hljs-literal">null</span>,a3=<span class="hljs-literal">NaN</span>,a4=<span class="hljs-literal">undefined</span>;<br>        <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> a);  <span class="hljs-literal">undefined</span><br>        <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> a1);  <span class="hljs-literal">undefined</span><br>        <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> a2);  object<br>        <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> a3);   <span class="hljs-built_in">number</span><br>        <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> a4);  <span class="hljs-literal">undefined</span><br>        <span class="hljs-literal">undefined</span>==<span class="hljs-literal">null</span>; <span class="hljs-comment">//true</span><br>        <span class="hljs-literal">undefined</span>==<span class="hljs-literal">NaN</span>; <span class="hljs-comment">//false</span><br>        <span class="hljs-literal">null</span>==<span class="hljs-literal">NaN</span>;  <span class="hljs-comment">//false    NaN==NaN; //false</span><br></code></pre></div></body></html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html><html><head><title>1. Express介绍</title><meta charset='utf-8'><link href='https://dn-maxiang.qbox.me/res-min/themes/marxico.css' rel='stylesheet'><style></style></head><body><div id='preview-contents' class='note-content'>
+                        
+                    
+
+<h2 id="1-express介绍">1. Express介绍</h2>
+
+<p>在原生node中如果路由和业务代码过多,代码会越来越复杂,难以阅读和维护,耦合的代码太多会导致修改时可能引入新的bug,我们可以使用express来解决这些问题,这篇文章让我们快速上手express。</p>
+
+<p>&lt;!-more–&gt;</p>
+
+
+
+<h2 id="2-使用express">2. 使用express</h2>
+
+<p>本地安装</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs cmake">$ npm <span class="hljs-keyword">install</span> express<br></code></pre>
+
+<p>引用express以后可以得到一个函数，调用此函数使用各种方法</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs arduino"><span class="hljs-keyword">const</span> express = require(<span class="hljs-string">'express'</span>);<br><span class="hljs-keyword">const</span> app = express();<br>app.<span class="hljs-built_in">listen</span>(<span class="hljs-number">8080</span>);<br></code></pre>
+
+
+
+<h2 id="3-app是http中的监听函数">3. app是http中的监听函数</h2>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs javascript">app.listen = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>  <span class="hljs-keyword">let</span> server = <span class="hljs-built_in">require</span>(<span class="hljs-string">'http'</span>).createServer(<span class="hljs-keyword">this</span>);<br>  <span class="hljs-keyword">return</span>  server.listen(...arguments);<br>};<br></code></pre>
+
+
+
+<h2 id="4-使用路由">4. 使用路由</h2>
+
+<p>路由就是根据客户端的不同的请求返回不同的响应，通过请求方法和路径执行对应的监听函数。  </p>
+
+<p>可以定义多个路由，匹配的时候从上往下依次匹配，如果方法名和路径都匹配上，则执行对应的监听函数并结束响应，如果有任何一个没有匹配上，则往下继续匹配，如果都没有匹配上，则报错 <code>CANNOT HTTP方法 路径</code></p>
+
+<p>创建一个首页路由和用户路由</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs lua">app.get(<span class="hljs-string">'/'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(req,res)</span></span>{<br>  res.<span class="hljs-keyword">end</span>(<span class="hljs-string">'home'</span>);<br>});<br>app.get(<span class="hljs-string">'/user'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(req,res)</span></span>{<br>  res.<span class="hljs-keyword">end</span>(<span class="hljs-string">'user'</span>);<br>});<br>app.post(<span class="hljs-string">'/user'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(req,res)</span></span>{<br>  res.<span class="hljs-keyword">end</span>(<span class="hljs-string">'post user'</span>);<br>});<br></code></pre>
+
+<blockquote>
+  <p>通过curl -X POST <a href="http://localhost:8080/user" target="_blank">http://localhost:8080/user</a> 发送post请求</p>
+</blockquote>
+
+
+
+<h2 id="5-通过all和配置404">5. 通过all和*配置404</h2>
+
+<p>all可以匹配所有方法,*可以匹配所有路径</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs lua">app.all(<span class="hljs-string">'*'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(req,res)</span></span> {<br>  res.<span class="hljs-keyword">end</span>(<span class="hljs-string">'404'</span>)<br>})<br></code></pre>
+
+
+
+<h2 id="实现路由完成功能">实现路由完成功能</h2>
+
+<ul><li>当访问/signup路径时，返回注册  </li>
+<li>当访问/signin路径时，返回登录  </li>
+<li>当访问/signout路径时，返回退出  </li>
+<li>当访问其他路由时，返回页面不存在   </li>
+</ul>
+
+
+
+<h2 id="6-请求参数">6. 请求参数</h2>
+
+<p>获取请求方法</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs css"><span class="hljs-selector-tag">req</span><span class="hljs-selector-class">.method</span><br></code></pre>
+
+<p>获取路径</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs css"><span class="hljs-selector-tag">req</span><span class="hljs-selector-class">.path</span><br></code></pre>
+
+<p>获取查询字符串</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs css"><span class="hljs-selector-tag">req</span><span class="hljs-selector-class">.query</span><br></code></pre>
+
+<p>获取请求头</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs css"><span class="hljs-selector-tag">req</span><span class="hljs-selector-class">.headers</span><br></code></pre>
+
+
+
+<h2 id="7-获取路径参数">7. 获取路径参数</h2>
+
+<p>可以通过路由匹配获取路径蚕食</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs javascript">app.get(<span class="hljs-regexp">/^\/article\/(\d+)$/</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">req,res</span>)</span>{<br>   <span class="hljs-keyword">var</span> result = req.path.match(<span class="hljs-regexp">/\/article\/(\d+)/</span>);<br>   res.end(<span class="hljs-string">`第<span class="hljs-subst">${result[<span class="hljs-number">1</span>]}</span>文章详情`</span>);<br>});<br></code></pre>
+
+<p>通过req.params获取路径参数</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs javascript">app.get(<span class="hljs-string">'/article/:id/'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">req,res</span>)</span>{<br>    res.end(<span class="hljs-string">`第<span class="hljs-subst">${req.params.id}</span>文章详情`</span>);<br>});<br></code></pre>
+
+
+
+<h2 id="8-中间件">8. 中间件</h2>
+
+<p>中间件是一个处理函数，它是在路由匹配之间的执行的,每个app.use表示一个中间件,它的特点是:</p>
+
+<ul><li>可以编写公共逻辑,在req和res上增加公用方法</li>
+<li>根据路径执行不同的中间件,调用next函数可以执行后续的中间件</li>
+<li>进行用户登录和权限判断</li>
+<li>next中传递参数，会执行错误中间件</li>
+</ul>
+
+<p>编写打印访问路径所需时间的中间件</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs javascript">app.use(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req,res,next</span>) </span>{<br>  <span class="hljs-keyword">var</span> end = res.end;<br>  <span class="hljs-keyword">var</span> timer = <span class="hljs-built_in">Date</span>.now();<br>  res.end = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Date</span>.now()-timer);<br>    end.apply(<span class="hljs-keyword">this</span>,<span class="hljs-built_in">arguments</span>);<br>  };<br>  next();<span class="hljs-comment">//如果next函数传入参数会调用错误中间件</span><br>});<br>app.use(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err,req,res,next</span>) </span>{<br>  <span class="hljs-built_in">console</span>.log(err);<br>})<br></code></pre>
+
+<blockquote>
+  <p>编写一个中间件，在里面判断是否有查询参数username并且值是否是admin,如果不是的话直接结束响应并返回你没有权限，如果是则可以继续执行</p>
+</blockquote>
+
+
+
+<h2 id="9-路由中间件">9. 路由中间件</h2>
+
+<p>实现划分路由模块,引用用户模块</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs php">app.<span class="hljs-keyword">use</span>(<span class="hljs-string">'/user'</span>,<span class="hljs-keyword">require</span>(<span class="hljs-string">'./user'</span>));<br></code></pre>
+
+<p>导出用户模块</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs javascript"><span class="hljs-keyword">var</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">'express'</span>);<br><span class="hljs-keyword">var</span> router = express.Router();<br>router.get(<span class="hljs-string">'/signin'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">req,res</span>)</span>{<br>    res.end(<span class="hljs-string">'登录'</span>);<br>});<br><span class="hljs-built_in">module</span>.exports = router<br></code></pre>
+
+
+
+<h2 id="10-send方法">10. send方法</h2>
+
+<p>send方法向浏览器发送一个响应信息，并可以智能处理不同类型的数据 并在输出响应时会自动进行一些设置，比如HEAD信息、HTTP缓存支持等等。</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs css"><span class="hljs-selector-tag">res</span><span class="hljs-selector-class">.send</span>(<span class="hljs-selector-attr">[body|status]</span>, <span class="hljs-selector-attr">[body]</span>);<br></code></pre>
+
+<p>当参数为一个String时或者Buffer，Content-Type默认设置为”text/html” <br>
+当参数为Array或Object时，Express会返回一个JSON <br>
+当参数为一个Number时，并且没有上面提到的任何一条在响应体里，Express会帮你设置一个响应体，比如：200会返回字符”OK”</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs javascript">app.use(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req,res,next</span>) </span>{<br>  res.send = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">data</span>) </span>{<br>    <span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> data==<span class="hljs-string">'string'</span>|| Buffer.isBuffer(data)){<br>      res.setHeader(<span class="hljs-string">'content-type'</span>,<span class="hljs-string">'text/html;charset=utf8'</span>)<br>      res.end(data);<br>    }<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> data==<span class="hljs-string">'object'</span>){<br>      res.setHeader(<span class="hljs-string">'content-type'</span>,<span class="hljs-string">'application/json;charset=utf8'</span>);<br>      res.end(<span class="hljs-built_in">JSON</span>.stringify(data));<br>    }<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> data==<span class="hljs-string">'number'</span>){<br>      res.statusCode=data;<br>      res.end(<span class="hljs-built_in">require</span>(<span class="hljs-string">'_http_server'</span>).STATUS_CODES[data]);<br>    }<br>  };<br>  next();<br>});<br></code></pre>
+
+
+
+<h2 id="实现响应不同类型内容">实现响应不同类型内容</h2>
+
+<ul><li>当访问/users,返回用户列表</li>
+<li>当访问一个不存在的路径，返回404，内容为not found</li>
+</ul>
+
+
+
+<h2 id="11-静态服务中间件">11. 静态服务中间件</h2>
+
+<p>提供静态文件服务器,如果没有找到,则向下执行</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs php"><span class="hljs-keyword">var</span> path  = <span class="hljs-keyword">require</span>(<span class="hljs-string">'path'</span>);<br>app.<span class="hljs-keyword">use</span>(express.<span class="hljs-keyword">static</span>(path.resolve(__dirname,<span class="hljs-string">'views'</span>)))<br></code></pre>
+
+<p>实现static服务</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs haxe"><span class="hljs-keyword">var</span> path  = require(<span class="hljs-string">'path'</span>);<br><span class="hljs-keyword">var</span> fs = require(<span class="hljs-string">'fs'</span>);<br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">static</span></span>(p){<br>    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span></span>(req,res,next){<br>        <span class="hljs-keyword">var</span> <span class="hljs-keyword">new</span><span class="hljs-type">p</span> = path.join(p,req.path);<br>        fs.exists(<span class="hljs-keyword">new</span><span class="hljs-type">p</span>,<span class="hljs-function"><span class="hljs-keyword">function</span></span>(exists){<br>            <span class="hljs-keyword">if</span>(exists&amp;&amp;req.path!=<span class="hljs-string">'/'</span>){<br>                fs.createReadStream(<span class="hljs-keyword">new</span><span class="hljs-type">p</span>).pipe(res);<br>            }<span class="hljs-keyword">else</span>{<br>                next();<br>            }<br>        })<br><br>    }<br>}<br>app.use(<span class="hljs-keyword">static</span>(path.resolve(<span class="hljs-string">'views'</span>)))<br></code></pre>
+
+
+
+<h2 id="12-模板引擎ejs">12. 模板引擎ejs</h2>
+
+<p>安装ejs</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs cmake">$ npm <span class="hljs-keyword">install</span> ejs<br></code></pre>
+
+<p>通过render方法渲染指定模板</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs less"><span class="hljs-selector-tag">app</span><span class="hljs-selector-class">.set</span>(<span class="hljs-string">'views'</span>,path.resolve(<span class="hljs-string">'views'</span>));<br><span class="hljs-selector-tag">app</span><span class="hljs-selector-class">.get</span>(<span class="hljs-string">'/'</span>,function (req,res) {<br>  <span class="hljs-selector-tag">res</span><span class="hljs-selector-class">.render</span>(<span class="hljs-string">'1.ejs'</span>,{<span class="hljs-attribute">title</span>:<span class="hljs-string">'hello'</span>})<br>});<br></code></pre>
+
+<p>通过表达式取出对应内容</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs erb"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">%=</span></span></span><span class="ruby">title</span><span class="xml"><span class="hljs-tag">%&gt;</span></span><br></code></pre>
+
+<p>可以设置模板后缀render时不用在增加ejs后缀</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs cs">app.<span class="hljs-keyword">set</span>(<span class="hljs-string">'view engine'</span>,<span class="hljs-string">'ejs'</span>);<br></code></pre>
+
+<p>也可以更改ejs后缀为html后缀</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs lasso">app.<span class="hljs-built_in">set</span>(<span class="hljs-string">'view engine'</span>,<span class="hljs-string">'html'</span>);<br>app.engine(<span class="hljs-string">'html'</span>,<span class="hljs-keyword">require</span>(<span class="hljs-string">'ejs'</span>).__express);<br></code></pre>
+
+<p>如果有多个模板都会用到同一个变量值，而且变量的值也是一样的，那么就可以写在中间件里统一处理,真正渲染的时候，会把数据对象的属性全部拷贝给res.locals. 然后用res.locals真正渲染模板</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs lua">app.use(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(req,res,next)</span></span> {<br>  res.locals.title = <span class="hljs-string">'hello'</span>;<br>  <span class="hljs-built_in">next</span>()<br>});<br></code></pre>
+
+<blockquote>
+  <p>可以参考ejs具体的使用方法</p>
+</blockquote>
+
+
+
+<h2 id="13-redirect">13. redirect</h2>
+
+<p>跳转路径，重定向到指定的url地址</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs css"><span class="hljs-selector-tag">res</span><span class="hljs-selector-class">.redirect</span>(<span class="hljs-selector-attr">[status]</span>,<span class="hljs-selector-tag">url</span>);<br></code></pre>
+
+
+
+<h2 id="14-解析请求体">14. 解析请求体</h2>
+
+<p>分别解析json类型和表单类型数据</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs php">app.<span class="hljs-keyword">use</span>(bodyParser.urlencoded({extended:<span class="hljs-keyword">true</span>}));<br>app.<span class="hljs-keyword">use</span>(bodyParser.json());<br>app.post(<span class="hljs-string">'/signup'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(req,res)</span></span>{<br>    res.send(req.body);<br>});<br></code></pre>
+
+<blockquote>
+  <p>指定extended为true表示使用querystring模块来解析请求体</p>
+</blockquote>
+
+
+
+<h2 id="实现表单登录功能">实现表单登录功能</h2>
+
+<ul><li>当客户端 GET方式访问 /signup的时候，服务器返回一个注册表单。</li>
+<li>客户端填写完成后提交到服务器(post /signup)，服务器得到此请求体对象并保存到数组,并跳转到登录页 (get /signin)</li>
+<li>客户端填写登录表单并提交到服务器(post /signin),服务器得到此请求体对象后检验用户名和密码是否正确，如果正确跳到欢迎页，如果不正确跳回登录页</li>
+</ul></div></body></html>

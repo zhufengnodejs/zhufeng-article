@@ -1,0 +1,925 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<meta name=Generator content="Microsoft Word 12 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:微软雅黑;
+	panose-1:2 11 5 3 2 2 4 2 2 4;}
+@font-face
+	{font-family:"Source Code Pro";}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;}
+@font-face
+	{font-family:"\@微软雅黑";
+	panose-1:2 11 5 3 2 2 4 2 2 4;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.5pt;
+	font-family:"Calibri","sans-serif";}
+p
+	{margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:"Calibri","sans-serif";}
+pre
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:宋体;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"批注框文本 Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:9.0pt;
+	font-family:"Calibri","sans-serif";}
+span.Char
+	{mso-style-name:"批注框文本 Char";
+	mso-style-link:批注框文本;}
+.MsoChpDefault
+	{font-size:10.0pt;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	layout-grid:15.6pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=ZH-CN style='text-justify-trim:punctuation'>
+
+<div class=WordSection1 style='layout-grid:15.6pt'>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:16.0pt;font-family:宋体'>最新面试题目</span></p>
+
+<p class=MsoNormal align=left style='margin-left:0cm;text-align:left;
+text-indent:0cm'><span lang=EN-US style='font-size:16.0pt;color:blue'>1.</span><span
+lang=EN-US style='font-size:16.0pt;color:blue'>CSS</span><span
+style='font-size:16.0pt;font-family:宋体;color:blue'>盒子模型绝对定位和相对定位</span><span
+lang=EN-US style='font-size:16.0pt;color:blue'><br>
+</span><span lang=EN-US style='font-size:12.0pt;font-family:宋体'><img width=638
+height=400 id="图片 1" src="2017年8月18日面试题总结.files/image001.gif" alt="IMG_256"></span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-size:
+11.0pt;font-family:"微软雅黑","sans-serif";color:#3F3F3F;background:white'>　<span
+lang=EN-US>relative</span>属性表示<span lang=EN-US>CSS</span>相对定位，设置为相对定位的元素框会偏移原来的位置某个距离。通过<span
+lang=EN-US>top</span>、<span lang=EN-US>right</span>、<span lang=EN-US>bottom</span>和<span
+lang=EN-US>left</span>属性来设置元素位置的偏移量。但是元素仍然保持其未定位前的形状，而且它原本所占的空间仍保留。如果对一个元素进行相对定位，它将出现在它所在的位置上。然后，可以通过设置垂直或水平位置，让这个元素<span
+lang=EN-US>“</span>相对于<span lang=EN-US>”</span>它的起点进行移动。</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-size:
+11.0pt;font-family:"微软雅黑","sans-serif";color:#3F3F3F;background:white'>　 <span
+lang=EN-US>absolute</span>属性设置<span lang=EN-US>CSS</span>绝对定位，设置为绝对定位的元素框从文档流完全删除，并相对于其包含块定位，包含块可能是文档中的另一个元素或者是初始包含块（<strong>即相对于<span
+lang=EN-US>position</span>属性非<span lang=EN-US>static</span>值的最近父级元素进行偏移</strong>），如果元素没有已定位的祖先元素，那么它的位置相对于最初的包含块。。元素原先在正常文档流中所占的空间会关闭，就好像该元素原来不存在一样。元素定位后生成一个块级框，而不论原来它在正常流中生成何种类型的框。</span></p>
+
+<p style='margin-bottom:11.55pt;background:white'><span lang=EN-US
+style='font-size:16.0pt;color:blue'>2.</span><span style='font-size:16.0pt;
+font-family:宋体;color:blue'>清除浮动</span><span lang=EN-US style='font-size:16.0pt;
+color:blue'>,</span><span style='font-size:16.0pt;font-family:宋体;color:blue'>什么时候需要清除浮动</span><span
+lang=EN-US style='font-size:16.0pt;color:blue'>,</span><span style='font-size:
+16.0pt;font-family:宋体;color:blue'>清除浮动都有那些方法</span><span lang=EN-US
+style='font-size:16.0pt;color:blue'>?</span><span lang=EN-US style='font-size:
+16.0pt;color:blue'><br>
+</span><span lang=EN-US style='font-size:11.0pt;font-family:"微软雅黑","sans-serif";
+color:#3F3F3F;background:white'>.</span><span style='font-size:11.0pt;
+font-family:"微软雅黑","sans-serif";color:#3F3F3F;background:white'>什么时候需要清除浮动？</span></p>
+
+<p style='margin-bottom:11.55pt;background:white'><span style='font-size:11.0pt;
+font-family:"微软雅黑","sans-serif";color:#3F3F3F;background:white'>我们对元素进行了浮动<span
+lang=EN-US>(float)</span>时，我们的元素就会脱离文档流，像一只小船一样漂流在文档之上。</span></p>
+
+<p style='margin-bottom:11.55pt;background:white'><span style='font-size:11.0pt;
+font-family:"微软雅黑","sans-serif";color:#3F3F3F;background:white'>在<span
+lang=EN-US> CSS </span>中，任何元素都可以浮动。浮动元素会生成一个块级框，而不论它本身是何种元素。<span lang=EN-US>&nbsp;<br>
+</span></span><span lang=EN-US style='font-size:11.0pt;font-family:"微软雅黑","sans-serif";
+color:#3F3F3F'>1</span><span style='font-size:11.0pt;font-family:"微软雅黑","sans-serif";
+color:#3F3F3F'>、父盒子的<span lang=EN-US>margin</span>受到影响，无法实现左右居中，<span
+lang=EN-US>&nbsp;<br>
+2</span>、我没有给父盒子设置高度，浮动后父盒子的高度没有被撑开，图片中撑开的高度是<span lang=EN-US>padding</span>带来的效果</span></p>
+
+<p style='margin-bottom:11.55pt;background:white'><strong><span
+style='font-size:11.0pt;font-family:"微软雅黑","sans-serif";color:#3F3F3F;
+background:white'>方法一</span></strong><span style='font-size:11.0pt;font-family:
+"微软雅黑","sans-serif";color:#3F3F3F;background:white'>：添加新的元素 应用<span lang=EN-US>
+clear</span>：<span lang=EN-US>both</span>；<span lang=EN-US><br>
+</span><strong>方法二</strong>：父级<span lang=EN-US>div</span>定义<span lang=EN-US>
+overflow: auto<br>
+</span><strong>方法三</strong>：<span lang=EN-US> :after </span>方法：（注意：作用于浮动元素的父亲）</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+style='font-size:16.0pt;color:blue'>3.</span><span style='font-size:16.0pt;
+font-family:宋体;color:blue'>如何保持浮层水平垂直居中</span><span lang=EN-US
+style='font-size:16.0pt;color:blue'><br>
+</span><span lang=EN-US style='font-size:16.0pt'>(1)</span><strong><span
+style='font-size:11.0pt;font-family:"微软雅黑","sans-serif";background:white'>利用绝对定位与<span
+lang=EN-US>transform</span></span></strong><span lang=EN-US style='font-size:
+11.0pt;font-family:"微软雅黑","sans-serif";background:white'>&nbsp;<br>
+.child</span><span lang=EN-US style='font-family:"Source Code Pro";color:#333333'>{
+</span><span style='font-family:"Source Code Pro";color:#333333'>　　　　<span
+lang=EN-US>position:</span></span><span lang=EN-US style='font-family:"Source Code Pro";
+color:#006666'> absolute</span><span lang=EN-US style='font-family:"Source Code Pro";
+color:#333333'>; </span><span style='font-family:"Source Code Pro";color:#333333'>　　　　<span
+lang=EN-US>top:</span></span><span lang=EN-US style='font-family:"Source Code Pro";
+color:#006666'> 50%</span><span lang=EN-US style='font-family:"Source Code Pro";
+color:#333333'>; </span><span style='font-family:"Source Code Pro";color:#333333'>　　　　<span
+lang=EN-US>left:</span></span><span lang=EN-US style='font-family:"Source Code Pro";
+color:#006666'> 50%</span><span lang=EN-US style='font-family:"Source Code Pro";
+color:#333333'>; </span><span style='font-family:"Source Code Pro";color:#333333'>　　　　<span
+lang=EN-US>-webkit-transform:</span></span><span lang=EN-US style='font-family:
+"Source Code Pro";color:#006666'>translate(-50%,-50%)</span><span lang=EN-US
+style='font-family:"Source Code Pro";color:#333333'>; </span><span
+style='font-family:"Source Code Pro";color:#333333'>　　　　<span lang=EN-US>background:</span></span><span
+lang=EN-US style='font-family:"Source Code Pro";color:#006666'> black</span><span
+lang=EN-US style='font-family:"Source Code Pro";color:#333333'>; </span><span
+style='font-family:"Source Code Pro";color:#333333'>　　<span lang=EN-US>}</span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><strong><span
+style='font-size:11.0pt;font-family:"微软雅黑","sans-serif";color:#3F3F3F;
+background:white'>（<span lang=EN-US>2</span>）利用<span lang=EN-US>flexbox<br>
+</span></span></strong><span lang=EN-US style='font-family:"Source Code Pro";
+color:#9B703F'>.parent</span><span lang=EN-US style='font-family:"Source Code Pro";
+color:#333333'>{ </span><span style='font-family:"Source Code Pro";color:#333333'>　　　　<span
+lang=EN-US>justify-content:</span></span><span lang=EN-US style='font-family:
+"Source Code Pro";color:#006666'>center</span><span lang=EN-US
+style='font-family:"Source Code Pro";color:#333333'>; </span><span
+style='font-family:"Source Code Pro";color:#333333'>　　　　<span lang=EN-US>align-items:</span></span><span
+lang=EN-US style='font-family:"Source Code Pro";color:#006666'>center</span><span
+lang=EN-US style='font-family:"Source Code Pro";color:#333333'>; </span><span
+style='font-family:"Source Code Pro";color:#333333'>　　　　<span lang=EN-US>display:</span></span><span
+lang=EN-US style='font-family:"Source Code Pro";color:#006666'> -webkit-flex</span><span
+lang=EN-US style='font-family:"Source Code Pro";color:#333333'>; </span><span
+style='font-family:"Source Code Pro";color:#333333'>　　<span lang=EN-US>}</span></span><span
+lang=EN-US style='font-size:11.0pt;font-family:"微软雅黑","sans-serif";background:
+white'><br>
+<br>
+</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+style='font-size:16.0pt;color:blue'>4.Position</span><span style='font-size:
+16.0pt;font-family:宋体;color:blue'>和</span><span lang=EN-US style='font-size:
+16.0pt;color:blue'>display</span><span style='font-size:16.0pt;font-family:
+宋体;color:blue'>的取值和各自的意思和用法</span><span lang=EN-US style='font-size:16.0pt;
+color:blue'><br>
+</span><strong><span lang=EN-US style='font-size:11.0pt;font-family:"微软雅黑","sans-serif";
+color:#3F3F3F;background:white'>1. position:static</span></strong></p>
+
+<p style='margin-bottom:11.55pt;background:white'><span lang=EN-US
+style='font-size:11.0pt;font-family:"微软雅黑","sans-serif";color:#3F3F3F;
+background:white'>position</span><span style='font-size:11.0pt;font-family:
+"微软雅黑","sans-serif";color:#3F3F3F;background:white'>的默认值，一般不设置<span lang=EN-US>position</span>属性时，会按照正常的文档流进行排列。一般来说，不用指定<span
+lang=EN-US> position:static</span>，除非想要覆盖之前设置的定位。</span></p>
+
+<p style='margin-bottom:11.55pt;background:white'><strong><span lang=EN-US
+style='font-size:11.0pt;font-family:"微软雅黑","sans-serif";color:#3F3F3F;
+background:white'>2. position:relative</span></strong></p>
+
+<p style='margin-bottom:11.55pt;background:white'><span lang=EN-US
+style='font-size:11.0pt;font-family:"微软雅黑","sans-serif";color:#3F3F3F;
+background:white'>relative</span><span style='font-size:11.0pt;font-family:
+"微软雅黑","sans-serif";color:#3F3F3F;background:white'>属性相对比较简单，我们要搞清它是相对哪个对象来进行偏移的。答案<strong>是它本身的位置</strong>。<span
+lang=EN-US>&nbsp;<br>
+</span>如果设定<span lang=EN-US> position:relative</span>，就可以使用 <span lang=EN-US>top</span>，<span
+lang=EN-US>bottom</span>，<span lang=EN-US>left </span>和<span lang=EN-US> right </span>来相对于元素在文档中应该出现的位置来移动这个元素。【意思是元素实际上依然占据文档中的原有位置，只是视觉上相对于它在文档中的原有位置移动了】</span></p>
+
+<p style='margin-bottom:11.55pt;background:white'><strong><span lang=EN-US
+style='font-size:11.0pt;font-family:"微软雅黑","sans-serif";color:#3F3F3F;
+background:white'>3. position:absolute</span></strong></p>
+
+<p style='margin-bottom:11.55pt;background:white'><span style='font-size:11.0pt;
+font-family:"微软雅黑","sans-serif";color:#3F3F3F;background:white'>当指定<span
+lang=EN-US> position:absolute </span>时，元素就脱离了文档【即在文档中已经不占据位置了】，可以准确的按照设置的<span
+lang=EN-US> top</span>，<span lang=EN-US>bottom</span>，<span lang=EN-US>left </span>和<span
+lang=EN-US> right </span>来定位了。<span lang=EN-US>&nbsp;</span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><strong><span lang=EN-US
+style='font-size:11.0pt;font-family:"微软雅黑","sans-serif";color:#3F3F3F;
+background:white'>4.position: fixed&nbsp;</span></strong><span lang=EN-US
+style='font-size:11.0pt;font-family:"微软雅黑","sans-serif";color:#3F3F3F;
+background:white'><br>
+fixed</span><span style='font-size:11.0pt;font-family:"微软雅黑","sans-serif";
+color:#3F3F3F;background:white'>是特殊的<span lang=EN-US>absolute</span>，即<span
+lang=EN-US>fixed</span>总是以<span lang=EN-US>body</span>为定位对象的，按照浏览器的窗口进行定位。</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+style='font-size:16.0pt;color:blue'>5.</span><span style='font-size:16.0pt;
+font-family:宋体;color:blue'>样式的层级关系</span><span lang=EN-US style='font-size:
+16.0pt;color:blue'>,</span><span style='font-size:16.0pt;font-family:宋体;
+color:blue'>选择器优先级</span><span lang=EN-US style='font-size:16.0pt;color:blue'>,</span><span
+style='font-size:16.0pt;font-family:宋体;color:blue'>样式冲突</span><span lang=EN-US
+style='font-size:16.0pt;color:blue'>,</span><span style='font-size:16.0pt;
+font-family:宋体;color:blue'>以及抽离样式怎么</span><span lang=EN-US style='font-size:
+16.0pt;color:blue'>,</span><span style='font-size:16.0pt;font-family:宋体;
+color:blue'>写说出思路</span><span lang=EN-US style='font-size:16.0pt;color:blue'>,</span><span
+style='font-size:16.0pt;font-family:宋体;color:blue'>有无实际经验</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+style='font-size:16.0pt;color:blue'>6.CSS3</span><span style='font-size:16.0pt;
+font-family:宋体;color:blue'>常用新增方法</span><span lang=EN-US style='font-size:16.0pt;
+color:blue'>?Canvas</span><span style='font-size:16.0pt;font-family:宋体;
+color:blue'>和</span><span lang=EN-US style='font-size:16.0pt;color:blue'>svg</span><span
+style='font-size:16.0pt;font-family:宋体;color:blue'>的区别</span><span lang=EN-US
+style='font-size:16.0pt;color:blue'>?</span><span lang=EN-US style='font-size:
+16.0pt'><br>
+</span><span style='font-size:16.0pt;font-family:宋体;color:red'>答案</span><span
+lang=EN-US style='font-size:16.0pt'>:<u>SVG </u></span><u><span
+style='font-size:16.0pt;font-family:宋体'>是一种使用</span></u><u><span lang=EN-US
+style='font-size:16.0pt'> XML </span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>描述</span></u><u><span lang=EN-US style='font-size:16.0pt'> 2D </span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>图形的语言。</span></u></p>
+
+<p class=MsoNormal align=left style='text-align:left'><u><span lang=EN-US
+style='font-size:16.0pt'>Canvas </span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>通过</span></u><u><span lang=EN-US style='font-size:16.0pt'>
+JavaScript </span></u><u><span style='font-size:16.0pt;font-family:宋体'>来绘制</span></u><u><span
+lang=EN-US style='font-size:16.0pt'> 2D </span></u><u><span style='font-size:
+16.0pt;font-family:宋体'>图形。</span></u></p>
+
+<p class=MsoNormal align=left style='text-align:left'><u><span lang=EN-US
+style='font-size:16.0pt'>Canvas</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>特点</span></u><u><span lang=EN-US style='font-size:16.0pt'>:</span></u></p>
+
+<p class=MsoNormal align=left style='text-align:left'><u><span
+style='font-size:16.0pt;font-family:宋体'>依赖分辨率</span></u><u><span lang=EN-US
+style='font-size:16.0pt'>,</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>不支持事件处理器</span></u><u><span lang=EN-US style='font-size:16.0pt'>,</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>弱的文本渲染能力</span></u><u><span lang=EN-US
+style='font-size:16.0pt'>,</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>能够以</span></u><u><span lang=EN-US style='font-size:16.0pt'>
+.png </span></u><u><span style='font-size:16.0pt;font-family:宋体'>或</span></u><u><span
+lang=EN-US style='font-size:16.0pt'> .jpg </span></u><u><span style='font-size:
+16.0pt;font-family:宋体'>格式保存结果图像</span></u><u><span lang=EN-US style='font-size:
+16.0pt'>,</span></u><u><span style='font-size:16.0pt;font-family:宋体'>最适合图像密集型的游戏，其中的许多对象会被频繁重绘</span></u></p>
+
+<p class=MsoNormal align=left style='text-align:left'><u><span lang=EN-US
+style='font-size:16.0pt'>SVG</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>特点</span></u><u><span lang=EN-US style='font-size:16.0pt'>:</span></u></p>
+
+<p class=MsoNormal align=left style='text-align:left'><u><span
+style='font-size:16.0pt;font-family:宋体'>不依赖分辨率</span></u><u><span lang=EN-US
+style='font-size:16.0pt'>,</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>支持事件处理器</span></u><u><span lang=EN-US style='font-size:16.0pt'>,</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>最适合带有大型渲染区域的应用程序（比如谷歌地图）</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>,</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>复杂度高会减慢渲染速度（任何过度使用</span></u><u><span lang=EN-US
+style='font-size:16.0pt'> DOM </span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>的应用都不快）</span></u><u><span lang=EN-US style='font-size:16.0pt'>,</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>不适合游戏应用</span></u></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+style='font-size:16.0pt;color:blue'>7.px,em,rem</span><span style='font-size:
+16.0pt;font-family:宋体;color:blue'>的区别</span><span lang=EN-US style='font-size:
+16.0pt;color:blue'>CSS</span><span style='font-size:16.0pt;font-family:宋体;
+color:blue'>中</span><span lang=EN-US style='font-size:16.0pt;color:blue'>link</span><span
+style='font-size:16.0pt;font-family:宋体;color:blue'>和</span><span lang=EN-US
+style='font-size:16.0pt;color:blue'>import</span><span style='font-size:16.0pt;
+font-family:宋体;color:blue'>的区别</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+style='font-size:16.0pt;color:blue'>8.</span><span style='font-size:16.0pt;
+font-family:宋体;color:blue'>了解过</span><span lang=EN-US style='font-size:16.0pt;
+color:blue'>flex</span><span style='font-size:16.0pt;font-family:宋体;color:blue'>吗</span><span
+lang=EN-US style='font-size:16.0pt;color:blue'>?</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+style='font-size:16.0pt;color:blue'>9.H5</span><span style='font-size:16.0pt;
+font-family:宋体;color:blue'>常用新增标签以及</span><span lang=EN-US style='font-size:
+16.0pt;color:blue'>API</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+style='font-size:16.0pt;color:blue'>10.</span><span style='font-size:16.0pt;
+font-family:宋体;color:blue'>响应式网页主要原理</span><span lang=EN-US style='font-size:
+16.0pt;color:blue'>?<br>
+</span><u><span style='font-size:16.0pt;font-family:宋体'>响应式网页是允许设计和代码响应各种设备屏幕大小的方式</span></u><u><span
+lang=EN-US style='font-size:16.0pt'><br>
+</span></u><u><span style='font-size:16.0pt;font-family:宋体'>具体的实践方式由多方面组成，包括弹性网格和布局、图片、</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>css media query</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>的使用等。无论用户正在使用笔记本还是</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>iPad</span></u><u><span style='font-size:
+16.0pt;font-family:宋体'>，我们的页面都应该能够自动切换分辨率、图片尺寸及相关脚本功能等，以适应不同设备；换句话说，页面应该有能力去自动响应用户的设备环境。</span></u></p>
+
+<p class=MsoNormal align=left style='text-align:left'><u><span
+style='font-size:16.0pt;font-family:宋体'>响应式网页设计就是一个网站能够兼容多个终端——而不是为每个终端做一个特定的版本。这样，我们就可以不必为不断到来的新设备做专门的版本设计和开发了。</span></u></p>
+
+<p class=MsoNormal align=left style='text-align:left'><u><span
+style='font-size:16.0pt;font-family:宋体'>响应式设计的基本原理是通过媒体查询检测不同的设备屏幕尺寸做处理。页面头部必须有</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>meta</span></u><u><span style='font-size:
+16.0pt;font-family:宋体'>声明</span></u><u><span lang=EN-US style='font-size:16.0pt'>viewport</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>：</span></u></p>
+
+<p class=MsoNormal align=left style='text-align:left'><u><span lang=EN-US
+style='font-size:16.0pt'>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,
+initial-scale=1, maximum-scale=1, user-scalable=no</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>”</span></u><u><span lang=EN-US
+style='font-size:16.0pt'>&gt;</span></u></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+style='font-size:16.0pt;color:blue'>11.</span><span style='font-size:16.0pt;
+font-family:宋体;color:blue'>如何处理浏览器兼容性</span><span lang=EN-US style='font-size:
+16.0pt;color:blue'>?</span><span style='font-size:16.0pt;font-family:宋体;
+color:blue'>什么是优雅降级开发模式</span><span lang=EN-US style='font-size:16.0pt;
+color:blue'>?</span><span lang=EN-US style='font-size:16.0pt'><br>
+<br>
+JavaScript</span><span style='font-size:16.0pt;font-family:宋体'>基础</span></p>
+
+<p class=MsoNormal align=left style='margin-left:0cm;text-align:left;
+text-indent:0cm'><span lang=EN-US style='font-size:16.0pt;color:blue'>1.</span><span
+lang=EN-US style='font-size:16.0pt;color:blue'>JavaScript</span><span
+style='font-size:16.0pt;font-family:宋体;color:blue'>里有哪些数据类型</span><span
+lang=EN-US style='font-size:16.0pt;color:blue'>?</span><span style='font-size:
+16.0pt;font-family:宋体;color:blue'>原始数据类型和引用数据类型</span></p>
+
+<p class=MsoNormal align=left style='margin-left:0cm;text-align:left;
+text-indent:0cm'><span lang=EN-US style='font-size:16.0pt'>2.</span><span
+lang=EN-US style='font-size:16.0pt;color:blue'>Prototype</span><span
+style='font-size:16.0pt;font-family:宋体;color:blue'>是什么</span><span lang=EN-US
+style='font-size:16.0pt;color:blue'>?</span><span style='font-size:16.0pt;
+font-family:宋体;color:blue'>原型链的理解</span><span lang=EN-US style='font-size:16.0pt;
+color:blue'>?</span><span lang=EN-US style='font-size:16.0pt'><br>
+</span><span style='font-size:16.0pt;font-family:宋体;color:red'>答案</span><span
+lang=EN-US style='font-size:16.0pt'>:</span><u><span style='font-size:16.0pt;
+font-family:宋体'>每一个函数数据类型（函数，所有的类）天生都有一个</span></u><u><span lang=EN-US
+style='font-size:16.0pt'>prototype</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>（原型）属性</span></u></p>
+
+<p class=MsoNormal align=left style='text-align:left'><u><span lang=EN-US
+style='font-size:16.0pt'>prototype</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>；里面存储的是共有的属性和方法，这个属性是一个对象数据类型的，浏览器就会给他</span></u><u><span
+style='font-size:16.0pt'> </span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>开辟一个堆内存，开辟的这个堆内存中也有一个天生自带的属性</span></u><u><span lang=EN-US
+style='font-size:16.0pt'>constructor</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>，而且指向的的是类本身</span></u><u><span lang=EN-US style='font-size:
+16.0pt'>,</span></u></p>
+
+<p class=MsoNormal align=left style='text-align:left'><u><span
+style='font-size:16.0pt;font-family:宋体'>原型的链：</span></u></p>
+
+<p class=MsoNormal align=left style='text-align:left'><u><span
+style='font-size:16.0pt;font-family:宋体'>实例</span></u><u><span lang=EN-US
+style='font-size:16.0pt'>.</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>属性名，遇到属性名先看是不是自己的私有属性，如果是的话就用私有的，不是的话，通过实例的</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>__proto__</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>找到所属类的原型（</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>prototype</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>），还没有的话，通过所属类的</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>prototype</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>的</span></u><u><span lang=EN-US
+style='font-size:16.0pt'>__proto__</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>继续找，一直找到基类（根本）</span></u><u><span lang=EN-US style='font-size:
+16.0pt'>Object</span></u><u><span style='font-size:16.0pt;font-family:宋体'>的</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>prototype<br>
+<br>
+</span></u></p>
+
+<p class=MsoNormal align=left style='margin-left:0cm;text-align:left;
+text-indent:0cm'><span lang=EN-US style='font-size:16.0pt'>3.</span><span
+style='font-size:16.0pt;font-family:宋体;color:blue'>函数里的</span><span lang=EN-US
+style='font-size:16.0pt;color:blue'>this</span><span style='font-size:16.0pt;
+font-family:宋体;color:blue'>含义</span><span lang=EN-US style='font-size:16.0pt;
+color:blue'>?</span><span lang=EN-US style='font-size:16.0pt'><br>
+</span><span style='font-size:16.0pt;font-family:宋体;color:red'>答案</span><span
+lang=EN-US style='font-size:16.0pt;color:red'>:</span><span lang=EN-US
+style='font-size:16.0pt'><br>
+<u>this&nbsp;:</u></span><u><span style='font-size:16.0pt;font-family:宋体'>执行的主体，谁来执行的</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>,</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>一般看点前面是谁就是谁</span></u><u><span lang=EN-US style='font-size:
+16.0pt'>,</span></u><u><span style='font-size:16.0pt;font-family:宋体'>但是有特殊情况</span></u><u><span
+lang=EN-US style='font-size:16.0pt'><br>
+1).</span></u><u><span style='font-size:16.0pt;font-family:宋体'>自执行函数中的</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>this</span></u><u><span style='font-size:
+16.0pt;font-family:宋体'>永远是</span></u><u><span lang=EN-US style='font-size:16.0pt'>window<br>
+2).</span></u><u><span style='font-size:16.0pt;font-family:宋体'>给元素绑定事件的时候给谁绑的</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>this</span></u><u><span style='font-size:
+16.0pt;font-family:宋体'>就是谁</span></u><u><span lang=EN-US style='font-size:16.0pt'><br>
+3).</span></u><u><span style='font-size:16.0pt;font-family:宋体'>函数作为参数的时候，</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>this</span></u><u><span style='font-size:
+16.0pt;font-family:宋体'>是</span></u><u><span lang=EN-US style='font-size:16.0pt'>window<br>
+4).</span></u><u><span style='font-size:16.0pt;font-family:宋体'>构造函数中</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>,this</span></u><u><span style='font-size:
+16.0pt;font-family:宋体'>是实例</span></u><u><span lang=EN-US style='font-size:16.0pt'><br>
+5).</span></u><u><span style='font-size:16.0pt;font-family:宋体'>严格模式下没有点就是</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>undefined</span></u></p>
+
+<p class=MsoNormal align=left style='margin-left:0cm;text-align:left;
+text-indent:0cm'><span lang=EN-US style='font-size:16.0pt'>4.</span><span
+lang=EN-US style='font-size:16.0pt;color:blue'>Apply</span><span
+style='font-size:16.0pt;font-family:宋体;color:blue'>和</span><span lang=EN-US
+style='font-size:16.0pt;color:blue'>Call</span><span style='font-size:16.0pt;
+font-family:宋体;color:blue'>什么含义与区别</span><span lang=EN-US style='font-size:
+16.0pt;color:blue'>?</span><span lang=EN-US style='font-size:16.0pt'><br>
+</span><span style='font-size:16.0pt;font-family:宋体;color:red'>答案</span><span
+lang=EN-US style='font-size:16.0pt;color:red'>:</span><span lang=EN-US
+style='font-size:16.0pt'><br>
+</span><u><span style='font-size:16.0pt;font-family:宋体'>函数原型上的</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>call</span></u><u><span style='font-size:
+16.0pt;font-family:宋体'>方法是一个函数，这个方法至少要穿一个参数，这个参数是用来改变</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>call</span></u><u><span style='font-size:
+16.0pt;font-family:宋体'>前面的方法的</span></u><u><span lang=EN-US style='font-size:
+16.0pt'>this</span></u><u><span style='font-size:16.0pt;font-family:宋体'>的</span></u><u><span
+lang=EN-US style='font-size:16.0pt'><br>
+&nbsp;&nbsp;&nbsp;&nbsp;call</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>两个作用：</span></u><u><span lang=EN-US style='font-size:16.0pt'>1.</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>改变</span></u><u><span lang=EN-US
+style='font-size:16.0pt'>this</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>，</span></u><u><span lang=EN-US style='font-size:16.0pt'>2</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>，让当前函数执行</span></u><u><span lang=EN-US
+style='font-size:16.0pt'><br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span></u><u><span style='font-size:16.0pt;font-family:
+宋体'>写法</span></u><u><span lang=EN-US style='font-size:16.0pt'>:</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>实例</span></u><u><span lang=EN-US
+style='font-size:16.0pt'>.call<br>
+</span></u><u><span style='font-size:16.0pt;font-family:宋体'>在非严格模式下，不传参数或者是穿了个</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>null</span></u><u><span style='font-size:
+16.0pt;font-family:宋体'>，</span></u><u><span lang=EN-US style='font-size:16.0pt'>undefined</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>，默认是</span></u><u><span lang=EN-US
+style='font-size:16.0pt'>window</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>，在严格模式下</span></u><u><span lang=EN-US style='font-size:16.0pt'>&quot;use&nbsp;strict&quot;</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>，不传，</span></u><u><span lang=EN-US
+style='font-size:16.0pt'>null</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>。</span></u><u><span lang=EN-US style='font-size:16.0pt'>undefined</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>是将</span></u><u><span lang=EN-US
+style='font-size:16.0pt'>this</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>变成了</span></u><u><span lang=EN-US style='font-size:16.0pt'>undefined<br>
+&nbsp;&nbsp;&nbsp;call</span></u><u><span style='font-size:16.0pt;font-family:
+宋体'>方法从第二个参数开始就是给前面的函数传的参数</span></u><u><span lang=EN-US style='font-size:16.0pt'><br>
+&nbsp;</span></u><u><span style='font-size:16.0pt;font-family:宋体'>当使用函数</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>.call.call()</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>，两个及两个以上的</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>call</span></u><u><span style='font-size:
+16.0pt;font-family:宋体'>，你传的参数不是一个函数就会报错，因为只有函数的原型上才会有</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>call</span></u><u><span style='font-size:
+16.0pt;font-family:宋体'>这个方法</span></u><u><span lang=EN-US style='font-size:
+16.0pt'><br>
+&nbsp;&nbsp; apply&nbsp;</span></u><u><span style='font-size:16.0pt;font-family:
+宋体'>跟</span></u><u><span lang=EN-US style='font-size:16.0pt'>call</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>意思和用法一样，区别是：</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>apply</span></u><u><span style='font-size:
+16.0pt;font-family:宋体'>第一个参数也是改变</span></u><u><span lang=EN-US
+style='font-size:16.0pt'>this</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>用的，第二个参数是一个数组，这个数组是给前面的方法传参数的，将数组里面的每一项一个一个传给函数</span></u></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+style='font-size:16.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='margin-left:0cm;text-align:left;
+text-indent:0cm'><span lang=EN-US style='font-size:16.0pt'>5.</span><span
+style='font-size:16.0pt;font-family:宋体;color:blue'>数组和对象有哪些原生方法</span><span
+lang=EN-US style='font-size:16.0pt;color:blue'>?</span><span style='font-size:
+16.0pt;font-family:宋体;color:blue'>简要说明数组的栈和队列</span><span lang=EN-US
+style='font-size:16.0pt'>?<br>
+</span><span style='font-size:16.0pt;font-family:宋体;color:red'>答案</span><span
+lang=EN-US style='font-size:16.0pt;color:red'>:</span><span lang=EN-US
+style='font-size:16.0pt'><br>
+</span><u><span style='font-size:16.0pt;font-family:宋体'>栈是一种</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>LIFO</span></u><u><span style='font-size:
+16.0pt;font-family:宋体'>（</span></u><u><span lang=EN-US style='font-size:16.0pt'>Last-In-First-Out</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>后进先出）的数据结构，</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>js</span></u><u><span style='font-size:
+16.0pt;font-family:宋体'>中的</span></u><u><span lang=EN-US style='font-size:16.0pt'>push()</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>和</span></u><u><span lang=EN-US
+style='font-size:16.0pt'>pop()</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>类似栈的行为</span></u></p>
+
+<p class=MsoNormal align=left style='text-align:left'><u><span
+style='font-size:16.0pt;font-family:宋体'>队列是一种</span></u><u><span lang=EN-US
+style='font-size:16.0pt'>FIFO</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>（</span></u><u><span lang=EN-US style='font-size:16.0pt'>First-In-First-Out</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>先进先出）的数据结构，</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>js</span></u><u><span style='font-size:
+16.0pt;font-family:宋体'>中的</span></u><u><span lang=EN-US style='font-size:16.0pt'>shift()</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>和</span></u><u><span lang=EN-US
+style='font-size:16.0pt'>unshift()</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>类似队列的行为</span></u></p>
+
+<p class=MsoNormal align=left style='margin-left:0cm;text-align:left;
+text-indent:0cm'><span lang=EN-US style='font-size:16.0pt;color:blue'>6.</span><span
+style='font-size:16.0pt;font-family:宋体;color:blue'>怎么避免全局变量的污染</span><span
+lang=EN-US style='font-size:16.0pt;color:blue'>?<br>
+</span><span style='font-size:16.0pt;font-family:宋体;color:red'>答案</span><span
+lang=EN-US style='font-size:16.0pt;color:red'>:</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><u><span
+style='font-size:16.0pt;font-family:宋体'>尽量避免使用全局变量</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>,</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>改用局部变量和自定义属性</span></u><u><span lang=EN-US style='font-size:
+16.0pt'><br>
+</span></u><u><span style='font-size:16.0pt;font-family:宋体'>定义全局变量命名空间</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>(</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>单例模式</span></u><u><span lang=EN-US style='font-size:16.0pt'>)</span></u></p>
+
+<p class=MsoNormal align=left style='text-align:left'><u><span
+style='font-size:16.0pt;font-family:宋体'>利用匿名函数将脚本包裹起来</span></u></p>
+
+<p class=MsoNormal align=left style='margin-left:0cm;text-align:left;
+text-indent:0cm'><span lang=EN-US style='font-size:16.0pt'>7.</span><span
+style='font-size:16.0pt;font-family:宋体;color:blue'>说明</span><span lang=EN-US
+style='font-size:16.0pt;color:blue'>var</span><span style='font-size:16.0pt;
+font-family:宋体;color:blue'>和</span><span lang=EN-US style='font-size:16.0pt;
+color:blue'>let,const</span><span style='font-size:16.0pt;font-family:宋体;
+color:blue'>区别</span><span lang=EN-US style='font-size:16.0pt'><br>
+</span><span style='font-size:16.0pt;font-family:宋体;color:red'>答案</span><span
+lang=EN-US style='font-size:16.0pt;color:red'>:<br>
+</span><span lang=EN-US style='font-size:16.0pt'>l<u>et :1.</u></span><u><span
+style='font-size:16.0pt;font-family:宋体'>没有变量提升</span></u><u><span lang=EN-US
+style='font-size:16.0pt'> ,2.</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>变量不能重复声明</span></u><u><span lang=EN-US style='font-size:16.0pt'>
+3.</span></u><u><span style='font-size:16.0pt;font-family:宋体'>虽然不进行量提升但是先回会把所有的变量过滤一遍</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>,</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>一旦不合法就直接报错了</span></u></p>
+
+<p class=MsoNormal align=left style='text-align:left'><u><span lang=EN-US
+style='font-size:16.0pt'>const</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>定义静态变量</span></u><u><span lang=EN-US style='font-size:16.0pt'>,</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>定义之后不能改变</span></u></p>
+
+<p class=MsoNormal align=left style='margin-left:0cm;text-align:left;
+text-indent:0cm'><span lang=EN-US style='font-size:16.0pt'>8.</span><span
+style='font-size:16.0pt;font-family:宋体;color:blue'>怎样在不使用</span><span
+lang=EN-US style='font-size:16.0pt;color:blue'>JS</span><span style='font-size:
+16.0pt;font-family:宋体;color:blue'>库的情况对动态</span><span lang=EN-US
+style='font-size:16.0pt;color:blue'>DOM</span><span style='font-size:16.0pt;
+font-family:宋体;color:blue'>元素进行事件绑定</span><span lang=EN-US style='font-size:
+16.0pt'><br>
+</span><span style='font-size:16.0pt;font-family:宋体;color:red'>答案</span><span
+lang=EN-US style='font-size:16.0pt;color:red'>:</span><span lang=EN-US
+style='font-size:16.0pt'><br>
+<u>DOM0</u></span><u><span style='font-size:16.0pt;font-family:宋体'>级事件绑定</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>:</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>给一个元素的同一个行为只能绑定一次</span></u><u><span lang=EN-US
+style='font-size:16.0pt'>,</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>如果多次绑定后面就会前面的给覆盖了</span></u><u><span lang=EN-US
+style='font-size:16.0pt'>,</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>原因就是给元素的属性赋了一个值</span></u><u><span lang=EN-US style='font-size:
+16.0pt'>(</span></u><u><span style='font-size:16.0pt;font-family:宋体'>地址值</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>)</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>而已</span></u><u><span lang=EN-US style='font-size:16.0pt'><br>
+DOM0</span></u><u><span style='font-size:16.0pt;font-family:宋体'>级事件不存在兼容性</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>&nbsp;</span></u><u><span style='font-size:
+16.0pt;font-family:宋体'>任何浏览器都可以</span></u><u><span lang=EN-US style='font-size:
+16.0pt'><br>
+DOM2</span></u><u><span style='font-size:16.0pt;font-family:宋体'>级事件</span></u><u><span
+lang=EN-US style='font-size:16.0pt'><br>
+addEventListener&nbsp;</span></u><u><span style='font-size:16.0pt;font-family:
+宋体'>是元素所属的</span></u><u><span lang=EN-US style='font-size:16.0pt'>EventTarget</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>类原型上的公有属性</span></u><u><span
+lang=EN-US style='font-size:16.0pt'><br>
+box.addEventListener(&quot;</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>事件的类型</span></u><u><span lang=EN-US style='font-size:16.0pt'>-</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>事件行为属性不带</span></u><u><span lang=EN-US
+style='font-size:16.0pt'>on&quot;,function(){</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>给事件行为帮绑定的方法</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>},</span></u><u><span style='font-size:
+16.0pt;font-family:宋体'>可选的参数</span></u><u><span lang=EN-US style='font-size:
+16.0pt'>false(</span></u><u><span style='font-size:16.0pt;font-family:宋体'>默认冒泡阶段发生</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>)/true(</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>捕获阶段发生</span></u><u><span lang=EN-US
+style='font-size:16.0pt'>));</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>存在兼容性</span></u><u><span lang=EN-US style='font-size:16.0pt'>,</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>在</span></u><u><span lang=EN-US
+style='font-size:16.0pt'>IE</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>下使用</span></u><u><span lang=EN-US style='font-size:16.0pt'>:attachEvent(&quot;</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>事件的类型</span></u><u><span lang=EN-US
+style='font-size:16.0pt'>&quot;,function(){})</span></u></p>
+
+<p class=MsoNormal align=left style='margin-left:0cm;text-align:left;
+text-indent:0cm'><span lang=EN-US style='font-size:16.0pt'>9.</span><span
+lang=EN-US style='font-size:16.0pt;color:blue'>Js</span><span style='font-size:
+16.0pt;font-family:宋体;color:blue'>模块化开发</span><span lang=EN-US
+style='font-size:16.0pt;color:blue'>CommonJS,AMD,CMD,ES6</span><span
+style='font-size:16.0pt;font-family:宋体;color:blue'>的区别</span><span lang=EN-US
+style='font-size:16.0pt'><br>
+</span><span style='font-size:16.0pt;font-family:宋体;color:red'>答案</span><span
+lang=EN-US style='font-size:16.0pt;color:red'>:</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><u><span lang=EN-US
+style='font-size:16.0pt'>Node</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>应用由模块组成，采用</span></u><u><span lang=EN-US style='font-size:16.0pt'>CommonJS</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>模块规范。</span></u></p>
+
+<p class=MsoNormal align=left style='text-align:left'><u><span
+style='font-size:16.0pt;font-family:宋体'>根据这个规范，每个文件就是一个模块，有自己的作用域。在一个文件里面定义的变量、函数、类，都是私有的，对其他文件不可见。</span></u></p>
+
+<p class=MsoNormal align=left style='text-align:left'><u><span lang=EN-US
+style='font-size:16.0pt'>AMD: </span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>异步模块定义</span></u><u><span style='font-size:16.0pt'> </span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>常用</span></u><u><span lang=EN-US
+style='font-size:16.0pt'>require.js</span></u></p>
+
+<p class=MsoNormal align=left style='text-align:left'><u><span
+style='font-size:16.0pt;font-family:宋体'>在</span></u><u><span lang=EN-US
+style='font-size:16.0pt'> AMD </span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>规范中的</span></u><u><span lang=EN-US style='font-size:16.0pt'>
+require </span></u><u><span style='font-size:16.0pt;font-family:宋体'>函数与一般的</span></u><u><span
+lang=EN-US style='font-size:16.0pt'> CommonJS</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>中的</span></u><u><span lang=EN-US
+style='font-size:16.0pt'> require </span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>不同。由于动态检测依赖关系使加载异步，对于基于回调的</span></u><u><span lang=EN-US
+style='font-size:16.0pt'> require </span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>需求强烈。</span></u></p>
+
+<p class=MsoNormal align=left style='text-align:left'><u><span lang=EN-US
+style='font-size:16.0pt'>CMD</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>中</span></u><u><span lang=EN-US style='font-size:16.0pt'>,</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>常用</span></u><u><span lang=EN-US
+style='font-size:16.0pt'>sea.js</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>，一个模块就是一个文件，格式为：</span></u></p>
+
+<p class=MsoNormal align=left style='text-align:left'><u><span lang=EN-US
+style='font-size:16.0pt'>define( factory );</span></u></p>
+
+<p class=MsoNormal align=left style='text-align:left'><u><span lang=EN-US
+style='font-size:16.0pt'>1. </span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>对于依赖的模块，</span></u><u><span lang=EN-US style='font-size:16.0pt'>AMD
+</span></u><u><span style='font-size:16.0pt;font-family:宋体'>是提前执行，</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>CMD </span></u><u><span style='font-size:
+16.0pt;font-family:宋体'>是延迟执行。不过</span></u><u><span lang=EN-US style='font-size:
+16.0pt'> RequireJS </span></u><u><span style='font-size:16.0pt;font-family:
+宋体'>从</span></u><u><span lang=EN-US style='font-size:16.0pt'> 2.0 </span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>开始，也改成可以延迟执行（根据写法不同，处理方式不同）。</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>CMD </span></u><u><span style='font-size:
+16.0pt;font-family:宋体'>推崇</span></u><u><span lang=EN-US style='font-size:16.0pt'>
+as lazy as possible.</span></u></p>
+
+<p class=MsoNormal align=left style='text-align:left'><u><span lang=EN-US
+style='font-size:16.0pt'>2. CMD </span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>推崇依赖就近，</span></u><u><span lang=EN-US style='font-size:16.0pt'>AMD
+</span></u><u><span style='font-size:16.0pt;font-family:宋体'>推崇依赖前置</span></u></p>
+
+<p class=MsoNormal align=left style='text-align:left'><u><span lang=EN-US
+style='font-size:16.0pt'>3.ES6</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>是新的语法规范</span></u></p>
+
+<p class=MsoNormal align=left style='margin-left:0cm;text-align:left;
+text-indent:0cm'><span lang=EN-US style='font-size:16.0pt'>10.</span><span
+lang=EN-US style='font-size:16.0pt;color:blue'>ES5</span><span
+style='font-size:16.0pt;font-family:宋体;color:blue'>以及之前的面向对象开发</span><span
+lang=EN-US style='font-size:16.0pt;color:blue'>?</span><span lang=EN-US
+style='font-size:16.0pt'><br>
+</span><span style='font-size:16.0pt;font-family:宋体;color:red'>答案</span><span
+lang=EN-US style='font-size:16.0pt;color:red'>:<br>
+</span><u><span style='font-size:16.0pt;font-family:宋体'>面向对象开发就是面向类的开发</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>:</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>简单来说就是类的继承</span></u><u><span lang=EN-US style='font-size:16.0pt'>,</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>封装</span></u><u><span lang=EN-US
+style='font-size:16.0pt'>,</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>和多态</span></u></p>
+
+<p class=MsoNormal align=left style='margin-left:0cm;text-align:left;
+text-indent:0cm'><span lang=EN-US style='font-size:16.0pt;color:blue'>11.</span><span
+style='font-size:16.0pt;font-family:宋体;color:blue'>什么是闭包</span><span
+lang=EN-US style='font-size:16.0pt;color:blue'>?</span><span style='font-size:
+16.0pt;font-family:宋体;color:blue'>请写出一个简单的实例</span><span lang=EN-US
+style='font-size:16.0pt;color:blue'><br>
+</span><span style='font-size:16.0pt;font-family:宋体;color:red'>答案</span><span
+lang=EN-US style='font-size:16.0pt;color:red'>:</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><u><span
+style='font-size:16.0pt;font-family:宋体'>闭包的原理就是保护局部变量不被污染</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>,</span></u></p>
+
+<pre style='background:white'><b><i><span lang=EN-US style='font-size:22.5pt;
+font-family:Consolas;color:#660E7A;background:white'>box</span></i></b><span
+lang=EN-US style='font-size:22.5pt;font-family:Consolas;color:black;background:
+white'>.</span><span lang=EN-US style='font-size:22.5pt;font-family:Consolas;
+color:#7A7A43;background:white'>onclick</span><span lang=EN-US
+style='font-size:22.5pt;font-family:Consolas;color:black;background:white'>=(</span><b><span
+lang=EN-US style='font-size:22.5pt;font-family:Consolas;color:navy;background:
+white'>function </span></b><span lang=EN-US style='font-size:22.5pt;font-family:
+Consolas;color:black;background:white'>(n) {<br>
+&nbsp;&nbsp;&nbsp; </span><b><span lang=EN-US style='font-size:22.5pt;
+font-family:Consolas;color:navy;background:white'>return function </span></b><span
+lang=EN-US style='font-size:22.5pt;font-family:Consolas;color:black;background:
+white'>() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b><i><span lang=EN-US
+style='font-size:22.5pt;font-family:Consolas;color:#660E7A;background:white'>oSpan</span></i></b><span
+lang=EN-US style='font-size:22.5pt;font-family:Consolas;color:black;background:
+white'>.</span><b><span lang=EN-US style='font-size:22.5pt;font-family:Consolas;
+color:#660E7A;background:white'>innerHTML</span></b><span lang=EN-US
+style='font-size:22.5pt;font-family:Consolas;color:black;background:white'>=++n<br>
+&nbsp;&nbsp;&nbsp; }<br>
+})(</span><span lang=EN-US style='font-size:22.5pt;font-family:Consolas;
+color:blue;background:white'>100</span><span lang=EN-US style='font-size:22.5pt;
+font-family:Consolas;color:black;background:white'>)</span></pre>
+
+<p class=MsoNormal align=left style='margin-left:0cm;text-align:left;
+text-indent:0cm'><span lang=EN-US style='font-size:16.0pt'>12.</span><span
+style='font-size:16.0pt;font-family:宋体;color:blue'>说明</span><span lang=EN-US
+style='font-size:16.0pt;color:blue'>ajax</span><span style='font-size:16.0pt;
+font-family:宋体;color:blue'>工作原理</span><span lang=EN-US style='font-size:16.0pt;
+color:blue'>?</span><span style='font-size:16.0pt;font-family:宋体;color:blue'>跨域有哪些方法</span><span
+lang=EN-US style='font-size:16.0pt;color:blue'>?Jsonp</span><span
+style='font-size:16.0pt;font-family:宋体;color:blue'>的原理是什么</span><span
+lang=EN-US style='font-size:16.0pt;color:blue'>?</span><span lang=EN-US
+style='font-size:16.0pt'><br>
+</span><span style='font-size:16.0pt;font-family:宋体;color:red'>答案</span><span
+lang=EN-US style='font-size:16.0pt;color:red'>:<br>
+</span><u><span lang=EN-US style='font-size:16.0pt'>Async&nbsp;(</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>异步</span></u><u><span lang=EN-US
+style='font-size:16.0pt'>)&nbsp;Javascript&nbsp;And&nbsp;XMl<br>
+</span></u><u><span style='font-size:16.0pt;font-family:宋体'>异步</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>:</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>客户端和服务器的数数据交互</span></u><u><span lang=EN-US style='font-size:
+16.0pt'>,</span></u><u><span style='font-size:16.0pt;font-family:宋体'>不需要整个页面刷新</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>,</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>只需要将操作的这一部分更新一下</span></u><u><span lang=EN-US style='font-size:
+16.0pt'>&nbsp;,</span></u><u><span style='font-size:16.0pt;font-family:宋体'>这就叫做局部刷新</span></u><u><span
+lang=EN-US style='font-size:16.0pt'><br>
+AJAX</span></u><u><span style='font-size:16.0pt;font-family:宋体'>一般都是用来请求页面的部分数据</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>,</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>在将获取出来的数据绑定到页面指定位置</span></u><u><span lang=EN-US
+style='font-size:16.0pt'><br>
+</span></u><u><span style='font-size:16.0pt;font-family:宋体'>什么是</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>JSONP/JSONP</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>的原理</span></u><u><span lang=EN-US
+style='font-size:16.0pt'><br>
+script</span></u><u><span style='font-size:16.0pt;font-family:宋体'>标签是没有同源和非同源之分的</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>,src</span></u><u><span style='font-size:
+16.0pt;font-family:宋体'>中引入的</span></u><u><span lang=EN-US style='font-size:
+16.0pt'>JS</span></u><u><span style='font-size:16.0pt;font-family:宋体'>文件是自己的服务器上的或者别人服务器上的都可以</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>(</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>换句话说</span></u><u><span lang=EN-US style='font-size:16.0pt'>script</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>标签可以向</span></u><u><span lang=EN-US
+style='font-size:16.0pt'>&nbsp;&nbsp;&nbsp;</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>其他服务器发送请求</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>,</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>并且其他服务器也可以接收到请求</span></u><u><span lang=EN-US style='font-size:
+16.0pt'>,</span></u><u><span style='font-size:16.0pt;font-family:宋体'>把需要的内返回给客户端</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>)&nbsp;</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>其他的标签有</span></u><u><span lang=EN-US
+style='font-size:16.0pt'>:link&nbsp;Img&nbsp;audio&nbsp;video&nbsp;iframe<br>
+JSONP</span></u><u><span style='font-size:16.0pt;font-family:宋体'>原理</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>:&nbsp;</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>利用</span></u><u><span lang=EN-US
+style='font-size:16.0pt'>script</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>不存在跨域限制</span></u><u><span lang=EN-US style='font-size:16.0pt'>,</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>我们把需要的请求数据的地址赋值</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>scr</span></u><u><span style='font-size:
+16.0pt;font-family:宋体'>属性</span></u><u><span lang=EN-US style='font-size:16.0pt'>,</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>这样就可以从被人的服务器上获取响应的数据</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>,</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>这样还不够</span></u><u><span lang=EN-US style='font-size:16.0pt'>,</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>我们还需要在</span></u><u><span lang=EN-US
+style='font-size:16.0pt'>JS</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>中把浏览器获取处来的数据得到</span></u><u><span lang=EN-US style='font-size:
+16.0pt'>,</span></u><u><span style='font-size:16.0pt;font-family:宋体'>来做后续的操作</span></u><u><span
+lang=EN-US style='font-size:16.0pt'><br>
+</span></u><u><span style='font-size:16.0pt;font-family:宋体'>注意</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>:JSONP</span></u><u><span style='font-size:
+16.0pt;font-family:宋体'>请求是</span></u><u><span lang=EN-US style='font-size:16.0pt'>GET</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>方式请求的</span></u></p>
+
+<p class=MsoNormal align=left style='margin-left:0cm;text-align:left;
+text-indent:0cm'><span lang=EN-US style='font-size:16.0pt'>13.</span><span
+style='font-size:16.0pt;font-family:宋体;color:blue'>说明</span><span lang=EN-US
+style='font-size:16.0pt;color:blue'>ES6</span><span style='font-size:16.0pt;
+font-family:宋体;color:blue'>的箭头函数</span><span lang=EN-US style='font-size:16.0pt;
+color:blue'>,promise,</span><span style='font-size:16.0pt;font-family:宋体;
+color:blue'>类</span><span lang=EN-US style='font-size:16.0pt;color:blue'>,</span><span
+style='font-size:16.0pt;font-family:宋体;color:blue'>继承</span><span lang=EN-US
+style='font-size:16.0pt;color:blue'>?<br>
+</span><u><span style='font-size:16.0pt;font-family:宋体'>当你只是需要一个简单的单变量函数，箭头函数写起来就非常简单</span></u><u><span
+lang=EN-US style='font-size:16.0pt'> Identifier =&gt; Expression </span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>你可以省去了写</span></u><u><span lang=EN-US
+style='font-size:16.0pt'>function</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>和</span></u><u><span lang=EN-US style='font-size:16.0pt'>return</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>了，当然，还有中括号，小括号和分号。</span></u><u><span
+lang=EN-US style='font-size:16.0pt'><br>
+</span></u><u><span style='font-size:16.0pt;font-family:宋体'>但是有需要注意的几点：</span></u></p>
+
+<p class=MsoNormal align=left style='text-align:left'><u><span lang=EN-US
+style='font-size:16.0pt'>1.</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>当箭头函数包含的是区块的时候，它就不会自动</span></u><u><span lang=EN-US
+style='font-size:16.0pt'>return</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>我们的结果</span></u></p>
+
+<p class=MsoNormal align=left style='text-align:left'><u><span lang=EN-US
+style='font-size:16.0pt'>2.</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>而且当我们想要直接使用箭头函数创造空对象，一定要将其包裹在括号里</span></u></p>
+
+<p class=MsoNormal align=left style='text-align:left'><u><span lang=EN-US
+style='font-size:16.0pt'>3.</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>普通函数与箭头函数有个微小的不同点。箭头函数没有自己的</span></u><u><span lang=EN-US
+style='font-size:16.0pt'>this</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>值，其</span></u><u><span lang=EN-US style='font-size:16.0pt'>this</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>值是通过继承其它传入对象而获得的</span></u><u><span
+lang=EN-US style='font-size:16.0pt'><br>
+Promise</span></u><u><span style='font-size:16.0pt;font-family:宋体'>是异步编程的一种解决方案，比传统的解决方案——回调函数和事件——更合理和更强大。</span></u><u><span
+lang=EN-US style='font-size:16.0pt'><br>
+Promise</span></u><u><span style='font-size:16.0pt;font-family:宋体'>对象有以下两个特点。</span></u></p>
+
+<p class=MsoNormal align=left style='text-align:left'><u><span
+style='font-size:16.0pt;font-family:宋体'>（</span></u><u><span lang=EN-US
+style='font-size:16.0pt'>1</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>）对象的状态不受外界影响。</span></u><u><span lang=EN-US style='font-size:
+16.0pt'>Promise</span></u><u><span style='font-size:16.0pt;font-family:宋体'>对象代表一个异步操作，有三种状态：</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>Pending</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>（进行中）、</span></u><u><span lang=EN-US
+style='font-size:16.0pt'>Resolved</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>（已完成，又称</span></u><u><span lang=EN-US style='font-size:16.0pt'>Fulfilled</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>）和</span></u><u><span lang=EN-US
+style='font-size:16.0pt'>Rejected</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>（已拒绝）。只有异步操作的结果，可以决定当前是哪一种状态，任何其他操作都无法改变这个状态</span></u></p>
+
+<p class=MsoNormal align=left style='text-align:left'><u><span
+style='font-size:16.0pt;font-family:宋体'>（</span></u><u><span lang=EN-US
+style='font-size:16.0pt'>2</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>）一旦状态改变，就不会再变，任何时候都可以得到这个结果。</span></u><u><span lang=EN-US
+style='font-size:16.0pt'>Promise</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>对象的状态改变，只有两种可能：从</span></u><u><span lang=EN-US
+style='font-size:16.0pt'>Pending</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>变为</span></u><u><span lang=EN-US style='font-size:16.0pt'>Resolved</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>和从</span></u><u><span lang=EN-US
+style='font-size:16.0pt'>Pending</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>变为</span></u><u><span lang=EN-US style='font-size:16.0pt'>Rejected</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>。只要这两种情况发生，状态就凝固了，不会再变了，会一直保持这个结果。就算改变已经发生了，你再对</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>Promise</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>对象添加回调函数，也会立即得到这个结果。这与事件（</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>Event</span></u><u><span style='font-size:
+16.0pt;font-family:宋体'>）完全不同，事件的特点是，如果你错过了它，再去监听，是得不到结果的。</span></u></p>
+
+<p class=MsoNormal align=left style='text-align:left'><u><span lang=EN-US
+style='font-size:16.0pt'>ES6</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>的</span></u><u><span lang=EN-US style='font-size:16.0pt'>Class</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>之间可以通过</span></u><u><span lang=EN-US
+style='font-size:16.0pt'>extends</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>关键字实现继承，</span></u></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+style='font-size:16.0pt;color:blue'>JQ</span><span style='font-size:16.0pt;
+font-family:宋体;color:blue'>插件一般的组织形式是怎样的</span><span lang=EN-US
+style='font-size:16.0pt;color:blue'>?</span><span style='font-size:16.0pt;
+font-family:宋体;color:blue'>请写出大概的代码组织结构</span><span lang=EN-US
+style='font-size:16.0pt;color:blue'><br>
+</span><u><span style='font-size:16.0pt;font-family:宋体'>知识</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>1</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>：用</span></u><u><span lang=EN-US style='font-size:16.0pt'>JQuery</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>写插件时，最核心的方法有如下两个：</span></u><u><span
+lang=EN-US style='font-size:16.0pt'><br>
+$.extend(object) </span></u><u><span style='font-size:16.0pt;font-family:宋体'>可以理解为</span></u><u><span
+lang=EN-US style='font-size:16.0pt'>JQuery </span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>添加一个静态方法。</span></u></p>
+
+<p class=MsoNormal align=left style='text-align:left'><u><span lang=EN-US
+style='font-size:16.0pt'>$.fn.extend(object) </span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>可以理解为</span></u><u><span lang=EN-US
+style='font-size:16.0pt'>JQuery</span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>实例添加一个方法。</span></u></p>
+
+<p class=MsoNormal align=left style='text-align:left'><u><span lang=EN-US
+style='font-size:16.0pt'>/* $.extend </span></u><u><span style='font-size:16.0pt;
+font-family:宋体'>定义与调用</span></u><u><span lang=EN-US style='font-size:16.0pt'><br>
+$.extend({ fun1: function () { alert(&quot;</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>执行方法一</span></u><u><span lang=EN-US
+style='font-size:16.0pt'>&quot;); } });<br>
+$.fun1();<br>
+/*&nbsp; $.fn.extend </span></u><u><span style='font-size:16.0pt;font-family:
+宋体'>定义与调用</span></u><u><span lang=EN-US style='font-size:16.0pt'><br>
+$.fn.extend({ fun2: function () { alert(&quot;</span></u><u><span
+style='font-size:16.0pt;font-family:宋体'>执行方法</span></u><u><span lang=EN-US
+style='font-size:16.0pt'>2&quot;); } });<br>
+$(this).fun2();<br>
+//</span></u><u><span style='font-size:16.0pt;font-family:宋体'>等同于</span></u><u><span
+lang=EN-US style='font-size:16.0pt'><br>
+$.fn.fun3 = function () { alert(&quot;</span></u><u><span style='font-size:
+16.0pt;font-family:宋体'>执行方法三</span></u><u><span lang=EN-US style='font-size:
+16.0pt'>&quot;); }<br>
+$(this).fun3();</span></u></p>
+
+<p class=MsoNormal><a name="_GoBack"></a><span lang=EN-US>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>

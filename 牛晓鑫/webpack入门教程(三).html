@@ -1,0 +1,242 @@
+<!DOCTYPE html><html><head><title>插件（Plugins）</title><meta charset='utf-8'><link href='https://dn-maxiang.qbox.me/res-min/themes/marxico.css' rel='stylesheet'><style></style></head><body><div id='preview-contents' class='note-content'>
+                        
+                    
+
+
+
+<h3 id="插件plugins">插件（Plugins）</h3>
+
+<p>插件（Plugins）是用来拓展Webpack功能的，它们会在整个构建过程中生效，执行相关的任务。 <br>
+Loaders和Plugins常常被弄混，但是他们其实是完全不同的东西，可以这么来说，loaders是在打包构建过程中用来处理源文件的（JSX，Scss，Less..），一次处理一个，插件并不直接操作单个文件，它直接对整个构建过程其作用。</p>
+
+<p>Webpack有很多内置插件，同时也有很多第三方插件，可以让我们完成更加丰富的功能。</p>
+
+
+
+<h4 id="使用插件的方法">使用插件的方法</h4>
+
+<p>要使用某个插件，我们需要通过npm安装它，然后要做的就是在webpack配置中的plugins关键字部分添加该插件的一个实例（plugins是一个数组）继续看例子，我们添加了一个实现版权声明的插件。</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs nimrod">//webpack.config.js<br><span class="hljs-keyword">var</span> webpack = require('webpack');<br><br>module.exports = {<br>  devtool: 'eval-source-map',<br>  entry:  __dirname + <span class="hljs-string">"/app/main.js"</span>,<br>  output: <span class="hljs-meta">{...}</span>,<br><br>  module: {<br>    loaders: [<br>      { test: /\.json$/, loader: <span class="hljs-string">"json"</span> },<br>      { test: /\.js$/, exclude: /node_modules/, loader: 'babel' },<br>      { test: /\.css$/, loader: 'style!css?modules!postcss' }//这里添加<span class="hljs-type">PostCSS</span><br>    ]<br>  },<br>  postcss: [<br>    require('autoprefixer')<br>  ],<br><br>  plugins: [<br>    new webpack.<span class="hljs-type">BannerPlugin</span>(<span class="hljs-string">"Copyright Flying Unicorns inc."</span>)//在这个数组中new一个就可以了<br>  ],<br><br>  devServer: <span class="hljs-meta">{...}</span><br>}<br></code></pre>
+
+<p>通过这个插件，打包后的JS文件显示如下</p>
+
+<p><a href="https://segmentfault.com/img/remote/1460000006766941" target="_blank">https://segmentfault.com/img/remote/1460000006766941</a></p>
+
+<p>知道Webpack中的插件如何使用了，下面给大家推荐几个常用的插件</p>
+
+
+
+<h4 id="htmlwebpackplugin">HtmlWebpackPlugin</h4>
+
+<p>这个插件的作用是依据一个简单的模板，帮你生成最终的Html5文件，这个文件中自动引用了你打包后的JS文件。每次编译都在文件名中插入一个不同的哈希值。</p>
+
+<p><strong>安装</strong></p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs q">npm install --<span class="hljs-built_in">save</span>-<span class="hljs-built_in">dev</span> html-webpack-plugin<br></code></pre>
+
+<p>这个插件自动完成了我们之前手动做的一些事情，在正式使用之前需要对一直以来的项目结构做一些改变：</p>
+
+<ol><li rel="1">移除public文件夹，利用此插件，HTML5文件会自动生成，此外CSS已经通过前面的操作打包到JS中了，public文件夹里。</li>
+<li rel="2">在app目录下，创建一个Html文件模板，这个模板包含title等其它你需要的元素，在编译过程中，本插件会依据此模板生成最终的html页面，会自动添加所依赖的 css, js，favicon等文件，在本例中我们命名模板文件名称为index.tmpl.html，模板源代码如下</li>
+</ol>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs xml"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Webpack Sample Project<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">'root'</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre>
+
+<p>3.更新webpack的配置文件，方法同上,新建一个build文件夹用来存放最终的输出文件</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs typescript"><span class="hljs-keyword">var</span> webpack = <span class="hljs-built_in">require</span>(<span class="hljs-string">'webpack'</span>);<br><span class="hljs-keyword">var</span> HtmlWebpackPlugin = <span class="hljs-built_in">require</span>(<span class="hljs-string">'html-webpack-plugin'</span>);<br><br><span class="hljs-built_in">module</span>.exports = {<br>  devtool: <span class="hljs-string">'eval-source-map'</span>,<br><br>  entry:  __dirname + <span class="hljs-string">"/app/main.js"</span>,<br>  output: {<br>    path: __dirname + <span class="hljs-string">"/build"</span>,<br>    filename: <span class="hljs-string">"bundle.js"</span><br>  },<br><br>  <span class="hljs-keyword">module</span>: {<br>    loaders: [<br>      { test: <span class="hljs-regexp">/\.json$/</span>, loader: <span class="hljs-string">"json"</span> },<br>      { test: <span class="hljs-regexp">/\.js$/</span>, exclude: <span class="hljs-regexp">/node_modules/</span>, loader: <span class="hljs-string">'babel'</span> },<br>      { test: <span class="hljs-regexp">/\.css$/</span>, loader: <span class="hljs-string">'style!css?modules!postcss'</span> }<br>    ]<br>  },<br>  postcss: [<br>    <span class="hljs-built_in">require</span>(<span class="hljs-string">'autoprefixer'</span>)<br>  ],<br><br>  plugins: [<br>    <span class="hljs-keyword">new</span> HtmlWebpackPlugin({<br>      template: __dirname + <span class="hljs-string">"/app/index.tmpl.html"</span><span class="hljs-comment">//new 一个这个插件的实例，并传入相关的参数</span><br>    })<br>  ],<br><br>  devServer: {<br>    colors: <span class="hljs-literal">true</span>,<br>    historyApiFallback: <span class="hljs-literal">true</span>,<br>    inline: <span class="hljs-literal">true</span><br>  }<br>}<br></code></pre>
+
+
+
+<h4 id="hot-module-replacement">Hot Module Replacement</h4>
+
+<p>Hot Module Replacement（HMR）也是webpack里很有用的一个插件，它允许你在修改组件代码后，自动刷新实时预览修改后的效果。</p>
+
+<p>在webpack中实现HMR也很简单，只需要做两项配置</p>
+
+<ol><li rel="1">在webpack配置文件中添加HMR插件；</li>
+<li rel="2">在Webpack Dev Server中添加“hot”参数； <br>
+不过配置完这些后，JS模块其实还是不能自动热加载的，还需要在你的JS模块中执行一个Webpack提供的API才能实现热加载，虽然这个API不难使用，但是如果是React模块，使用我们已经熟悉的Babel可以更方便的实现功能热加载。</li>
+</ol>
+
+<p>整理下我们的思路，具体实现方法如下</p>
+
+<ul><li>Babel和webpack是独立的工具</li>
+<li>二者可以一起工作</li>
+<li>二者都可以通过插件拓展功能</li>
+<li>HMR是一个webpack插件，它让你能浏览器中实时观察模块修改后的效果，但是如果你想让它工作，需要对模块进行额外的配额；</li>
+<li>Babel有一个叫做react-transform-hrm的插件，可以在不对React模块进行额外的配置的前提下让HMR正常工作；</li>
+</ul>
+
+<p>更新我们的例子来实际看看如何配置</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs javascript"><span class="hljs-comment">//webpack中的配置</span><br><span class="hljs-keyword">var</span> webpack = <span class="hljs-built_in">require</span>(<span class="hljs-string">'webpack'</span>);<br><span class="hljs-keyword">var</span> HtmlWebpackPlugin = <span class="hljs-built_in">require</span>(<span class="hljs-string">'html-webpack-plugin'</span>);<br><br><span class="hljs-built_in">module</span>.exports = {<br>  <span class="hljs-attr">devtool</span>: <span class="hljs-string">'eval-source-map'</span>,<br>  <span class="hljs-attr">entry</span>: __dirname + <span class="hljs-string">"/app/main.js"</span>,<br>  <span class="hljs-attr">output</span>: {<br>    <span class="hljs-attr">path</span>: __dirname + <span class="hljs-string">"/build"</span>,<br>    <span class="hljs-attr">filename</span>: <span class="hljs-string">"bundle.js"</span><br>  },<br><br>  <span class="hljs-attr">module</span>: {<br>    <span class="hljs-attr">loaders</span>: [<br>      { <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.json$/</span>, <span class="hljs-attr">loader</span>: <span class="hljs-string">"json"</span> },<br>      { <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.js$/</span>, <span class="hljs-attr">exclude</span>: <span class="hljs-regexp">/node_modules/</span>, <span class="hljs-attr">loader</span>: <span class="hljs-string">'babel'</span> },<br>      { <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.css$/</span>, <span class="hljs-attr">loader</span>: <span class="hljs-string">'style!css?modules!postcss'</span> }<br>    ]<br>  },<br>  <span class="hljs-attr">postcss</span>: [<br>    <span class="hljs-built_in">require</span>(<span class="hljs-string">'autoprefixer'</span>)<br>  ],<br><br>  <span class="hljs-attr">plugins</span>: [<br>    <span class="hljs-keyword">new</span> HtmlWebpackPlugin({<br>      <span class="hljs-attr">template</span>: __dirname + <span class="hljs-string">"/app/index.tmpl.html"</span><br>    }),<br>    <span class="hljs-keyword">new</span> webpack.HotModuleReplacementPlugin()<span class="hljs-comment">//热加载插件</span><br>  ],<br><br>  <span class="hljs-attr">devServer</span>: {<br>    <span class="hljs-attr">colors</span>: <span class="hljs-literal">true</span>,<br>    <span class="hljs-attr">historyApiFallback</span>: <span class="hljs-literal">true</span>,<br>    <span class="hljs-attr">inline</span>: <span class="hljs-literal">true</span>,<br>    <span class="hljs-attr">hot</span>: <span class="hljs-literal">true</span><br>  }<br>}<br><span class="hljs-string">``</span><span class="hljs-string">``</span><br><br>安装react-transform-hmr<br><br><br><br><br><br>&lt;div <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"se-preview-section-delimiter"</span>&gt;<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><br></code></pre>
+
+<p>npm install –save-dev babel-plugin-react-transform react-transform-hmr</p>
+
+<pre class="prettyprint hljs-dark"><code class="hljs javascript"><br>配置Babel<br><br><br><br><br><br>&lt;div <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"se-preview-section-delimiter"</span>&gt;<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><br></code></pre>
+
+<p>{ <br>
+  “presets”: [“react”, “es2015”], <br>
+  “env”: { <br>
+    “development”: { <br>
+    “plugins”: [[“react-transform”, { <br>
+       “transforms”: [{ <br>
+         “transform”: “react-transform-hmr”,</p>
+
+<pre class="prettyprint hljs-dark"><code class="hljs prolog">     <span class="hljs-string">"imports"</span>: [<span class="hljs-string">"react"</span>],<br><br>     <span class="hljs-string">"locals"</span>: [<span class="hljs-string">"module"</span>]<br>   }]<br> }]]<br>}<br></code></pre>
+
+<p>} <br>
+}</p>
+
+<pre class="prettyprint hljs-dark"><code class="hljs applescript"><br>现在当你使用React时，可以热加载模块了<br><br><br><br><br><br>&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"se-preview-section-delimiter"</span>&gt;&lt;/<span class="hljs-keyword">div</span>&gt;<br><br><span class="hljs-comment">#### 产品阶段的构建</span><br><br>目前为止，我们已经使用webpack构建了一个完整的开发环境。但是在产品阶段，可能还需要对打包的文件进行额外的处理，比如说优化，压缩，缓存以及分离CSS和JS。<br><br>对于复杂的项目来说，需要复杂的配置，这时候分解配置文件为多个小的文件可以使得事情井井有条，以上面的例子来说，我们创建一个“webpack.production.config.js”的文件，在里面加上基本的配置,它和原始的webpack.config.js很像，如下<br><br><br><br><br><br>&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"se-preview-section-delimiter"</span>&gt;&lt;/<span class="hljs-keyword">div</span>&gt;<br><br></code></pre>
+
+<p>var webpack = require(‘webpack’); <br>
+var HtmlWebpackPlugin = require(‘html-webpack-plugin’);</p>
+
+<p>module.exports = { <br>
+  entry: __dirname + “/app/main.js”, <br>
+  output: { <br>
+    path: __dirname + “/build”, <br>
+    filename: “bundle.js” <br>
+  },</p>
+
+<p>module: { <br>
+    loaders: [ <br>
+      { <br>
+        test: /.json<span class="MathJax_Preview"></span><span class="MathJax_SVG" id="MathJax-Element-1-Frame" role="textbox" aria-readonly="true" style="font-size: 100%; display: inline-block;"><span class="noError" style="display: inline-block; vertical-align: -45.6px;">/,&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;loader:&nbsp;“json”&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;test:&nbsp;/.js</span></span>/, <br>
+        exclude: /node_modules/, <br>
+        loader: ‘babel’ <br>
+      }, <br>
+      { <br>
+        test: /.css$/, <br>
+        loader: ‘style!css?modules!postcss’ <br>
+      } <br>
+    ] <br>
+  }, <br>
+  postcss: [ <br>
+    require(‘autoprefixer’) <br>
+  ],</p>
+
+<p>plugins: [ <br>
+    new HtmlWebpackPlugin({ <br>
+      template: __dirname + “/app/index.tmpl.html” <br>
+    }), <br>
+  ],</p>
+
+<p>}</p>
+
+<pre class="prettyprint hljs-dark"><code class="hljs http"><br><br><span class="http"><br><br><span class="javascript"><br>&lt;div <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"se-preview-section-delimiter"</span>&gt;<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br></span></span><br></code></pre>
+
+<p>//package.json <br>
+{ <br>
+  “name”: “webpack-sample-project”, <br>
+  “version”: “1.0.0”, <br>
+  “description”: “Sample webpack project”, <br>
+  “scripts”: { <br>
+    “start”: “webpack-dev-server –progress”, <br>
+    “build”: “NODE_ENV=production webpack –config ./webpack.production.config.js –progress” <br>
+  }, <br>
+  “author”: “Cássio Zen”, <br>
+  “license”: “ISC”, <br>
+  “devDependencies”: {…}, <br>
+  “dependencies”: {…} <br>
+}</p>
+
+<pre class="prettyprint hljs-dark"><code class="hljs http"><br><br><span class="http"><br><br><span class="applescript"><br>&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"se-preview-section-delimiter"</span>&gt;&lt;/<span class="hljs-keyword">div</span>&gt;<br><br><span class="hljs-comment">#### 优化插件</span><br><br>webpack提供了一些在发布阶段非常有用的优化插件，它们大多来自于webpack社区，可以通过npm安装，通过以下插件可以完成产品发布阶段所需的功能<br><br>- OccurenceOrderPlugin :为组件分配ID，通过这个插件webpack可以分析和优先考虑使用最多的模块，并为它们分配最小的ID<br>- UglifyJsPlugin：压缩JS代码；<br>- ExtractTextPlugin：分离CSS和JS文件<br><br>我们继续用例子来看看如何添加它们，OccurenceOrder 和 UglifyJS plugins 都是内置插件，你需要做的只是安装它们<br><br><br><br><br><br>&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"se-preview-section-delimiter"</span>&gt;&lt;/<span class="hljs-keyword">div</span>&gt;<br></span></span><br></code></pre>
+
+<p>npm install –save-dev extract-text-webpack-plugin</p>
+
+<pre class="prettyprint hljs-dark"><code class="hljs javascript"><br>在配置文件的plugins后引用它们<br><br><br><br><br><br>&lt;div <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"se-preview-section-delimiter"</span>&gt;<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><br></code></pre>
+
+<p>var webpack = require(‘webpack’); <br>
+var HtmlWebpackPlugin = require(‘html-webpack-plugin’); <br>
+var ExtractTextPlugin = require(‘extract-text-webpack-plugin’);</p>
+
+<p>module.exports = { <br>
+  entry: __dirname + “/app/main.js”, <br>
+  output: { <br>
+    path: __dirname + “/build”, <br>
+    filename: “bundle.js” <br>
+  },</p>
+
+<p>module: { <br>
+    loaders: [ <br>
+      { <br>
+        test: /.json<span class="MathJax_Preview"></span><span class="MathJax_SVG" id="MathJax-Element-2-Frame" role="textbox" aria-readonly="true" style="font-size: 100%; display: inline-block;"><span class="noError" style="display: inline-block; vertical-align: -45.6px;">/,&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;loader:&nbsp;“json”&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;test:&nbsp;/.js</span></span>/, <br>
+        exclude: /node_modules/, <br>
+        loader: ‘babel’ <br>
+      }, <br>
+      { <br>
+        test: /.css$/, <br>
+        loader: ExtractTextPlugin.extract(‘style’, ‘css?modules!postcss’) <br>
+      } <br>
+    ] <br>
+  }, <br>
+  postcss: [ <br>
+    require(‘autoprefixer’) <br>
+  ],</p>
+
+<p>plugins: [ <br>
+    new HtmlWebpackPlugin({ <br>
+      template: __dirname + “/app/index.tmpl.html” <br>
+    }), <br>
+    new webpack.optimize.OccurenceOrderPlugin(), <br>
+    new webpack.optimize.UglifyJsPlugin(), <br>
+    new ExtractTextPlugin(“style.css”) <br>
+  ] <br>
+}</p>
+
+<pre class="prettyprint hljs-dark"><code class="hljs http"><br><br><span class="http"><br><br><span class="applescript"><br>&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"se-preview-section-delimiter"</span>&gt;&lt;/<span class="hljs-keyword">div</span>&gt;<br><br><span class="hljs-comment">#### 缓存</span><br><br>缓存无处不在，使用缓存的最好方法是保证你的文件名和文件内容是匹配的（内容改变，名称相应改变）<br><br>webpack可以把一个哈希值添加到打包的文件名中，使用方法如下,添加特殊的字符串混合体（[<span class="hljs-built_in">name</span>], [<span class="hljs-built_in">id</span>] <span class="hljs-keyword">and</span> [hash]）到输出文件名前<br><br><br><br><br><br>&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"se-preview-section-delimiter"</span>&gt;&lt;/<span class="hljs-keyword">div</span>&gt;<br></span></span><br></code></pre>
+
+<p>var webpack = require(‘webpack’); <br>
+var HtmlWebpackPlugin = require(‘html-webpack-plugin’); <br>
+var ExtractTextPlugin = require(‘extract-text-webpack-plugin’);</p>
+
+<p>module.exports = { <br>
+  entry: __dirname + “/app/main.js”, <br>
+  output: { <br>
+    path: __dirname + “/build”, <br>
+    filename: “[name]-[hash].js” <br>
+  },</p>
+
+<p>module: { <br>
+    loaders: [ <br>
+      { <br>
+        test: /.json<span class="MathJax_Preview"></span><span class="MathJax_SVG" id="MathJax-Element-3-Frame" role="textbox" aria-readonly="true" style="font-size: 100%; display: inline-block;"><span class="noError" style="display: inline-block; vertical-align: -45.6px;">/,&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;loader:&nbsp;“json”&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;test:&nbsp;/.js</span></span>/, <br>
+        exclude: /node_modules/, <br>
+        loader: ‘babel’ <br>
+      }, <br>
+      { <br>
+        test: /.css$/, <br>
+        loader: ExtractTextPlugin.extract(‘style’, ‘css?modules!postcss’) <br>
+      } <br>
+    ] <br>
+  }, <br>
+  postcss: [ <br>
+    require(‘autoprefixer’) <br>
+  ],</p>
+
+<p>plugins: [ <br>
+    new HtmlWebpackPlugin({ <br>
+      template: __dirname + “/app/index.tmpl.html” <br>
+    }), <br>
+    new webpack.optimize.OccurenceOrderPlugin(), <br>
+    new webpack.optimize.UglifyJsPlugin(), <br>
+    new ExtractTextPlugin(“[name]-[hash].css”) <br>
+  ] <br>
+} <br>
+```</p>
+
+<p>现在用户会有合理的缓存了。</p></div></body></html>

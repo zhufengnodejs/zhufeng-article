@@ -1,0 +1,1832 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 12">
+<meta name=Originator content="Microsoft Word 12">
+<link rel=File-List href="H5表单属性.files/filelist.xml">
+<link rel=Edit-Time-Data href="H5表单属性.files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Apache POI</o:Author>
+  <o:LastAuthor>Administrator</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>0</o:TotalTime>
+  <o:Created>2017-08-18T12:33:00Z</o:Created>
+  <o:LastSaved>2017-08-18T12:33:00Z</o:LastSaved>
+  <o:Pages>17</o:Pages>
+  <o:Words>371</o:Words>
+  <o:Characters>2116</o:Characters>
+  <o:Lines>17</o:Lines>
+  <o:Paragraphs>4</o:Paragraphs>
+  <o:CharactersWithSpaces>2483</o:CharactersWithSpaces>
+  <o:Version>12.00</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<link rel=themeData href="H5表单属性.files/themedata.thmx">
+<link rel=colorSchemeMapping href="H5表单属性.files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-US</w:LidThemeOther>
+  <w:LidThemeAsian>ZH-CN</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:DontVertAlignCellWithSp/>
+   <w:DontBreakConstrainedForcedTables/>
+   <w:DontVertAlignInTxbx/>
+   <w:Word11KerningPairs/>
+   <w:CachedColBalance/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <w:DoNotOptimizeForBrowser/>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+  DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="267">
+  <w:LsdException Locked="false" Priority="0" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 9"/>
+  <w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" Priority="10" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" Priority="11" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" Priority="22" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Table Grid"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-alt:SimSun;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 680460288 22 0 262145 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:1;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:0 0 0 0 0 0;}
+@font-face
+	{font-family:微软雅黑;
+	panose-1:2 11 5 3 2 2 4 2 2 4;
+	mso-font-charset:134;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-2147483001 672087122 22 0 262175 0;}
+@font-face
+	{font-family:"\@微软雅黑";
+	panose-1:2 11 5 3 2 2 4 2 2 4;
+	mso-font-charset:134;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-2147483001 672087122 22 0 262175 0;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 680460288 22 0 262145 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:10.5pt;
+	mso-bidi-font-size:11.0pt;
+	font-family:"微软雅黑","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+h1
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"标题 1 Char";
+	mso-style-next:正文;
+	margin-top:17.0pt;
+	margin-right:0cm;
+	margin-bottom:16.5pt;
+	margin-left:0cm;
+	line-height:240%;
+	mso-pagination:lines-together;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:22.0pt;
+	font-family:"微软雅黑","sans-serif";
+	mso-font-kerning:22.0pt;}
+h2
+	{mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-link:"标题 2 Char";
+	mso-style-next:正文;
+	margin-top:13.0pt;
+	margin-right:0cm;
+	margin-bottom:13.0pt;
+	margin-left:0cm;
+	line-height:173%;
+	mso-pagination:lines-together;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:16.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:宋体;
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;}
+h3
+	{mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-link:"标题 3 Char";
+	mso-style-next:正文;
+	margin-top:13.0pt;
+	margin-right:0cm;
+	margin-bottom:13.0pt;
+	margin-left:0cm;
+	line-height:173%;
+	mso-pagination:lines-together;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:16.0pt;
+	font-family:"微软雅黑","sans-serif";}
+h4
+	{mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-link:"标题 4 Char";
+	mso-style-next:正文;
+	margin-top:14.0pt;
+	margin-right:0cm;
+	margin-bottom:14.5pt;
+	margin-left:0cm;
+	line-height:156%;
+	mso-pagination:lines-together;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	font-size:14.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:宋体;
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;}
+h5
+	{mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-link:"标题 5 Char";
+	mso-style-next:正文;
+	margin-top:14.0pt;
+	margin-right:0cm;
+	margin-bottom:14.5pt;
+	margin-left:0cm;
+	line-height:156%;
+	mso-pagination:lines-together;
+	page-break-after:avoid;
+	mso-outline-level:5;
+	font-size:14.0pt;
+	font-family:"微软雅黑","sans-serif";}
+h6
+	{mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-link:"标题 6 Char";
+	mso-style-next:正文;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.2pt;
+	margin-left:0cm;
+	line-height:133%;
+	mso-pagination:lines-together;
+	page-break-after:avoid;
+	mso-outline-level:6;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:宋体;
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;}
+p.MsoHeading7, li.MsoHeading7, div.MsoHeading7
+	{mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-link:"标题 7 Char";
+	mso-style-next:正文;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.2pt;
+	margin-left:0cm;
+	line-height:133%;
+	mso-pagination:lines-together;
+	page-break-after:avoid;
+	mso-outline-level:7;
+	font-size:12.0pt;
+	font-family:"微软雅黑","sans-serif";
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:bold;}
+p.MsoHeading8, li.MsoHeading8, div.MsoHeading8
+	{mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-link:"标题 8 Char";
+	mso-style-next:正文;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.2pt;
+	margin-left:0cm;
+	line-height:133%;
+	mso-pagination:lines-together;
+	page-break-after:avoid;
+	mso-outline-level:8;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:宋体;
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;}
+p.MsoHeading9, li.MsoHeading9, div.MsoHeading9
+	{mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-link:"标题 9 Char";
+	mso-style-next:正文;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.2pt;
+	margin-left:0cm;
+	line-height:133%;
+	mso-pagination:lines-together;
+	page-break-after:avoid;
+	mso-outline-level:9;
+	font-size:10.5pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:宋体;
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-priority:10;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"标题 Char";
+	mso-style-next:正文;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	text-align:center;
+	mso-pagination:none;
+	mso-outline-level:1;
+	font-size:16.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:宋体;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	font-weight:bold;}
+p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
+	{mso-style-priority:11;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"副标题 Char";
+	mso-style-next:正文;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	text-align:center;
+	line-height:130%;
+	mso-pagination:none;
+	mso-outline-level:2;
+	font-size:16.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:宋体;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	mso-font-kerning:14.0pt;
+	font-weight:bold;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-link:"批注框文本 Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:9.0pt;
+	font-family:"微软雅黑","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+span.1Char
+	{mso-style-name:"标题 1 Char";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"标题 1";
+	mso-ansi-font-size:22.0pt;
+	mso-bidi-font-size:22.0pt;
+	mso-font-kerning:22.0pt;
+	font-weight:bold;}
+span.2Char
+	{mso-style-name:"标题 2 Char";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"标题 2";
+	mso-ansi-font-size:16.0pt;
+	mso-bidi-font-size:16.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:宋体;
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	font-weight:bold;}
+span.3Char
+	{mso-style-name:"标题 3 Char";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"标题 3";
+	mso-ansi-font-size:16.0pt;
+	mso-bidi-font-size:16.0pt;
+	font-weight:bold;}
+span.4Char
+	{mso-style-name:"标题 4 Char";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"标题 4";
+	mso-ansi-font-size:14.0pt;
+	mso-bidi-font-size:14.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:宋体;
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	font-weight:bold;}
+span.5Char
+	{mso-style-name:"标题 5 Char";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"标题 5";
+	mso-ansi-font-size:14.0pt;
+	mso-bidi-font-size:14.0pt;
+	font-weight:bold;}
+span.6Char
+	{mso-style-name:"标题 6 Char";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"标题 6";
+	mso-ansi-font-size:12.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:宋体;
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	font-weight:bold;}
+span.7Char
+	{mso-style-name:"标题 7 Char";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"标题 7";
+	mso-ansi-font-size:12.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-weight:bold;}
+span.8Char
+	{mso-style-name:"标题 8 Char";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"标题 8";
+	mso-ansi-font-size:12.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:宋体;
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;}
+span.9Char
+	{mso-style-name:"标题 9 Char";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"标题 9";
+	mso-bidi-font-size:10.5pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:宋体;
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;}
+span.Char
+	{mso-style-name:"标题 Char";
+	mso-style-priority:10;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:标题;
+	mso-ansi-font-size:16.0pt;
+	mso-bidi-font-size:16.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:宋体;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	font-weight:bold;}
+span.Char0
+	{mso-style-name:"副标题 Char";
+	mso-style-priority:11;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:副标题;
+	mso-ansi-font-size:16.0pt;
+	mso-bidi-font-size:16.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:宋体;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	mso-font-kerning:14.0pt;
+	font-weight:bold;}
+span.Char1
+	{mso-style-name:"批注框文本 Char";
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:批注框文本;
+	mso-ansi-font-size:9.0pt;
+	mso-bidi-font-size:9.0pt;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	mso-ascii-font-family:微软雅黑;
+	mso-fareast-font-family:微软雅黑;
+	mso-hansi-font-family:微软雅黑;
+	mso-font-kerning:0pt;}
+ /* Page Definitions */
+ @page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:42.55pt;
+	mso-footer-margin:49.6pt;
+	mso-paper-source:0;
+	layout-grid:15.6pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:1232352982;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-430658624 67698703 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l0:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:21.0pt;
+	text-indent:-21.0pt;}
+@list l0:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-text:"%2\)";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:42.0pt;
+	text-indent:-21.0pt;}
+@list l0:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	margin-left:63.0pt;
+	text-indent:-21.0pt;}
+@list l0:level4
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:84.0pt;
+	text-indent:-21.0pt;}
+@list l1
+	{mso-list-id:1972323967;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1492542300 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F06C;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:21.0pt;
+	text-indent:-21.0pt;
+	font-family:Wingdings;}
+@list l1:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:\F06E;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:42.0pt;
+	text-indent:-21.0pt;
+	font-family:Wingdings;}
+@list l1:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F075;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:63.0pt;
+	text-indent:-21.0pt;
+	font-family:Wingdings;}
+@list l1:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F06C;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:84.0pt;
+	text-indent:-21.0pt;
+	font-family:Wingdings;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:普通表格;
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.5pt;
+	mso-bidi-font-size:11.0pt;
+	font-family:"微软雅黑","sans-serif";}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=ZH-CN style='tab-interval:21.0pt'>
+
+<div class=WordSection1 style='layout-grid:15.6pt'>
+
+<p class=MsoNormal align=center style='text-align:center'><a
+name=9oapd1502243128911></a><span style='font-size:14.0pt;mso-bidi-font-size:
+11.0pt;color:#DF402A'>第二天</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><a
+name=55dxnj1502243147777></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=94fzcw1502243147777></a><span style='font-size:12.0pt;
+mso-bidi-font-size:11.0pt;color:#DF402A'>一、<b style='mso-bidi-font-weight:normal'>表单属性</b></span></p>
+
+<p class=MsoNormal><a name=36muen1502243392318></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="Drawing_x0020_0" o:spid="_x0000_i1068" type="#_x0000_t75"
+ alt="clipboard.png" style='width:414.75pt;height:51.75pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="H5表单属性.files/image001.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=69
+src="H5表单属性.files/image002.gif" alt=clipboard.png v:shapes="Drawing_x0020_0"><![endif]></span></p>
+
+<p class=MsoNormal><a name=31zcwc1502243392318></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=95pagd1502243366875></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_1"
+ o:spid="_x0000_i1067" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:81.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="H5表单属性.files/image003.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=109
+src="H5表单属性.files/image004.gif" alt=clipboard.png v:shapes="Drawing_x0020_1"><![endif]></span></p>
+
+<p class=MsoNormal><a name=69ygdl1502243501241></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=28ctbw1502243501241></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_2"
+ o:spid="_x0000_i1066" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:65.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="H5表单属性.files/image005.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=87
+src="H5表单属性.files/image006.gif" alt=clipboard.png v:shapes="Drawing_x0020_2"><![endif]></span></p>
+
+<p class=MsoNormal><a name=87ofpr1502243501241></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=63idwi1502243479445></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_3"
+ o:spid="_x0000_i1065" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:73.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="H5表单属性.files/image007.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=98
+src="H5表单属性.files/image008.gif" alt=clipboard.png v:shapes="Drawing_x0020_3"><![endif]></span></p>
+
+<p class=MsoNormal><a name=73kboi1502243479445></a><span class=SpellE><span
+lang=EN-US style='color:#DF402A'>autocomplete</span></span><span lang=EN-US> </span>自动完成功能提示<span
+lang=EN-US><span style='mso-spacerun:yes'>&nbsp; </span></span><span
+style='color:gray'>（第一输入后<span lang=EN-US><span style='mso-spacerun:yes'>&nbsp;
+</span></span>第一次输入会提示）</span></p>
+
+<p class=MsoNormal><a name=33ascy1502244956711></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=13hnjm1502244960763></a><span lang=EN-US
+style='color:#DF402A'>autofocus </span><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span>自动获取焦点</p>
+
+<p class=MsoNormal><a name=61ywro1502244952280></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=60zvhf1502244961513></a><span lang=EN-US
+style='color:#DF402A'>required value</span><span lang=EN-US> </span>为空验证 必须填写</p>
+
+<p class=MsoNormal><a name=58qvim1502243591577></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=13numq1502243591794></a><span lang=EN-US
+style='color:#DF402A'>pattern</span><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>验证是否符合正则表达式</p>
+
+<p class=MsoNormal><a name=9qosc1502243619003></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=46hhvg1502243620771></a><span lang=EN-US
+style='color:#DF402A'>placeholder</span><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span></span>填写提示信息</p>
+
+<p class=MsoNormal><a name=34kfww1502258793228></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_4"
+ o:spid="_x0000_i1064" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:89.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="H5表单属性.files/image009.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=119
+src="H5表单属性.files/image010.gif" alt=clipboard.png v:shapes="Drawing_x0020_4"><![endif]></span></p>
+
+<p class=MsoNormal><a name=47olej1502258846274></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=40rffc1502258846274></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_5"
+ o:spid="_x0000_i1063" type="#_x0000_t75" alt="clipboard.png" style='width:414pt;
+ height:233.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="H5表单属性.files/image011.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=552 height=311
+src="H5表单属性.files/image012.gif" alt=clipboard.png v:shapes="Drawing_x0020_5"><![endif]></span></p>
+
+<p class=MsoNormal><a name=0qhfv1502258857406></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=15jvaw1502258857406></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_6"
+ o:spid="_x0000_i1062" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:23.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="H5表单属性.files/image013.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=31
+src="H5表单属性.files/image014.gif" alt=clipboard.png v:shapes="Drawing_x0020_6"><![endif]></span></p>
+
+<p class=MsoNormal><a name=61fimq1502258848425></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=38cgjt1502258859291></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=78ncav1502258848619></a><span style='font-size:12.0pt;
+mso-bidi-font-size:11.0pt;color:#DF402A'>二、<b style='mso-bidi-font-weight:normal'>表单</b></span></p>
+
+<p class=MsoNormal><a name=89lxpz1502243571407></a>日历控件：<span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&lt;input type=&quot;<span style='color:#DF402A'>date</span>&quot;/&gt;&lt;<span
+class=SpellE>br</span>/&gt;</span></p>
+
+<p class=MsoNormal><a name=70mbtk1502244459015></a>颜色面板：<span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&lt;input type=&quot;<span style='color:#DF402A'>color</span>&quot;&gt;&lt;<span
+class=SpellE>br</span>/&gt;</span></p>
+
+<p class=MsoNormal><a name=49xbrb1502244459015></a>进度条控件：<span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>&lt;input type=&quot;<span
+style='color:#DF402A'>range</span>&quot;&gt;&lt;<span class=SpellE>br</span>/&gt;</span></p>
+
+<p class=MsoNormal><a name=95mljr1502244459015></a>上传文件：<span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&lt;input type=&quot;<span style='color:#DF402A'>file</span>&quot;&gt;&lt;<span
+class=SpellE>br</span>/&gt;</span></p>
+
+<p class=MsoNormal><a name=95hins1502244459015></a>数字：<span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&lt;input type=&quot;<span style='color:#DF402A'>number</span>&quot;&gt;&lt;<span
+class=SpellE>br</span>/&gt;</span></p>
+
+<p class=MsoNormal><a name=91bxkr1502244459015></a>时间：<span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&lt;input type=&quot;<span style='color:#DF402A'>time</span>&quot;&gt;&lt;<span
+class=SpellE>br</span>/&gt;</span></p>
+
+<p class=MsoNormal><a name=86ybja1502244459015></a>网址：<span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&lt;input type=&quot;<span class=SpellE><span style='color:#DF402A'>url</span></span>&quot;&gt;&lt;<span
+class=SpellE>br</span>/&gt;</span></p>
+
+<p class=MsoNormal><a name=48pjvo1502244459015></a>邮箱：<span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&lt;input type=&quot;<span style='color:#DF402A'>email</span>&quot;&gt;&lt;<span
+class=SpellE>br</span>/&gt; <span style='mso-spacerun:yes'>&nbsp;</span></span>通过验证<span
+lang=EN-US>@</span>符 判断是否是邮箱格式</p>
+
+<p class=MsoNormal><a name=39puzo1502244723387></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=96sres1502244721169></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_7"
+ o:spid="_x0000_i1061" type="#_x0000_t75" alt="clipboard.png" style='width:415.5pt;
+ height:27pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="H5表单属性.files/image015.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=554 height=36
+src="H5表单属性.files/image016.gif" alt=clipboard.png v:shapes="Drawing_x0020_7"><![endif]></span></p>
+
+<p class=MsoNormal><a name=86dgzb1502244721169></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=19jvfk1502244597358></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_8"
+ o:spid="_x0000_i1060" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:27pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="H5表单属性.files/image017.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=36
+src="H5表单属性.files/image018.gif" alt=clipboard.png v:shapes="Drawing_x0020_8"><![endif]></span></p>
+
+<p class=MsoNormal><a name=72hljg1502243571470></a>限定最小值是<span lang=EN-US>5<span
+style='mso-spacerun:yes'>&nbsp; </span></span>最大是<span lang=EN-US>20</span></p>
+
+<p class=MsoNormal><a name=11dagf1502246282431></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=25nmcg1502246191117></a>表单控件 可以调出相应的键盘 相应的控件</p>
+
+<p class=MsoNormal><a name=67yfwu1502246013083></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_9"
+ o:spid="_x0000_i1059" type="#_x0000_t75" alt="clipboard.png" style='width:126.75pt;
+ height:225pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="H5表单属性.files/image019.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=169 height=300
+src="H5表单属性.files/image020.gif" alt=clipboard.png v:shapes="Drawing_x0020_9"><![endif]></span></p>
+
+<p class=MsoNormal><a name=83laux1502246035351></a><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span>Number</span>：</p>
+
+<p class=MsoNormal><a name=76okwa1502246035351></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_10"
+ o:spid="_x0000_i1058" type="#_x0000_t75" alt="clipboard.png" style='width:125.25pt;
+ height:222.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="H5表单属性.files/image021.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=167 height=297
+src="H5表单属性.files/image022.gif" alt=clipboard.png v:shapes="Drawing_x0020_10"><![endif]></span></p>
+
+<p class=MsoNormal><a name=26unhb1502246053947></a><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span class=SpellE>Url</span></span>：</p>
+
+<p class=MsoNormal><a name=1ievu1502246053947></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_11"
+ o:spid="_x0000_i1057" type="#_x0000_t75" alt="clipboard.png" style='width:119.25pt;
+ height:212.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="H5表单属性.files/image023.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=159 height=283
+src="H5表单属性.files/image024.gif" alt=clipboard.png v:shapes="Drawing_x0020_11"><![endif]></span></p>
+
+<p class=MsoNormal><a name=85bupn1502246075263></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=40kjio1502246075263></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_12"
+ o:spid="_x0000_i1056" type="#_x0000_t75" alt="clipboard.png" style='width:136.5pt;
+ height:245.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="H5表单属性.files/image025.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=182 height=327
+src="H5表单属性.files/image026.gif" alt=clipboard.png v:shapes="Drawing_x0020_12"><![endif]></span></p>
+
+<p class=MsoNormal><a name=8qopr1502246093951></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=23tfrq1502246093951></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_13"
+ o:spid="_x0000_i1055" type="#_x0000_t75" alt="clipboard.png" style='width:138pt;
+ height:246pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="H5表单属性.files/image027.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=184 height=328
+src="H5表单属性.files/image028.gif" alt=clipboard.png v:shapes="Drawing_x0020_13"><![endif]></span></p>
+
+<p class=MsoNormal><a name=51ylic1502243571674></a><span lang=EN-US>Email</span>：</p>
+
+<p class=MsoNormal><a name=36mdox1502243571699></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=55ekxv1502247931429></a><span style='font-size:12.0pt;
+mso-bidi-font-size:11.0pt;color:#DF402A'>三、<span lang=EN-US>node</span></span></p>
+
+<p class=MsoNormal><a name=64xwkf1502247951877></a><span lang=EN-US>shift </span>右击打开命令窗口</p>
+
+<p class=MsoNormal><a name=12ptzh1502243571726></a><span class=SpellE><span
+lang=EN-US>npm</span></span><span lang=EN-US> -v<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>查看<span lang=EN-US>node</span>是否安装成功<span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp; </span></span>是否出现版本号</p>
+
+<p class=MsoNormal><a name=86itvw1502247984392></a><span class=SpellE><span
+lang=EN-US>npm</span></span><span lang=EN-US> install<span style='color:gray'> </span>jquery<span
+style='color:gray'>@1.11<span style='mso-spacerun:yes'>&nbsp; </span></span>@</span>符后不指定版本
+下载的就是最新版本的</p>
+
+<p class=MsoNormal><a name=83duab1502248040071></a><span class=SpellE><span
+lang=EN-US>npm</span></span><span lang=EN-US> install<span style='color:gray'> </span><span
+class=SpellE>vue</span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span>下载最新版本<span
+class=SpellE><span lang=EN-US>vue</span></span></p>
+
+<p class=MsoNormal><a name=86hgiz1502248101046></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_14"
+ o:spid="_x0000_i1054" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:199.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="H5表单属性.files/image029.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=266
+src="H5表单属性.files/image030.gif" alt=clipboard.png v:shapes="Drawing_x0020_14"><![endif]></span></p>
+
+<p class=MsoNormal><a name=42axpr1502243571751></a>下载完成后<span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp; </span></span>桌面有新的文件夹</p>
+
+<p class=MsoNormal><a name=56jxcv1502248176563></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=12uisi1502249610991></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=45xcam1502249632992></a><span style='font-size:12.0pt;
+mso-bidi-font-size:11.0pt;color:#DF402A'>安装<span lang=EN-US> http-server </span>命令工具</span></p>
+
+<p class=MsoNormal><a name=9dsag1502248280997></a><span class=SpellE><span
+lang=EN-US style='color:#DF402A'>npm</span></span><span lang=EN-US
+style='color:#DF402A'>&nbsp;install&nbsp;http-server&nbsp;-g<span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span><span style='color:gray'>安装一次就可以
+以后可以直接用 </span></p>
+
+<p class=MsoNormal><a name=17cwyk1502248330069></a>安装完<span lang=EN-US>-g</span>后
+任意打开一个目录 右击打开命令窗口<span lang=EN-US><span style='mso-spacerun:yes'>&nbsp; </span><span
+style='color:#DF402A'>http-server</span></span></p>
+
+<p class=MsoNormal><a name=35xpjz1502248362902></a><span style='color:#DF402A'>就把会我打开的目录
+做为网站的根目录</span><span lang=EN-US><span style='mso-spacerun:yes'>&nbsp; </span></span>（把窗口关掉<span
+lang=EN-US><span style='mso-spacerun:yes'>&nbsp; </span></span>服务器就断了）</p>
+
+<p class=MsoNormal><a name=9zvaq1502248673646></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=85qfvu1502248686676></a>搭建一个本地<span lang=EN-US>server<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span>http-server(</span>默认<span
+lang=EN-US>8080) -p 9090</span></p>
+
+<p class=MsoNormal><a name=30mrlh1502248712946></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_15"
+ o:spid="_x0000_i1053" type="#_x0000_t75" alt="clipboard.png" style='width:415.5pt;
+ height:101.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="H5表单属性.files/image031.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=554 height=135
+src="H5表单属性.files/image032.gif" alt=clipboard.png v:shapes="Drawing_x0020_15"><![endif]></span></p>
+
+<p class=MsoNormal><a name=69rvik1502248712946></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=13zxgv1502249725746></a>把<span lang=EN-US>server </span>阅览页面<span
+class=SpellE><span lang=EN-US>ip</span></span>换成和你手机同一个无线<span class=SpellE><span
+lang=EN-US>ip</span></span></p>
+
+<p class=MsoNormal><a name=55wrzb1502249823853></a>例如：电脑无线<span class=SpellE><span
+lang=EN-US>ip</span></span>为<span lang=EN-US> 172.18.1.24<span
+style='mso-spacerun:yes'>&nbsp; </span></span>就用<span lang=EN-US>http://172.18.2.17:8080</span>来浏览页面</p>
+
+<p class=MsoNormal><a name=85ntoo1502258931850></a>让你手机和电脑连接的是同一<span
+class=SpellE><span lang=EN-US>wifi</span></span></p>
+
+<p class=MsoNormal><a name=34witj1502248670460></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_16"
+ o:spid="_x0000_i1052" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:121.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="H5表单属性.files/image033.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=162
+src="H5表单属性.files/image034.gif" alt=clipboard.png v:shapes="Drawing_x0020_16"><![endif]></span></p>
+
+<p class=MsoNormal><a name=42eonn1502248670460></a><span style='color:#DF402A'>选择<span
+class=SpellE><span lang=EN-US>wifi</span></span><span lang=EN-US> </span>的<span
+lang=EN-US>IP </span>来访问这个页面</span></p>
+
+<p class=MsoNormal><a name=9xcat1502249681129></a><span style='color:#DF402A'>保证手机和他连接的是同一个<span
+class=SpellE><span lang=EN-US>wifi</span></span></span></p>
+
+<p class=MsoNormal><a name=49vopo1502249091148></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=73xeve1502249093077></a>新打开一个窗口<span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp; </span></span>输入<b style='mso-bidi-font-weight:
+normal'><span lang=EN-US style='color:#DF402A'> <span class=SpellE>ipconfig</span><span
+style='mso-spacerun:yes'>&nbsp; </span></span></b>获取到我的<span class=SpellE><span
+lang=EN-US>wifi</span></span><span lang=EN-US> IP</span>地址</p>
+
+<p class=MsoNormal><a name=19esjc1502249088760></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_17"
+ o:spid="_x0000_i1051" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:177.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="H5表单属性.files/image035.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=237
+src="H5表单属性.files/image036.gif" alt=clipboard.png v:shapes="Drawing_x0020_17"><![endif]></span></p>
+
+<p class=MsoNormal><a name=23jwjd1502249088760></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=11mrhi1502249688325></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=88ffzk1502249169317></a>草料二微码<span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp; </span></span>输入网址<span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp; </span></span>生成二微码</p>
+
+<p class=MsoNormal><a name=74ruji1502249167985></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_18"
+ o:spid="_x0000_i1050" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:217.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="H5表单属性.files/image037.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=290
+src="H5表单属性.files/image038.gif" alt=clipboard.png v:shapes="Drawing_x0020_18"><![endif]></span></p>
+
+<p class=MsoNormal><a name=45uhtj1502249167985></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=5nicl1502250161926></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=35fyni1502250162058></a><span style='font-size:12.0pt;
+mso-bidi-font-size:11.0pt;color:#DF402A'>四、表单验证 </span></p>
+
+<p class=MsoNormal><a name=83wplb1502250439615></a>验证邮箱<span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp; </span></span>提交验证时触发</p>
+
+<p class=MsoNormal><a name=97buge1502251480603></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_19"
+ o:spid="_x0000_i1049" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:150.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="H5表单属性.files/image039.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=201
+src="H5表单属性.files/image040.gif" alt=clipboard.png v:shapes="Drawing_x0020_19"><![endif]></span></p>
+
+<p class=MsoNormal><a name=42jdqr1502251480603></a><span class=SpellE><span
+lang=EN-US style='color:#DF402A'>this.setCustomValidity</span></span><span
+lang=EN-US style='color:#DF402A'>(&quot;&quot;);<span
+style='mso-spacerun:yes'>&nbsp; </span></span><span style='color:#DF402A'>置为空</span></p>
+
+<p class=MsoNormal><a name=59tbqg1502251704581></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=36hdad1502250438847></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_20"
+ o:spid="_x0000_i1048" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:105pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="H5表单属性.files/image041.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=140
+src="H5表单属性.files/image042.gif" alt=clipboard.png v:shapes="Drawing_x0020_20"><![endif]></span></p>
+
+<p class=MsoNormal><a name=10omtl1502250162363></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=84kiot1502250593608></a><span class=SpellE><span
+lang=EN-US style='color:#DF402A'>this.setCustomValidity</span></span><span
+lang=EN-US style='color:#DF402A'>(&quot;</span><span style='color:#DF402A'>你写 错了<span
+lang=EN-US>&quot;)<span style='mso-spacerun:yes'>&nbsp; </span></span></span>修改提示信息</p>
+
+<p class=MsoNormal><a name=41iedc1502250579154></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_21"
+ o:spid="_x0000_i1047" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:79.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="H5表单属性.files/image043.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=106
+src="H5表单属性.files/image044.gif" alt=clipboard.png v:shapes="Drawing_x0020_21"><![endif]></span></p>
+
+<p class=MsoNormal><a name=40anvv1502250162665></a><span lang=EN-US>email </span>有自己的验证规则<span
+lang=EN-US><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span>我们也可以自己写正则验证</p>
+
+<p class=MsoNormal><a name=52icdz1502251919840></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_22"
+ o:spid="_x0000_i1046" type="#_x0000_t75" alt="clipboard.png" style='width:414pt;
+ height:93pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="H5表单属性.files/image045.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=552 height=124
+src="H5表单属性.files/image046.gif" alt=clipboard.png v:shapes="Drawing_x0020_22"><![endif]></span></p>
+
+<p class=MsoNormal><a name=41ftrt1502251853779></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=61pllz1502251854255></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=3vrjl1502251854306></a><span style='color:#DF402A'>发短信打电话功能</span></p>
+
+<p class=MsoNormal><a name=22ehcd1502252553531></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_23"
+ o:spid="_x0000_i1045" type="#_x0000_t75" alt="clipboard.png" style='width:99pt;
+ height:175.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="H5表单属性.files/image047.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=132 height=234
+src="H5表单属性.files/image048.gif" alt=clipboard.png v:shapes="Drawing_x0020_23"><![endif]></span></p>
+
+<p class=MsoNormal><a name=7gtwi1502252573621></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=95ikdc1502252573621></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_24"
+ o:spid="_x0000_i1044" type="#_x0000_t75" alt="clipboard.png" style='width:89.25pt;
+ height:158.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="H5表单属性.files/image049.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=119 height=211
+src="H5表单属性.files/image050.gif" alt=clipboard.png v:shapes="Drawing_x0020_24"><![endif]></span></p>
+
+<p class=MsoNormal><a name=49fpxa1502252610139></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=55uvwx1502252610139></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_25"
+ o:spid="_x0000_i1043" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:40.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="H5表单属性.files/image051.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=54
+src="H5表单属性.files/image052.gif" alt=clipboard.png v:shapes="Drawing_x0020_25"><![endif]></span></p>
+
+<p class=MsoNormal><a name=95qzkv1502251854385></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=73ervw1502251854410></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=21lqkm1502251854436></a><span style='font-size:12.0pt;
+mso-bidi-font-size:11.0pt;color:#DF402A'>五、全局属性</span></p>
+
+<p class=MsoNormal><a name=6bswo1502252844271></a><span lang=EN-US
+style='color:#DF402A'>&lt;p <span class=SpellE>contenteditable</span>=&quot;true&quot;&gt;11111&lt;/p&gt;<span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span>不只是<span lang=EN-US>input p</span>标签也可以编辑</p>
+
+<p class=MsoNormal><a name=10uqbh1502252837848></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_26"
+ o:spid="_x0000_i1042" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:65.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="H5表单属性.files/image053.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=87
+src="H5表单属性.files/image054.gif" alt=clipboard.png v:shapes="Drawing_x0020_26"><![endif]></span></p>
+
+<p class=MsoNormal><a name=3ckxd1502251854489></a>页面中所有元素设置为<span
+style='color:#DF402A'>可编辑状态</span></p>
+
+<p class=MsoNormal><a name=30sgmp1502259267299></a><span class=SpellE><span
+lang=EN-US style='color:#DF402A'>document.designMode</span></span><span
+lang=EN-US style='color:#DF402A'> = 'on';</span></p>
+
+<p class=MsoNormal><a name=72pdfw1502253114163></a><span class=SpellE><span
+lang=EN-US style='color:#DF402A'>document.designMode</span></span><span
+lang=EN-US style='color:#DF402A'> = 'off ';</span></p>
+
+<p class=MsoNormal><a name=51rqqu1502259509102></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=32adtr1502259527616></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=79vhjy1502253114690></a><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;</span><span class=SpellE>spellcheck</span>=&quot;false&quot;<span
+style='mso-spacerun:yes'>&nbsp; </span></span>拼写检查</p>
+
+<p class=MsoNormal><a name=44nvgz1502253141619></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_27"
+ o:spid="_x0000_i1041" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:26.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="H5表单属性.files/image055.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=35
+src="H5表单属性.files/image056.gif" alt=clipboard.png v:shapes="Drawing_x0020_27"><![endif]></span></p>
+
+<p class=MsoNormal><a name=78khck1502253141619></a>默认是<span lang=EN-US>true </span>检查输入的内容是否符合常规</p>
+
+<p class=MsoNormal><a name=19pjva1502253508730></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=1evhl1502253513720></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_28"
+ o:spid="_x0000_i1040" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:69.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="H5表单属性.files/image057.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=93
+src="H5表单属性.files/image058.gif" alt=clipboard.png v:shapes="Drawing_x0020_28"><![endif]></span></p>
+
+<p class=MsoNormal><a name=78btmd1502253525858></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=9woba1502253525858></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_29"
+ o:spid="_x0000_i1039" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:20.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="H5表单属性.files/image059.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=27
+src="H5表单属性.files/image060.gif" alt=clipboard.png v:shapes="Drawing_x0020_29"><![endif]></span></p>
+
+<p class=MsoNormal><a name=25fvqh1502253525858></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=48eatl1502259155842></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_30"
+ o:spid="_x0000_i1038" type="#_x0000_t75" alt="clipboard.png" style='width:415.5pt;
+ height:38.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="H5表单属性.files/image061.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=554 height=51
+src="H5表单属性.files/image062.gif" alt=clipboard.png v:shapes="Drawing_x0020_30"><![endif]></span></p>
+
+<p class=MsoNormal><a name=12kthj1502259155842></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=63jjtx1502259144652></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_31"
+ o:spid="_x0000_i1037" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:32.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="H5表单属性.files/image063.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=43
+src="H5表单属性.files/image064.gif" alt=clipboard.png v:shapes="Drawing_x0020_31"><![endif]></span></p>
+
+<p class=MsoNormal><a name=88wghe1502259144092></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=10jckh1502259157295></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=68wlsr1502259613200></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_32"
+ o:spid="_x0000_i1036" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:32.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="H5表单属性.files/image065.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=43
+src="H5表单属性.files/image066.gif" alt=clipboard.png v:shapes="Drawing_x0020_32"><![endif]></span></p>
+
+<p class=MsoNormal><a name=15emtl1502259613200></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=70usvt1502259596539></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_33"
+ o:spid="_x0000_i1035" type="#_x0000_t75" alt="clipboard.png" style='width:414pt;
+ height:23.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="H5表单属性.files/image067.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=552 height=31
+src="H5表单属性.files/image068.gif" alt=clipboard.png v:shapes="Drawing_x0020_33"><![endif]></span></p>
+
+<p class=MsoNormal><a name=36lpbo1502259595091></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=87cglr1502259655671></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=38knri1502259652297></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_34"
+ o:spid="_x0000_i1034" type="#_x0000_t75" alt="clipboard.png" style='width:415.5pt;
+ height:29.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="H5表单属性.files/image069.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=554 height=39
+src="H5表单属性.files/image070.gif" alt=clipboard.png v:shapes="Drawing_x0020_34"><![endif]></span></p>
+
+<p class=MsoNormal><a name=85mmcw1502259652297></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=86uzsg1502259641147></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_35"
+ o:spid="_x0000_i1033" type="#_x0000_t75" alt="clipboard.png" style='width:415.5pt;
+ height:33pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="H5表单属性.files/image071.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=554 height=44
+src="H5表单属性.files/image072.gif" alt=clipboard.png v:shapes="Drawing_x0020_35"><![endif]></span></p>
+
+<p class=MsoNormal><a name=18gpuh1502259641147></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=56nnhk1502259658184></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=97aiav1502259658408></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=44gqhh1502259205027></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_36"
+ o:spid="_x0000_i1032" type="#_x0000_t75" alt="clipboard.png" style='width:414pt;
+ height:127.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="H5表单属性.files/image073.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=552 height=170
+src="H5表单属性.files/image074.gif" alt=clipboard.png v:shapes="Drawing_x0020_36"><![endif]></span></p>
+
+<p class=MsoNormal><a name=27ejht1502254058064></a><span lang=EN-US>form</span></p>
+
+<p class=MsoNormal><a name=21eqog1502254070641></a><span lang=EN-US>action<span
+style='mso-spacerun:yes'>&nbsp; </span></span>指定表单内容要提交到的服务器地址（把表单内容发送给服务器）</p>
+
+<p class=MsoNormal><a name=75xjiq1502254099312></a>必须要指定<span lang=EN-US
+style='color:#DF402A'>name</span><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span>action</span>后跟着指定端口地址</p>
+
+<p class=MsoNormal><a name=11nwta1502254295953></a><span lang=EN-US>method </span>指定提交方式<span
+lang=EN-US><span style='mso-spacerun:yes'>&nbsp; </span>get<span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span>post</span></p>
+
+<p class=MsoNormal><a name=1mvxa1502259677890></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt;text-indent:-21.0pt;mso-list:l1 level1 lfo1'><a
+name=41pbxh1502254178064></a><![if !supportLists]><span lang=EN-US
+style='font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings'><span style='mso-list:Ignore'>l<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></span><![endif]>默认是<span lang=EN-US>get</span>请求<span
+lang=EN-US><span style='mso-spacerun:yes'>&nbsp; </span></span>会将表单内容 以查询参数 拼接到<span
+class=SpellE><span lang=EN-US>url</span></span>后面<span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp; </span></span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt;text-indent:-21.0pt;mso-list:l1 level1 lfo1'><a
+name=75hlkq1502254314862></a><![if !supportLists]><span lang=EN-US
+style='font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings'><span style='mso-list:Ignore'>l<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></span><![endif]>如果是<span lang=EN-US>post</span>请求 会将内容 提交到<span
+lang=EN-US>Form Data</span>里<span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp; </span></span>没有大小限制 比较安全</p>
+
+<p class=MsoNormal><a name=35joii1502259680181></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=41fvsm1502254178267></a><span class=SpellE><span
+lang=EN-US>ajax</span></span><span lang=EN-US> post<span
+style='mso-spacerun:yes'>&nbsp; </span></span>是添加到 请求体里<span class=SpellE><span
+lang=EN-US>xhr.send</span></span><span lang=EN-US>(<span class=SpellE>sdfadf</span>)</span></p>
+
+<p class=MsoNormal><a name=64ijbu1502254101191></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=54nils1502254004887></a>指定是以查询参数形式提交给指定的网址后面</p>
+
+<p class=MsoNormal><a name=30udzc1502254038675></a>不指定是添加到当前页面的地址后</p>
+
+<p class=MsoNormal><a name=48lvvw1502258950396></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=48hkee1502258950643></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=85kqhs1502263441781></a><span style='font-size:12.0pt;
+mso-bidi-font-size:11.0pt;color:#DF402A'>六、<span lang=EN-US>file</span></span></p>
+
+<p class=MsoNormal><a name=88cgeg1502263442010></a>相机：<span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span>&lt;input
+type=&quot;file&quot; accept=&quot;image/*&quot; capture=&quot;camera&quot;&gt;</span></p>
+
+<p class=MsoNormal><a name=63cfeu1502263472597></a>摄像机：<span lang=EN-US>
+&lt;input type=&quot;file&quot; accept=&quot;image/*&quot;
+capture=&quot;camcorder&quot;&gt;</span></p>
+
+<p class=MsoNormal><a name=76qlpj1502263472597></a><span lang=EN-US>file:<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&lt;input type=&quot;file&quot;&gt;</span></p>
+
+<p class=MsoNormal><a name=95fcpl1502263432927></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_37"
+ o:spid="_x0000_i1031" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:45pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="H5表单属性.files/image075.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=60
+src="H5表单属性.files/image076.gif" alt=clipboard.png v:shapes="Drawing_x0020_37"><![endif]></span></p>
+
+<p class=MsoNormal><a name=90eour1502258952176></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=8svnu1502263630331></a>搭建一个本地<span lang=EN-US>server
+</span>真机测试</p>
+
+<p class=MsoNormal><a name=3fxic1502263685161></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_38"
+ o:spid="_x0000_i1030" type="#_x0000_t75" alt="clipboard.png" style='width:138pt;
+ height:244.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="H5表单属性.files/image077.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=184 height=326
+src="H5表单属性.files/image078.gif" alt=clipboard.png v:shapes="Drawing_x0020_38"><![endif]></span></p>
+
+<p class=MsoNormal><a name=84muas1502258952254></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=33wwlv1502258952278></a>可以直接打开手机的相机<span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span></span></p>
+
+<p class=MsoNormal><a name=41gfhh1502263785544></a>并且可以录视频上传<span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+
+<p class=MsoNormal><a name=10wtsx1502263786662></a>但是是传到浏览器上</p>
+
+<p class=MsoNormal><a name=6mghx1502263781018></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=23yxqb1502263781292></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=55rnwo1502263781479></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=61xpnq1502263781618></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=35udxg1502263781799></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=23xyyo1502263781950></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=67cwbx1502263782117></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=84scip1502263782269></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=45pgdo1502263782445></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=11llqa1502263782631></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=12lzzm1502263768535></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_39"
+ o:spid="_x0000_i1029" type="#_x0000_t75" alt="clipboard.png" style='width:143.25pt;
+ height:257.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="H5表单属性.files/image079.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=191 height=343
+src="H5表单属性.files/image080.gif" alt=clipboard.png v:shapes="Drawing_x0020_39"><![endif]></span></p>
+
+<p class=MsoNormal><a name=82feef1502258952359></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=61bixa1502263795383></a>点击<span lang=EN-US> FILE</span></p>
+
+<p class=MsoNormal><a name=3gezo1502258952385></a>有文件选项</p>
+
+<p class=MsoNormal><a name=29pvtq1502263793881></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=69eagu1502258952410></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=57oekt1502258952434></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=81dipd1502258952459></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=58rmnc1502258952487></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=19pgqz1502258952510></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=14awpa1502258952537></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=10aafg1502264799724></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=78vimm1502264799889></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=12xsed1502264800056></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=94okwy1502264800207></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=98lenu1502264800372></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=86yozb1502264800539></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=32lchr1502264800894></a><span lang=EN-US>&lt;input
+type=&quot;file&quot; id=&quot;camera&quot; <span style='color:#DF402A'>multiple=&quot;multiple&quot;</span>&gt;<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span></span>可以上传多个文件</p>
+
+<p class=MsoNormal><a name=6xuab1502265063893></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_40"
+ o:spid="_x0000_i1028" type="#_x0000_t75" alt="clipboard.png" style='width:204.75pt;
+ height:91.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="H5表单属性.files/image081.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=273 height=122
+src="H5表单属性.files/image082.gif" alt=clipboard.png v:shapes="Drawing_x0020_40"><![endif]></span></p>
+
+<p class=MsoNormal><a name=71yywz1502265063893></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=43cpjo1502265405414></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=91vxuz1502265387690></a><span style='font-size:12.0pt;
+mso-bidi-font-size:11.0pt;color:#DF402A'>七、重力感应事件</span></p>
+
+<p class=MsoNormal><a name=88fheo1502265401446></a>有重力就触发</p>
+
+<p class=MsoNormal><a name=41yfwu1502266415460></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=99bojq1502265908808></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_41"
+ o:spid="_x0000_i1027" type="#_x0000_t75" alt="clipboard.png" style='width:414.75pt;
+ height:58.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="H5表单属性.files/image083.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=78
+src="H5表单属性.files/image084.gif" alt=clipboard.png v:shapes="Drawing_x0020_41"><![endif]></span></p>
+
+<p class=MsoNormal><a name=82wtfr1502265402416></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=19qkrh1502267096321></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_42"
+ o:spid="_x0000_i1026" type="#_x0000_t75" alt="clipboard.png" style='width:138.75pt;
+ height:237pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="H5表单属性.files/image085.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=185 height=316
+src="H5表单属性.files/image086.gif" alt=clipboard.png v:shapes="Drawing_x0020_42"><![endif]></span></p>
+
+<p class=MsoNormal><a name=10wjyq1502265402931></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=40kzpq1502265402947></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=38himg1502271867004></a><span style='font-size:12.0pt;
+mso-bidi-font-size:11.0pt;color:#DF402A'>八、移动端新增的事件</span></p>
+
+<p class=MsoNormal><a name=74pcfa1502272765888></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=44vqdy1502271867220></a><span class=SpellE><span
+lang=EN-US>npm</span></span>可以看作成一个应用商店<span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp; </span></span></p>
+
+<p class=MsoNormal><a name=83cbll1502271867403></a><span class=SpellE><span
+lang=EN-US style='color:#DF402A'>npm</span></span><span lang=EN-US
+style='color:#DF402A'> init -y </span><span style='color:gray'>（一路<span
+lang=EN-US>YES</span>）</span></p>
+
+<p class=MsoNormal><a name=17tauo1502271930700></a><span class=SpellE><span
+lang=EN-US style='color:#DF402A'>npm</span></span><span lang=EN-US
+style='color:#DF402A'> install <span class=SpellE>fastclick</span> --save</span></p>
+
+<p class=MsoNormal><a name=14qijk1502271954709></a><span class=SpellE><span
+lang=EN-US style='color:#DF402A'>npm</span></span><span lang=EN-US
+style='color:#DF402A'> install</span></p>
+
+<p class=MsoNormal><a name=43yvdp1502271907835></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=50iooh1502265402972></a><span class=SpellE><span
+lang=EN-US style='color:#DF402A'>npm</span></span><span lang=EN-US
+style='color:#DF402A'> install <span class=SpellE>zepto</span> --save</span></p>
+
+<p class=MsoNormal><a name=10hldy1502272708471></a><span class=SpellE><span
+lang=EN-US style='color:gray'>Zepto</span></span><span style='color:gray'>是一个轻量级的针对现代高级浏览器的<span
+lang=EN-US>JavaScript</span>库<span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp; </span></span>移动端</span></p>
+
+<p class=MsoNormal><a name=94scio1502272713102></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=31jfrl1502272795432></a><span lang=EN-US>--save </span>上线依赖（代码依赖
+也就是上线之后也需要用的）开发的时候要用 上线的时候也需要用</p>
+
+<p class=MsoNormal><a name=16skcf1502272713583></a>把下载下来的包 放到<span
+class=SpellE><span lang=EN-US>package.json</span></span>里<span lang=EN-US
+style='color:#DF402A'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>--save</span><span
+style='color:#DF402A'>的缩写 是<span lang=EN-US> -s</span></span></p>
+
+<p class=MsoNormal><a name=78fmhv1502272713583></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=13gfib1502272656837></a><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Drawing_x0020_43"
+ o:spid="_x0000_i1025" type="#_x0000_t75" alt="clipboard.png" style='width:132.75pt;
+ height:105pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="H5表单属性.files/image087.png" o:title="clipboard"/>
+</v:shape><![endif]--><![if !vml]><img width=177 height=140
+src="H5表单属性.files/image088.gif" alt=clipboard.png v:shapes="Drawing_x0020_43"><![endif]></span></p>
+
+<p class=MsoNormal><a name=39eote1502265403103></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=79vnqd1502265403133></a>在这个目录里打开 然后通过<span
+class=SpellE><span lang=EN-US>npm</span></span>下载的工具包</p>
+
+<p class=MsoNormal><a name=25kcje1502272699205></a>会直接存在当前目录里</p>
+
+<p class=MsoNormal><a name=91gmul1502265403157></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=12idbl1502265403428></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=16hces1502265403633></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=1elnd1502265403771></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=32trps1502265403936></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=0xeve1502265404123></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=29stik1502265404349></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=52axkq1502265404508></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name=57kvoa1502265404678></a><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

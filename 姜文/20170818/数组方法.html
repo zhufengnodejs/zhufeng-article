@@ -1,0 +1,96 @@
+<!DOCTYPE html><html><head><title>1.find 查找某个元素</title><meta charset='utf-8'><link href='https://dn-maxiang.qbox.me/res-min/themes/marxico.css' rel='stylesheet'><style></style></head><body><div id='preview-contents' class='note-content'>
+                        
+                    
+
+<h2 id="1find-查找某个元素">1.find 查找某个元素</h2>
+
+<ul><li>返回true则将当前遍历的元素返回 <br>
+找出数组中, 名字为jw的项,找到后立即返回不继续查找</li>
+</ul>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs javascript"><span class="hljs-keyword">var</span> arr = [{<span class="hljs-attr">name</span>:<span class="hljs-string">'jw'</span>},{<span class="hljs-attr">name</span>:<span class="hljs-string">'zfpx'</span>},{<span class="hljs-attr">name</span>:<span class="hljs-string">'zry'</span>},{<span class="hljs-attr">name</span>:<span class="hljs-string">'jw'</span>}];<br><span class="hljs-keyword">var</span> obj = arr.find(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">item</span>) </span>{<br>   <span class="hljs-keyword">if</span>(item.name == <span class="hljs-string">'jw'</span>){<br>       <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>   }<br>});<br><span class="hljs-built_in">console</span>.log(obj); <span class="hljs-comment">// jw</span><br></code></pre>
+
+
+
+<h2 id="2some-查看是否有满足条件的元素">2.some 查看是否有满足条件的元素</h2>
+
+<ul><li>返回true则结果为true  <br>
+查看数组中, 名字是否有jw的项,找到后立即返回不继续查找</li>
+</ul>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs sqf">var arr = [{<span class="hljs-built_in">name</span>:<span class="hljs-string">'jw'</span>},{<span class="hljs-built_in">name</span>:<span class="hljs-string">'zfpx'</span>},{<span class="hljs-built_in">name</span>:<span class="hljs-string">'zry'</span>},{<span class="hljs-built_in">name</span>:<span class="hljs-string">'jw'</span>}];<br>var <span class="hljs-built_in">flag</span> = arr.some(function (item) {<br>   <span class="hljs-keyword">if</span>(item.<span class="hljs-built_in">name</span> == <span class="hljs-string">'jw'</span>){<br>       return <span class="hljs-literal">true</span>;<br>   }<br>});<br>console.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">flag</span>); <span class="hljs-comment">// true</span><br></code></pre>
+
+
+
+<h2 id="3map">3.map</h2>
+
+<ul><li>遍历每一项，用返回值替换当前项 <br>
+将数组每个人的年龄累加10岁</li>
+</ul>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs applescript">var arr = [{<span class="hljs-built_in">name</span>:'jw',age:<span class="hljs-number">18</span>},{<span class="hljs-built_in">name</span>:'zfpx',age:<span class="hljs-number">40</span>},{<span class="hljs-built_in">name</span>:'zry',age:<span class="hljs-number">32</span>}];<br>var <span class="hljs-literal">result</span> = arr.map(function (<span class="hljs-built_in">item</span>) {<br>    <span class="hljs-built_in">item</span>.age+=<span class="hljs-number">10</span>;<br><span class="hljs-built_in">    return</span> <span class="hljs-built_in">item</span><br>});<br>console.<span class="hljs-built_in">log</span>(<span class="hljs-literal">result</span>);<br></code></pre>
+
+
+
+<h2 id="4filter">4.filter</h2>
+
+<ul><li>返回true则表示当前项删除，返回false当前项保留 <br>
+将数组中年龄小于30岁的删掉</li>
+</ul>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs applescript">var arr = [{<span class="hljs-built_in">name</span>:'jw',age:<span class="hljs-number">18</span>},{<span class="hljs-built_in">name</span>:'zfpx',age:<span class="hljs-number">40</span>},{<span class="hljs-built_in">name</span>:'zry',age:<span class="hljs-number">32</span>}];<br>var <span class="hljs-literal">result</span> = arr.map(function (<span class="hljs-built_in">item</span>) {<br>  <span class="hljs-built_in">item</span>.age+=<span class="hljs-number">10</span>;<br><span class="hljs-built_in">  return</span> <span class="hljs-built_in">item</span><br>});<br>console.<span class="hljs-built_in">log</span>(<span class="hljs-literal">result</span>);<br></code></pre>
+
+
+
+<h2 id="5reduce">5.reduce</h2>
+
+<ul><li>返回值是经过叠加处理后的操作。</li>
+<li>函数中第一个参数为prev 第二个参数为next <br>
+求出价格中的总和</li>
+</ul>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs javascript"><span class="hljs-keyword">var</span> arr = [{<span class="hljs-attr">price</span>:<span class="hljs-number">1</span>},{<span class="hljs-attr">price</span>:<span class="hljs-number">2</span>},{<span class="hljs-attr">price</span>:<span class="hljs-number">3</span>}];<br><span class="hljs-keyword">var</span> result = arr.reduce(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">prev,next</span>) </span>{<br>   <span class="hljs-keyword">return</span> prev+next.price;<br>},<span class="hljs-number">0</span>);<br><span class="hljs-built_in">console</span>.log(result);<br></code></pre>
+
+
+
+<h2 id="6foreach">6.forEach</h2>
+
+<ul><li>遍历数组 缺点:不能return循环</li>
+</ul>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs scheme">[<span class="hljs-name">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>].forEach(<span class="hljs-name">function</span> (<span class="hljs-name">item</span>) {<br>       if(<span class="hljs-name">item==2</span>) return<span class="hljs-comment">;</span><br> })<span class="hljs-comment">;</span><br></code></pre>
+
+
+
+<h2 id="7for-in">7.for in</h2>
+
+<ul><li>缺点 1.会遍历所有属性 2.遍历的key是对象数据类型</li>
+</ul>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs maxima"><span class="hljs-built_in">var</span> ary = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>];<br>arr.name = 'jw';<br><span class="hljs-keyword">for</span>(<span class="hljs-built_in">var</span> <span class="hljs-built_in">key</span> <span class="hljs-keyword">in</span> arr){<br>   console.<span class="hljs-built_in">log</span>(typeof <span class="hljs-built_in">key</span>);<br>   console.<span class="hljs-built_in">log</span>(arr[<span class="hljs-built_in">key</span>]);<br>}<br></code></pre>
+
+
+
+<h2 id="8for-of">8.for of</h2>
+
+<ul><li>好处:可以break,不会遍历数组以外的属性</li>
+<li>缺点:不能遍历普通对象</li>
+</ul>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs javascript"><span class="hljs-keyword">var</span> ary = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>];<br>ary.name = <span class="hljs-string">'jw'</span>;<br><span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> value <span class="hljs-keyword">of</span> ary){<br>    <span class="hljs-keyword">if</span>(key == <span class="hljs-number">2</span>){<span class="hljs-keyword">break</span>}<br>    <span class="hljs-built_in">console</span>.log(ary);<br>}<br></code></pre></div></body></html>

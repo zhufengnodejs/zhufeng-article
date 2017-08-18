@@ -1,0 +1,49 @@
+<!DOCTYPE html><html><head><title>你觉得前端工程的价值体现在哪</title><meta charset='utf-8'><link href='https://dn-maxiang.qbox.me/res-min/themes/marxico.css' rel='stylesheet'><style></style></head><body><div id='preview-contents' class='note-content'>
+                        
+                    
+
+<p>性能问题</p>
+
+
+
+<h4 id="你觉得前端工程的价值体现在哪">你觉得前端工程的价值体现在哪</h4>
+
+<pre class="prettyprint hljs-dark"><code class="hljs">为简化用户使用提供技术支持（交互部分）<br>为多个浏览器兼容性提供支持<br>为提高用户浏览速度（浏览器性能）提供支持<br>为跨平台或者其他基于webkit或其他渲染引擎的应用提供支持<br>为展示数据提供支持（数据接口）<br></code></pre>
+
+
+
+<h4 id="谈谈性能优化问题">谈谈性能优化问题</h4>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs lsl"><span class="hljs-number">1.</span>代码层面：避免使用css表达式，避免使用高级选择器，通配选择器。<br><span class="hljs-number">2.</span>缓存利用：缓存Ajax，使用CDN，使用外部js和css文件以便缓存，添加Expires头，服务端配置Etag，减少DNS查找等<br><span class="hljs-number">3.</span>请求数量：合并样式和脚本，使用css图片精灵，初始首屏之外的图片资源按需加载，静态资源延迟加载。<br><span class="hljs-number">4.</span>请求带宽：压缩文件，开启GZIP，<br></code></pre>
+
+<blockquote>
+  <h3 id="代码层面的优化"><code>代码层面的优化</code></h3>
+  
+  <ul><li>用<code>hash-table</code>来优化查找</li>
+  <li>少用全局变量</li>
+  <li>用<code>innerHTML</code>代替<code>DOM</code>操作，减少<code>DOM</code>操作次数，优化<code>javascript</code>性能</li>
+  <li>用<code>setTimeout</code>来避免页面失去响应</li>
+  <li>缓存DOM节点查找的结果</li>
+  <li>避免使用CSS Expression</li>
+  <li>避免全局查询</li>
+  <li>避免使用with(with会创建自己的作用域，会增加作用域链长度)</li>
+  <li>多个变量声明合并</li>
+  <li>避免图片和iFrame等的空Src。空Src会重新加载当前页面，影响速度和效率</li>
+  <li>尽量避免写在HTML标签中写Style属性</li>
+  </ul>
+  
+  <h3 id="移动端性能优化"><code>移动端性能优化</code></h3>
+  
+  <ul><li>尽量使用css3动画，开启硬件加速。</li>
+  <li>适当使用<code>touch</code>事件代替<code>click</code>事件。</li>
+  <li>避免使用<code>css3</code>渐变阴影效果。</li>
+  <li>可以用<code>transform: translateZ(0)</code>来开启硬件加速。</li>
+  <li>不滥用Float。Float在渲染时计算量比较大，尽量减少使用</li>
+  <li>不滥用Web字体。Web字体需要下载，解析，重绘当前页面，尽量减少使用。</li>
+  <li>合理使用requestAnimationFrame动画代替setTimeout</li>
+  <li>CSS中的属性（CSS3 transitions、CSS3 3D transforms、Opacity、Canvas、WebGL、Video）会触发GPU渲染，请合理使用。过渡使用会引发手机过耗电增加</li>
+  <li>PC端的在移动端同样适用</li>
+  </ul>
+</blockquote></div></body></html>

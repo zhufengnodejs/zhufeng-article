@@ -1,0 +1,96 @@
+<!DOCTYPE html><html><head><title>ball-1 {</title><meta charset='utf-8'><link href='https://dn-maxiang.qbox.me/res-min/themes/marxico.css' rel='stylesheet'><style></style></head><body><div id='preview-contents' class='note-content'>
+                        
+                    
+
+<p>如何解决安卓（系统版本低） CSS3 动画问题—高性能动画 <br>
+目前对提升移动端CSS3动画体验的主要方法有几点：</p>
+
+<p>尽可能多的利用硬件能力，如使用3D变形来开启GPU加速</p>
+
+<p>-webkit-transform translate3d(0, 0, 0); <br>
+-moz-transform translate3d(0, 0, 0); <br>
+-ms-transform translate3d(0, 0, 0); <br>
+transform translate3d(0, 0, 0); <br>
+如动画过程有闪烁（通常发生在动画开始的时候），可以尝试下面的Hack：</p>
+
+<p>-webkit-backface-visibility hidden; <br>
+-moz-backface-visibility hidden; <br>
+-ms-backface-visibility hidden; <br>
+backface-visibility hidden;</p>
+
+<p>-webkit-perspective 1000; <br>
+-moz-perspective 1000; <br>
+-ms-perspective 1000; <br>
+perspective 1000; <br>
+如下面一个元素通过translate3d右移500px的动画流畅度会明显优于使用left属性：</p>
+
+
+
+<h1 id="ball-1">ball-1 {</h1>
+
+<p>transition -webkit-transform .5s ease; <br>
+  -webkit-transform translate3d(0, 0, 0); <br>
+}</p>
+
+
+
+<h1 id="ball-1slidein">ball-1.slidein {</h1>
+
+<p>-webkit-transform translate3d(500px, 0, 0); <br>
+}</p>
+
+
+
+<h1 id="ball-2">ball-2 {</h1>
+
+<p>transition left .5s ease; <br>
+  left 0; <br>
+}</p>
+
+
+
+<h1 id="ball-2slidein">ball-2.slidein {</h1>
+
+<p>left 500px; <br>
+} <br>
+注：3D变形会消耗更多的内存与功耗，应确实有性能问题时才去使用它，兼在权衡</p>
+
+<p>尽可能少的使用box-shadows与gradients</p>
+
+<p>box-shadows与gradients往往都是页面的性能杀手，尤其是在一个元素同时都使用了它们，所以拥抱扁平化设计吧。</p>
+
+<p>尽可能的让动画元素不在文档流中，以减少重排</p>
+
+<p>position fixed; <br>
+position absolute; <br>
+优化 DOM layout 性能</p>
+
+<p>我们从实例开始描述这个主题：</p>
+
+<p>var newWidth = aDiv.offsetWidth + 10; <br>
+aDiv.style.width = newWidth + ‘px’; <br>
+var newHeight = aDiv.offsetHeight + 10; <br>
+aDiv.style.height = newHeight + ‘px’;</p>
+
+<p>var newWidth = aDiv.offsetWidth + 10; <br>
+var newHeight = aDiv.offsetHeight + 10; <br>
+aDiv.style.width = newWidth + ‘px’; <br>
+aDiv.style.height = newHeight + ‘px’; <br>
+这是两段能力上完全等同的代码，显式的差异正如我们所见，只有执行顺序的区别。但真是如此吗？下面是加了说明注释的代码版本，很好的阐述了其中的进一步差异：</p>
+
+<p>触发两次 layout <br>
+var newWidth = aDiv.offsetWidth + 10;    Read <br>
+aDiv.style.width = newWidth + ‘px’;      Write <br>
+var newHeight = aDiv.offsetHeight + 10;  Read <br>
+aDiv.style.height = newHeight + ‘px’;    Write</p>
+
+<p>只触发一次 layout <br>
+var newWidth = aDiv.offsetWidth + 10;    Read <br>
+var newHeight = aDiv.offsetHeight + 10;  Read <br>
+aDiv.style.width = newWidth + ‘px’;      Write <br>
+aDiv.style.height = newHeight + ‘px’;    Write <br>
+从注释中可找到规律，连续的读取offsetWidthHeight属性与连续的设置widthheight属性，相比分别读取设置单个属性可少触发一次layout。</p>
+
+<p>从结论看似乎与执行队列有关，没错，这是浏览器的优化策略。所有可触发layout的操作都会被暂时放入 layout-queue 中，等到必须更新的时候，再计算整个队列中所有操作影响的结果，如此就可只进行一次的layout，从而提升性能。</p>
+
+<p>关键一，可触发layout的操作，哪些操作下会layout的更新（也称为reflow或者relayout）？</p></div></body></html>

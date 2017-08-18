@@ -1,0 +1,447 @@
+<!DOCTYPE html><html><head><title>Node脚手架编写初学者教程</title><meta charset='utf-8'><link href='https://dn-maxiang.qbox.me/res-min/themes/marxico.css' rel='stylesheet'><style></style></head><body><div id='preview-contents' class='note-content'>
+                        
+                    
+
+
+
+<h1 id="node脚手架编写初学者教程">Node脚手架编写初学者教程</h1>
+
+<p><a href="https://github.com/antgod/any-cli.git" target="_blank">完整的脚手架代码</a></p>
+
+
+
+<h2 id="编写你的第一个脚手架">编写你的第一个脚手架</h2>
+
+
+
+<h3 id="前言">前言</h3>
+
+<p>随着NodeJs的崛起，现代前端工程已经变得越来越复杂。前端框架如雨后春笋。从Backbone,Ember,Knockout,Spine,Batman框架的崛起到Angular,React,Vue平分天下，我们经历太多代码风格的变革。</p>
+
+<p>不可避免学习新的框架，复杂的环境又让初学者很难入手。就拿React来说，我们要使用Babel,Webpack等模块辅助编译，我们还需要Redux,Immutable,Mocha,Jest,Antd或者其他第三方包（如eslint,lodash,moment,debug,uuid,request,co,koa等）辅助业务需求。</p>
+
+<p><strong>目录结构越来越复杂，为了让每个项目使用的统一的技术和目录结构，各大模块纷纷推出了自己的脚手架工具，比如redux-cli,create-react-app,vue-cli等。现在就让我们以any-cli为例，编写自己的脚手架工具吧。</strong></p>
+
+
+
+<h3 id="核心原理">核心原理</h3>
+
+<p><code>yoeman</code>搭建项目需要提供<code>yoeman-generator</code>。<code>yoeman-generator</code>本质上就是一个具备完整文件结构的模板，用户需要手动地把这些模板下载到本地，然后<code>yoeman</code>就会根据这些模板自动生成各种不同的项目。</p>
+
+<p>vue-cli提供了相当丰富的选项和设定功能，但是其本质也是从远程仓库把不同的模版拉取到本地，而并非是什么“本地生成”的黑科技。</p>
+
+<p><strong>这样看来，思路也就有了——首先建立不同的模板，然后脚手架根据用户的指令引用模板生成实际项目。</strong></p>
+
+<p><strong>模板既可以内置在脚手架当中，也可以部署在远程仓库。</strong></p>
+
+<ul><li><p>内置在脚手架中，使用<code>node file</code>操作来把模板克隆到本地。</p>
+
+<p>优点是不用新建仓库保存模板。尤其是有多项目模板时候，比如<code>init pc</code>与<code>init mobile</code>分别生成两个不同项目，我们只需要一个仓库保存脚手架即可。</p>
+
+<p>第二个优点：无论脚手架还是模板变更，只需要提交一次。</p></li>
+<li><p>部署在远程仓库，使用<code>git clone</code>把项目克隆到本地。</p>
+
+<p>优点是每次模板有代码变更时，无需让用户本地升级脚手架。</p>
+
+<p>如果模板内置在脚手架里，每次模板变更，因为是在同一仓库，所以用户需要升级脚手架。而部署在远程仓库则不同，我们只需要git clone即可获取最新模板。</p></li>
+</ul>
+
+
+
+<h3 id="整体流程">整体流程</h3>
+
+<p>按照标准惯例，先看下整体流程（github不支持流程图flow类型展示，好搓，害的我又把流程代码改成这种挫样式）</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs clean">添加模板-&gt;输入模板名-&gt;是否有重名模板?-添加成功:给出提示<br><br>删除模板-&gt;输入模板名-&gt;是否有模板?-删除成功:给出提示<br><br>模板列表-&gt;列出所有模板<br><br>初始化模板-输入模板名-是否有模板?-输入模块名-克隆远程仓库到本地模块-切换分支:给出提示<br></code></pre>
+
+
+
+<h3 id="技术要点">技术要点</h3>
+
+
+
+<h4 id="processcwd与dirname">process.cwd()与__dirname</h4>
+
+<p>命令都位于脚手架中，而执行命令的地方常常在模板项目中。</p>
+
+<p>比如脚手架路径是<code>/usr/local/lib/node_modules/any-cli/lib/</code>，执行全局脚手架命令路径是<code>/Users/admin/test/</code>。</p>
+
+<p>想要脚手架代码想读脚手架目录下的<code>a.js</code>文件写入模板项目（执行全局脚手架命令位置）<code>b.js</code>中，那么readFile的路径为<code>path.resolve(__dirname,'a.js')</code>,writeFile路径为<code>path.resolve(process.cwd(),'b.js')</code>。就这么简单。</p>
+
+
+
+<h4 id="bin">bin</h4>
+
+<p>许多npm模块有<strong>可执行文件</strong>希望被安装到全局系统路径。</p>
+
+<p>需要在package.json中提供一个bin字段，它是一个命令名称到文件路径的映射。如下：</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs xquery"><span class="hljs-string">"bin"</span>: {<br>    <span class="hljs-string">"any"</span>: <span class="hljs-string">"./bin/any"</span><br>},<br></code></pre>
+
+<p>这样会把any命令和本地可执行文件./bin/any建立映射。也就是说，当你在命令行执行any命令时，会执行./bin/any可执行文件。</p>
+
+<ul><li><p>全局安装，npm将会使用符号链接把这些文件链接到/usr/local/bin目录下，系统的二进制命令全部在这里。</p></li>
+<li><p>如果是本地安装，会链接到./node_modules/.bin目录下。只有当前目录运行any命令时，才会生效。</p></li>
+</ul>
+
+<p>如果你只有一个可执行文件，那么它的名字应该和包名相同，此时只需要提供这个文件路径(字符串)，比如：</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs json">{<br>    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"any-cli"</span>,<br>    <span class="hljs-attr">"version"</span>: <span class="hljs-string">"1.2.5"</span>,<br>    <span class="hljs-attr">"bin"</span>: <span class="hljs-string">"./bin/any"</span><br>}<br></code></pre>
+
+<p>等同于：</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs json">{<br>    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"any-cli"</span>,<br>    <span class="hljs-attr">"version"</span>: <span class="hljs-string">"1.2.5"</span>,<br>    <span class="hljs-attr">"bin"</span>: {<br>        <span class="hljs-attr">"any-cli"</span>: <span class="hljs-string">"./bin/any"</span><br>    }<br>}<br></code></pre>
+
+
+
+<h4 id="npm-link">npm link</h4>
+
+<ul><li><p>本地目录链接到全局模块</p>
+
+<p>npm link可以把本地目录链接到全局模块下。</p>
+
+<p>对于开发模块者而言，这算是最有价值的命令了。比如我们开发<code>any-cli</code>模块时，需要在命令行中使用<code>any</code>来测试我们的代码（开发中没有发布，也就无法全局安装模块）。不要担心，使用npm link一切变得非常容易。</p>
+
+<p>比如我们<code>any-cli</code>项目package.json里，有一条命令如下:</p>
+
+<pre class="prettyprint hljs-dark"><code class="hljs xquery"><span class="hljs-string">"bin"</span>: {<br>    <span class="hljs-string">"any"</span>: <span class="hljs-string">"./bin/any"</span><br>},<br></code></pre>
+
+<p>命令行中使用npm link</p>
+
+<pre class="prettyprint hljs-dark"><code class="hljs coffeescript">$ <span class="hljs-built_in">npm</span> link<br></code></pre>
+
+<p>得到以下结果</p>
+
+<pre class="prettyprint hljs-dark"><code class="hljs crystal">/usr/local/bin/any -&gt; <span class="hljs-regexp">/usr/local</span><span class="hljs-regexp">/lib/node</span>_modules/any-cli/bin/any<br>/usr/local/<span class="hljs-class"><span class="hljs-keyword">lib</span>/<span class="hljs-title">node_modules</span>/<span class="hljs-title">any</span>-<span class="hljs-title">cli</span> -&gt; /<span class="hljs-title">Users</span>/<span class="hljs-title">lihongji</span>/<span class="hljs-title">work</span>/<span class="hljs-title">any</span>-<span class="hljs-title">cli</span></span><br></code></pre>
+
+<p>**分别进入/usr/local/bin与/usr/local/lib/node_modules目录下查看。我们发现里面分别多了<code>any</code>可执行文件与<code>any-cli</code>目录。 <br>
+这样，每次本地仓库有改动时，全局命令也随之更新。我们就可以边开发边测试了**。</p></li>
+<li><p>本地目录引用全局模块</p>
+
+<p>如果你还有其他模块<code>any-cli-test</code>依赖于<code>any-cli</code>模块，你可以使用如下命令把全局<code>any</code>链接到当前模块下。</p>
+
+<pre class="prettyprint hljs-dark"><code class="hljs elixir"><span class="hljs-variable">$ </span>cd ~<span class="hljs-regexp">/work/any</span>-cli-test<br><span class="hljs-variable">$ </span>npm link any-cli <span class="hljs-comment"># 把全局模式的模块链接到本地</span><br></code></pre>
+
+<p>npm link test 命令会去<code>/usr/local/lib/node_modules</code>目录下查找 any-cli的模块，找到这个模块后把<code>/usr/local/lib/node_modules/any-cli</code> 的目录链接到当前<code>any-cli-test</code>下的<code>./node_modules/any-cli</code> 目录上。</p>
+
+<p>现在任何 test 模块上的改动都会直接映射到 test-example 上来。</p></li>
+</ul>
+
+
+
+<h4 id="其他字段engine与enginestrict">其他字段：engine与engineStrict</h4>
+
+<pre class="prettyprint hljs-dark"><code class="hljs css"><span class="hljs-selector-tag">node7</span><span class="hljs-selector-class">.6</span><span class="hljs-selector-class">.0</span>开始支持<span class="hljs-selector-tag">async</span>，如何保证用户本地安装<span class="hljs-selector-tag">node7</span><span class="hljs-selector-class">.6</span><span class="hljs-selector-class">.0</span>以上版本呢<br></code></pre>
+
+<ul><li><p>engine <br>
+你可以在本地安装node特定版本：</p>
+
+<pre class="prettyprint hljs-dark"><code class="hljs xquery"><span class="hljs-string">"engines"</span>: { <span class="hljs-string">"install-node"</span>: <span class="hljs-string">"7.6.0"</span> }<br></code></pre>
+
+<p>安装后，在本地node_modules/.bin目录下会多一个node可执行文件。本地的任何node命令都会使用这个版本的node可执行文件。</p>
+
+<p>你可以指定工作的node的版本：</p>
+
+<pre class="prettyprint hljs-dark"><code class="hljs json">{ <span class="hljs-attr">"engines"</span> : { <span class="hljs-attr">"node"</span> : <span class="hljs-string">"&gt;=0.10.3 &lt;0.12"</span> } }<br></code></pre>
+
+<p>并且，像<code>dependensies</code>一样，如果你不指定版本或者指定“*”作为版本，那么所有版本的node都可以。</p>
+
+<p>如果指定一个<code>engines</code>字段，那么<code>npm</code>会需要<code>node</code>在里面，如果“engines”被省略，npm会假定它在node上工作。</p>
+
+<p>你也可以用<code>engines</code>字段来指定哪一个<code>npm</code>版本能更好地初始化你的程序，如：</p>
+
+<pre class="prettyprint hljs-dark"><code class="hljs json">{ <span class="hljs-attr">"engines"</span> : { <span class="hljs-attr">"npm"</span> : <span class="hljs-string">"~1.0.20"</span> } }<br></code></pre>
+
+<p><strong>除非用户设置<code>engine-strict</code>标记，这个字段只是建议值。</strong></p></li>
+<li><p>engineStrict <br>
+如果你确定你的模块一定不会运行在你指定版本之外的<code>node</code>或者<code>npm</code>上，你可以在<code>package.json</code>文件中设置<code>engineStrict:true</code>。它会重写用户的<code>engine-strict</code>设置。</p></li>
+</ul>
+
+
+
+<h4 id="第三方包pre-commitnode-configcommanderchalk">第三方包：pre-commit/node-config/commander/chalk</h4>
+
+<p>这几个包分别用来处理提交执行脚本，全局配置文件管理与命令行处理。会在代码中一一讲解。</p>
+
+
+
+<h3 id="代码文件">代码文件</h3>
+
+<p>创建<code>any-cli</code>项目</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs stata">work<span class="hljs-variable">$mkdir</span> any-<span class="hljs-keyword">cli</span><br>work<span class="hljs-variable">$cd</span> any-<span class="hljs-keyword">cli</span><br>any-<span class="hljs-keyword">cli</span><span class="hljs-variable">$git</span> init &amp;&amp; npm init<br></code></pre>
+
+<p>package.json内容</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs json">{<br>  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"any-cli"</span>,<br>  <span class="hljs-attr">"version"</span>: <span class="hljs-string">"1.0.0"</span>,<br>  <span class="hljs-attr">"description"</span>: <span class="hljs-string">""</span>,<br>  <span class="hljs-attr">"main"</span>: <span class="hljs-string">"index.js"</span>,<br>  <span class="hljs-attr">"scripts"</span>: {<br>    <span class="hljs-attr">"pub"</span>: <span class="hljs-string">"npm version patch &amp;&amp; npm publish"</span>,<br>    <span class="hljs-attr">"pre-commit"</span>: <span class="hljs-string">"eslint src"</span><br>  },<br>  <span class="hljs-attr">"author"</span>: <span class="hljs-string">"antgod"</span>,<br>  <span class="hljs-attr">"devDependencies"</span>: {<br>    <span class="hljs-attr">"eslint"</span>: <span class="hljs-string">"^3.16.1"</span>,<br>    <span class="hljs-attr">"eslint-config-airbnb"</span>: <span class="hljs-string">"^12.0.0"</span>,<br>    <span class="hljs-attr">"eslint-plugin-babel"</span>: <span class="hljs-string">"^3.0.0"</span>,<br>    <span class="hljs-attr">"eslint-plugin-import"</span>: <span class="hljs-string">"^1.6.1"</span>,<br>    <span class="hljs-attr">"eslint-plugin-jsx-a11y"</span>: <span class="hljs-string">"^2.0.1"</span>,<br>    <span class="hljs-attr">"eslint-plugin-markdown"</span>: <span class="hljs-string">"*"</span>,<br>    <span class="hljs-attr">"eslint-plugin-react"</span>: <span class="hljs-string">"^6.3.0"</span>,<br>    <span class="hljs-attr">"eslint-tinker"</span>: <span class="hljs-string">"^0.3.2"</span>,<br>    <span class="hljs-attr">"pre-commit"</span>: <span class="hljs-string">"^1.2.2"</span><br>  },<br>  <span class="hljs-attr">"dependencies"</span>: {<br>    <span class="hljs-attr">"chalk"</span>: <span class="hljs-string">"^1.1.3"</span>,<br>    <span class="hljs-attr">"child_process"</span>: <span class="hljs-string">"^1.0.2"</span>,<br>    <span class="hljs-attr">"commander"</span>: <span class="hljs-string">"^2.9.0"</span>,<br>    <span class="hljs-attr">"prompt"</span>: <span class="hljs-string">"^1.0.0"</span><br>  },<br>  <span class="hljs-attr">"engines"</span>: {<br>    <span class="hljs-attr">"install-node"</span>: <span class="hljs-string">"7.6.0"</span><br>  },<br>  <span class="hljs-attr">"pre-commit"</span>: [<br>    <span class="hljs-string">"pre-commit"</span><br>  ],<br>  <span class="hljs-attr">"bin"</span>: {<br>    <span class="hljs-attr">"any"</span>: <span class="hljs-string">"./bin/any"</span><br>  },<br>  <span class="hljs-attr">"license"</span>: <span class="hljs-string">"ISC"</span><br>}<br></code></pre>
+
+<ul><li>字段bin下面配置被当做命令行可执行命令。指向/bin下面的any文件。</li>
+<li>字段engines用来当前目录安装7.6.0版本node，可直接使用async函数而无需要再使用co模块。</li>
+<li><p>pre-commit用来做提交前代码检查，运行pre-commit脚本，也就是eslint。</p>
+
+<p>在根目录下建立/bin 文件夹，创建any文件（无后缀名）。这个 /bin/any是整个脚手架的入口文件，所以我们首先对它进行编写。</p></li>
+</ul>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs php"><span class="hljs-comment"># !/usr/bin/env node</span><br><span class="hljs-keyword">const</span> add = <span class="hljs-keyword">require</span>(<span class="hljs-string">'../src/command/add'</span>)<br><span class="hljs-keyword">const</span> <span class="hljs-keyword">list</span> = <span class="hljs-keyword">require</span>(<span class="hljs-string">'../src/command/list'</span>)<br><span class="hljs-keyword">const</span> init = <span class="hljs-keyword">require</span>(<span class="hljs-string">'../src/command/init'</span>)<br><span class="hljs-keyword">const</span> del = <span class="hljs-keyword">require</span>(<span class="hljs-string">'../src/command/del'</span>)<br><span class="hljs-keyword">const</span> program = <span class="hljs-keyword">require</span>(<span class="hljs-string">'commander'</span>)<br><span class="hljs-keyword">const</span> { version } = <span class="hljs-keyword">require</span>(<span class="hljs-string">'../package'</span>)<br><br><span class="hljs-comment">// 定义当前版本</span><br>program<br>.version(version)<br><br>program.parse(process.argv)<br><span class="hljs-keyword">if</span> (!program.args.length) {<br>  program.help()<br>}<br></code></pre>
+
+<p>运行npm link，把当前项目链接到全局。这样就可以直接在命令行使用any命令测试/bin/any下面的代码</p>
+
+<pre class="prettyprint hljs-dark"><code class="hljs perl">如果没有权限，请自行百度，使用<span class="hljs-keyword">chmod</span> <span class="hljs-number">777</span>为usr/<span class="hljs-keyword">local</span>目录添加权限<br></code></pre>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs typescript"><span class="hljs-built_in">any</span>-cli<span class="hljs-meta">@npm</span> link<br><span class="hljs-built_in">any</span>-cli<span class="hljs-meta">@any</span><br></code></pre>
+
+<p>我们继续在/bin/any中添加代码</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs less"><span class="hljs-comment">// 定义使用方法</span><br><span class="hljs-selector-tag">program</span><br><span class="hljs-selector-class">.command</span>(<span class="hljs-string">'add'</span>)<br><span class="hljs-selector-class">.description</span>(<span class="hljs-string">'add template'</span>)<br><span class="hljs-selector-class">.alias</span>(<span class="hljs-string">'a'</span>)<br><span class="hljs-selector-class">.action</span>(add)<br><br><span class="hljs-selector-tag">program</span><br><span class="hljs-selector-class">.command</span>(<span class="hljs-string">'del'</span>)<br><span class="hljs-selector-class">.description</span>(<span class="hljs-string">'Delete a template'</span>)<br><span class="hljs-selector-class">.alias</span>(<span class="hljs-string">'d'</span>)<br><span class="hljs-selector-class">.action</span>(del)<br><br><span class="hljs-selector-tag">program</span><br><span class="hljs-selector-class">.command</span>(<span class="hljs-string">'list'</span>)<br><span class="hljs-selector-class">.description</span>(<span class="hljs-string">'List all the templates'</span>)<br><span class="hljs-selector-class">.alias</span>(<span class="hljs-string">'l'</span>)<br><span class="hljs-selector-class">.action</span>(list)<br><br> <span class="hljs-selector-tag">program</span><br><span class="hljs-selector-class">.command</span>(<span class="hljs-string">'init'</span>)<br><span class="hljs-selector-class">.description</span>(<span class="hljs-string">'Generate a new project'</span>)<br><span class="hljs-selector-class">.alias</span>(<span class="hljs-string">'i'</span>)<br><span class="hljs-selector-class">.action</span>(init)<br></code></pre>
+
+<p>command用来配置any命令的参数，alias配置缩写，action配置运行什么函数。其他就不用多说了吧，程序员你懂的。</p>
+
+<pre class="prettyprint hljs-dark"><code class="hljs markdown">commander 的具体使用方法在这里就不展开了，可以直接到 [<span class="hljs-string">官网</span>][<span class="hljs-symbol">2</span>] 去看详细的文档。<br></code></pre>
+
+<p>使用any命令，看到输出如下，证明入口文件已经编写完成了。</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs http">  <span class="hljs-attribute">Usage</span>: any [options] [command]<br><br><span class="vim"><br>  Command<span class="hljs-variable">s:</span><br><br>    <span class="hljs-built_in">add</span>|<span class="hljs-keyword">a</span>    <span class="hljs-built_in">add</span> template<br>    del|d    Delete <span class="hljs-keyword">a</span> template<br>    <span class="hljs-keyword">list</span>|<span class="hljs-keyword">l</span>   List <span class="hljs-keyword">all</span> the templates<br>    init|i   Generate <span class="hljs-keyword">a</span> <span class="hljs-keyword">new</span> project<br><br>  Option<span class="hljs-variable">s:</span><br><br>    -h, --<span class="hljs-keyword">help</span>     output usage information<br>    -V, --<span class="hljs-keyword">version</span>  output the <span class="hljs-keyword">version</span> <span class="hljs-keyword">number</span></span><br></code></pre>
+
+<p>接着，我们创建src/command目录，下面分别创建刚才的4个参数所对应的文件。文件内容是具体业务代码（分别对应增删查初始化），在此不做介绍。请参考<a href="https://github.com/antgod/any-cli/tree/master/src/command" target="_blank">github链接</a>。代码使用了函数式编程，需要有点函数式基础。</p>
+
+
+
+<h1 id="node脚手架编写初学者教程-1">Node脚手架编写初学者教程</h1>
+
+<p><a href="https://github.com/antgod/any-cli.git" target="_blank">完整的脚手架代码</a></p>
+
+
+
+<h2 id="编写你的第一个脚手架-1">编写你的第一个脚手架</h2>
+
+
+
+<h3 id="前言-1">前言</h3>
+
+<p>随着NodeJs的崛起，现代前端工程已经变得越来越复杂。前端框架如雨后春笋。从Backbone,Ember,Knockout,Spine,Batman框架的崛起到Angular,React,Vue平分天下，我们经历太多代码风格的变革。</p>
+
+<p>不可避免学习新的框架，复杂的环境又让初学者很难入手。就拿React来说，我们要使用Babel,Webpack等模块辅助编译，我们还需要Redux,Immutable,Mocha,Jest,Antd或者其他第三方包（如eslint,lodash,moment,debug,uuid,request,co,koa等）辅助业务需求。</p>
+
+<p><strong>目录结构越来越复杂，为了让每个项目使用的统一的技术和目录结构，各大模块纷纷推出了自己的脚手架工具，比如redux-cli,create-react-app,vue-cli等。现在就让我们以any-cli为例，编写自己的脚手架工具吧。</strong></p>
+
+
+
+<h3 id="核心原理-1">核心原理</h3>
+
+<p><code>yoeman</code>搭建项目需要提供<code>yoeman-generator</code>。<code>yoeman-generator</code>本质上就是一个具备完整文件结构的模板，用户需要手动地把这些模板下载到本地，然后<code>yoeman</code>就会根据这些模板自动生成各种不同的项目。</p>
+
+<p>vue-cli提供了相当丰富的选项和设定功能，但是其本质也是从远程仓库把不同的模版拉取到本地，而并非是什么“本地生成”的黑科技。</p>
+
+<p><strong>这样看来，思路也就有了——首先建立不同的模板，然后脚手架根据用户的指令引用模板生成实际项目。</strong></p>
+
+<p><strong>模板既可以内置在脚手架当中，也可以部署在远程仓库。</strong></p>
+
+<ul><li><p>内置在脚手架中，使用<code>node file</code>操作来把模板克隆到本地。</p>
+
+<p>优点是不用新建仓库保存模板。尤其是有多项目模板时候，比如<code>init pc</code>与<code>init mobile</code>分别生成两个不同项目，我们只需要一个仓库保存脚手架即可。</p>
+
+<p>第二个优点：无论脚手架还是模板变更，只需要提交一次。</p></li>
+<li><p>部署在远程仓库，使用<code>git clone</code>把项目克隆到本地。</p>
+
+<p>优点是每次模板有代码变更时，无需让用户本地升级脚手架。</p>
+
+<p>如果模板内置在脚手架里，每次模板变更，因为是在同一仓库，所以用户需要升级脚手架。而部署在远程仓库则不同，我们只需要git clone即可获取最新模板。</p></li>
+</ul>
+
+
+
+<h3 id="整体流程-1">整体流程</h3>
+
+<p>按照标准惯例，先看下整体流程（github不支持流程图flow类型展示，好搓，害的我又把流程代码改成这种挫样式）</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs clean">添加模板-&gt;输入模板名-&gt;是否有重名模板?-添加成功:给出提示<br><br>删除模板-&gt;输入模板名-&gt;是否有模板?-删除成功:给出提示<br><br>模板列表-&gt;列出所有模板<br><br>初始化模板-输入模板名-是否有模板?-输入模块名-克隆远程仓库到本地模块-切换分支:给出提示<br></code></pre>
+
+
+
+<h3 id="技术要点-1">技术要点</h3>
+
+
+
+<h4 id="processcwd与dirname-1">process.cwd()与__dirname</h4>
+
+<p>命令都位于脚手架中，而执行命令的地方常常在模板项目中。</p>
+
+<p>比如脚手架路径是<code>/usr/local/lib/node_modules/any-cli/lib/</code>，执行全局脚手架命令路径是<code>/Users/admin/test/</code>。</p>
+
+<p>想要脚手架代码想读脚手架目录下的<code>a.js</code>文件写入模板项目（执行全局脚手架命令位置）<code>b.js</code>中，那么readFile的路径为<code>path.resolve(__dirname,'a.js')</code>,writeFile路径为<code>path.resolve(process.cwd(),'b.js')</code>。就这么简单。</p>
+
+
+
+<h4 id="bin-1">bin</h4>
+
+<p>许多npm模块有<strong>可执行文件</strong>希望被安装到全局系统路径。</p>
+
+<p>需要在package.json中提供一个bin字段，它是一个命令名称到文件路径的映射。如下：</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs xquery"><span class="hljs-string">"bin"</span>: {<br>    <span class="hljs-string">"any"</span>: <span class="hljs-string">"./bin/any"</span><br>},<br></code></pre>
+
+<p>这样会把any命令和本地可执行文件./bin/any建立映射。也就是说，当你在命令行执行any命令时，会执行./bin/any可执行文件。</p>
+
+<ul><li><p>全局安装，npm将会使用符号链接把这些文件链接到/usr/local/bin目录下，系统的二进制命令全部在这里。</p></li>
+<li><p>如果是本地安装，会链接到./node_modules/.bin目录下。只有当前目录运行any命令时，才会生效。</p></li>
+</ul>
+
+<p>如果你只有一个可执行文件，那么它的名字应该和包名相同，此时只需要提供这个文件路径(字符串)，比如：</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs json">{<br>    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"any-cli"</span>,<br>    <span class="hljs-attr">"version"</span>: <span class="hljs-string">"1.2.5"</span>,<br>    <span class="hljs-attr">"bin"</span>: <span class="hljs-string">"./bin/any"</span><br>}<br></code></pre>
+
+<p>等同于：</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs json">{<br>    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"any-cli"</span>,<br>    <span class="hljs-attr">"version"</span>: <span class="hljs-string">"1.2.5"</span>,<br>    <span class="hljs-attr">"bin"</span>: {<br>        <span class="hljs-attr">"any-cli"</span>: <span class="hljs-string">"./bin/any"</span><br>    }<br>}<br></code></pre>
+
+
+
+<h4 id="npm-link-1">npm link</h4>
+
+<ul><li><p>本地目录链接到全局模块</p>
+
+<p>npm link可以把本地目录链接到全局模块下。</p>
+
+<p>对于开发模块者而言，这算是最有价值的命令了。比如我们开发<code>any-cli</code>模块时，需要在命令行中使用<code>any</code>来测试我们的代码（开发中没有发布，也就无法全局安装模块）。不要担心，使用npm link一切变得非常容易。</p>
+
+<p>比如我们<code>any-cli</code>项目package.json里，有一条命令如下:</p>
+
+<pre class="prettyprint hljs-dark"><code class="hljs xquery"><span class="hljs-string">"bin"</span>: {<br>    <span class="hljs-string">"any"</span>: <span class="hljs-string">"./bin/any"</span><br>},<br></code></pre>
+
+<p>命令行中使用npm link</p>
+
+<pre class="prettyprint hljs-dark"><code class="hljs coffeescript">$ <span class="hljs-built_in">npm</span> link<br></code></pre>
+
+<p>得到以下结果</p>
+
+<pre class="prettyprint hljs-dark"><code class="hljs crystal">/usr/local/bin/any -&gt; <span class="hljs-regexp">/usr/local</span><span class="hljs-regexp">/lib/node</span>_modules/any-cli/bin/any<br>/usr/local/<span class="hljs-class"><span class="hljs-keyword">lib</span>/<span class="hljs-title">node_modules</span>/<span class="hljs-title">any</span>-<span class="hljs-title">cli</span> -&gt; /<span class="hljs-title">Users</span>/<span class="hljs-title">lihongji</span>/<span class="hljs-title">work</span>/<span class="hljs-title">any</span>-<span class="hljs-title">cli</span></span><br></code></pre>
+
+<p>**分别进入/usr/local/bin与/usr/local/lib/node_modules目录下查看。我们发现里面分别多了<code>any</code>可执行文件与<code>any-cli</code>目录。 <br>
+这样，每次本地仓库有改动时，全局命令也随之更新。我们就可以边开发边测试了**。</p></li>
+<li><p>本地目录引用全局模块</p>
+
+<p>如果你还有其他模块<code>any-cli-test</code>依赖于<code>any-cli</code>模块，你可以使用如下命令把全局<code>any</code>链接到当前模块下。</p>
+
+<pre class="prettyprint hljs-dark"><code class="hljs elixir"><span class="hljs-variable">$ </span>cd ~<span class="hljs-regexp">/work/any</span>-cli-test<br><span class="hljs-variable">$ </span>npm link any-cli <span class="hljs-comment"># 把全局模式的模块链接到本地</span><br></code></pre>
+
+<p>npm link test 命令会去<code>/usr/local/lib/node_modules</code>目录下查找 any-cli的模块，找到这个模块后把<code>/usr/local/lib/node_modules/any-cli</code> 的目录链接到当前<code>any-cli-test</code>下的<code>./node_modules/any-cli</code> 目录上。</p>
+
+<p>现在任何 test 模块上的改动都会直接映射到 test-example 上来。</p></li>
+</ul>
+
+
+
+<h4 id="其他字段engine与enginestrict-1">其他字段：engine与engineStrict</h4>
+
+<pre class="prettyprint hljs-dark"><code class="hljs css"><span class="hljs-selector-tag">node7</span><span class="hljs-selector-class">.6</span><span class="hljs-selector-class">.0</span>开始支持<span class="hljs-selector-tag">async</span>，如何保证用户本地安装<span class="hljs-selector-tag">node7</span><span class="hljs-selector-class">.6</span><span class="hljs-selector-class">.0</span>以上版本呢<br></code></pre>
+
+<ul><li><p>engine <br>
+你可以在本地安装node特定版本：</p>
+
+<pre class="prettyprint hljs-dark"><code class="hljs xquery"><span class="hljs-string">"engines"</span>: { <span class="hljs-string">"install-node"</span>: <span class="hljs-string">"7.6.0"</span> }<br></code></pre>
+
+<p>安装后，在本地node_modules/.bin目录下会多一个node可执行文件。本地的任何node命令都会使用这个版本的node可执行文件。</p>
+
+<p>你可以指定工作的node的版本：</p>
+
+<pre class="prettyprint hljs-dark"><code class="hljs json">{ <span class="hljs-attr">"engines"</span> : { <span class="hljs-attr">"node"</span> : <span class="hljs-string">"&gt;=0.10.3 &lt;0.12"</span> } }<br></code></pre>
+
+<p>并且，像<code>dependensies</code>一样，如果你不指定版本或者指定“*”作为版本，那么所有版本的node都可以。</p>
+
+<p>如果指定一个<code>engines</code>字段，那么<code>npm</code>会需要<code>node</code>在里面，如果“engines”被省略，npm会假定它在node上工作。</p>
+
+<p>你也可以用<code>engines</code>字段来指定哪一个<code>npm</code>版本能更好地初始化你的程序，如：</p>
+
+<pre class="prettyprint hljs-dark"><code class="hljs json">{ <span class="hljs-attr">"engines"</span> : { <span class="hljs-attr">"npm"</span> : <span class="hljs-string">"~1.0.20"</span> } }<br></code></pre>
+
+<p><strong>除非用户设置<code>engine-strict</code>标记，这个字段只是建议值。</strong></p></li>
+<li><p>engineStrict <br>
+如果你确定你的模块一定不会运行在你指定版本之外的<code>node</code>或者<code>npm</code>上，你可以在<code>package.json</code>文件中设置<code>engineStrict:true</code>。它会重写用户的<code>engine-strict</code>设置。</p></li>
+</ul>
+
+
+
+<h4 id="第三方包pre-commitnode-configcommanderchalk-1">第三方包：pre-commit/node-config/commander/chalk</h4>
+
+<p>这几个包分别用来处理提交执行脚本，全局配置文件管理与命令行处理。会在代码中一一讲解。</p>
+
+
+
+<h3 id="代码文件-1">代码文件</h3>
+
+<p>创建<code>any-cli</code>项目</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs stata">work<span class="hljs-variable">$mkdir</span> any-<span class="hljs-keyword">cli</span><br>work<span class="hljs-variable">$cd</span> any-<span class="hljs-keyword">cli</span><br>any-<span class="hljs-keyword">cli</span><span class="hljs-variable">$git</span> init &amp;&amp; npm init<br></code></pre>
+
+<p>package.json内容</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs json">{<br>  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"any-cli"</span>,<br>  <span class="hljs-attr">"version"</span>: <span class="hljs-string">"1.0.0"</span>,<br>  <span class="hljs-attr">"description"</span>: <span class="hljs-string">""</span>,<br>  <span class="hljs-attr">"main"</span>: <span class="hljs-string">"index.js"</span>,<br>  <span class="hljs-attr">"scripts"</span>: {<br>    <span class="hljs-attr">"pub"</span>: <span class="hljs-string">"npm version patch &amp;&amp; npm publish"</span>,<br>    <span class="hljs-attr">"pre-commit"</span>: <span class="hljs-string">"eslint src"</span><br>  },<br>  <span class="hljs-attr">"author"</span>: <span class="hljs-string">"antgod"</span>,<br>  <span class="hljs-attr">"devDependencies"</span>: {<br>    <span class="hljs-attr">"eslint"</span>: <span class="hljs-string">"^3.16.1"</span>,<br>    <span class="hljs-attr">"eslint-config-airbnb"</span>: <span class="hljs-string">"^12.0.0"</span>,<br>    <span class="hljs-attr">"eslint-plugin-babel"</span>: <span class="hljs-string">"^3.0.0"</span>,<br>    <span class="hljs-attr">"eslint-plugin-import"</span>: <span class="hljs-string">"^1.6.1"</span>,<br>    <span class="hljs-attr">"eslint-plugin-jsx-a11y"</span>: <span class="hljs-string">"^2.0.1"</span>,<br>    <span class="hljs-attr">"eslint-plugin-markdown"</span>: <span class="hljs-string">"*"</span>,<br>    <span class="hljs-attr">"eslint-plugin-react"</span>: <span class="hljs-string">"^6.3.0"</span>,<br>    <span class="hljs-attr">"eslint-tinker"</span>: <span class="hljs-string">"^0.3.2"</span>,<br>    <span class="hljs-attr">"pre-commit"</span>: <span class="hljs-string">"^1.2.2"</span><br>  },<br>  <span class="hljs-attr">"dependencies"</span>: {<br>    <span class="hljs-attr">"chalk"</span>: <span class="hljs-string">"^1.1.3"</span>,<br>    <span class="hljs-attr">"child_process"</span>: <span class="hljs-string">"^1.0.2"</span>,<br>    <span class="hljs-attr">"commander"</span>: <span class="hljs-string">"^2.9.0"</span>,<br>    <span class="hljs-attr">"prompt"</span>: <span class="hljs-string">"^1.0.0"</span><br>  },<br>  <span class="hljs-attr">"engines"</span>: {<br>    <span class="hljs-attr">"install-node"</span>: <span class="hljs-string">"7.6.0"</span><br>  },<br>  <span class="hljs-attr">"pre-commit"</span>: [<br>    <span class="hljs-string">"pre-commit"</span><br>  ],<br>  <span class="hljs-attr">"bin"</span>: {<br>    <span class="hljs-attr">"any"</span>: <span class="hljs-string">"./bin/any"</span><br>  },<br>  <span class="hljs-attr">"license"</span>: <span class="hljs-string">"ISC"</span><br>}<br></code></pre>
+
+<ul><li>字段bin下面配置被当做命令行可执行命令。指向/bin下面的any文件。</li>
+<li>字段engines用来当前目录安装7.6.0版本node，可直接使用async函数而无需要再使用co模块。</li>
+<li><p>pre-commit用来做提交前代码检查，运行pre-commit脚本，也就是eslint。</p>
+
+<p>在根目录下建立/bin 文件夹，创建any文件（无后缀名）。这个 /bin/any是整个脚手架的入口文件，所以我们首先对它进行编写。</p></li>
+</ul>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs php"><span class="hljs-comment"># !/usr/bin/env node</span><br><span class="hljs-keyword">const</span> add = <span class="hljs-keyword">require</span>(<span class="hljs-string">'../src/command/add'</span>)<br><span class="hljs-keyword">const</span> <span class="hljs-keyword">list</span> = <span class="hljs-keyword">require</span>(<span class="hljs-string">'../src/command/list'</span>)<br><span class="hljs-keyword">const</span> init = <span class="hljs-keyword">require</span>(<span class="hljs-string">'../src/command/init'</span>)<br><span class="hljs-keyword">const</span> del = <span class="hljs-keyword">require</span>(<span class="hljs-string">'../src/command/del'</span>)<br><span class="hljs-keyword">const</span> program = <span class="hljs-keyword">require</span>(<span class="hljs-string">'commander'</span>)<br><span class="hljs-keyword">const</span> { version } = <span class="hljs-keyword">require</span>(<span class="hljs-string">'../package'</span>)<br><br><span class="hljs-comment">// 定义当前版本</span><br>program<br>.version(version)<br><br>program.parse(process.argv)<br><span class="hljs-keyword">if</span> (!program.args.length) {<br>  program.help()<br>}<br></code></pre>
+
+<p>运行npm link，把当前项目链接到全局。这样就可以直接在命令行使用any命令测试/bin/any下面的代码</p>
+
+<pre class="prettyprint hljs-dark"><code class="hljs perl">如果没有权限，请自行百度，使用<span class="hljs-keyword">chmod</span> <span class="hljs-number">777</span>为usr/<span class="hljs-keyword">local</span>目录添加权限<br></code></pre>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs typescript"><span class="hljs-built_in">any</span>-cli<span class="hljs-meta">@npm</span> link<br><span class="hljs-built_in">any</span>-cli<span class="hljs-meta">@any</span><br></code></pre>
+
+<p>我们继续在/bin/any中添加代码</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs less"><span class="hljs-comment">// 定义使用方法</span><br><span class="hljs-selector-tag">program</span><br><span class="hljs-selector-class">.command</span>(<span class="hljs-string">'add'</span>)<br><span class="hljs-selector-class">.description</span>(<span class="hljs-string">'add template'</span>)<br><span class="hljs-selector-class">.alias</span>(<span class="hljs-string">'a'</span>)<br><span class="hljs-selector-class">.action</span>(add)<br><br><span class="hljs-selector-tag">program</span><br><span class="hljs-selector-class">.command</span>(<span class="hljs-string">'del'</span>)<br><span class="hljs-selector-class">.description</span>(<span class="hljs-string">'Delete a template'</span>)<br><span class="hljs-selector-class">.alias</span>(<span class="hljs-string">'d'</span>)<br><span class="hljs-selector-class">.action</span>(del)<br><br><span class="hljs-selector-tag">program</span><br><span class="hljs-selector-class">.command</span>(<span class="hljs-string">'list'</span>)<br><span class="hljs-selector-class">.description</span>(<span class="hljs-string">'List all the templates'</span>)<br><span class="hljs-selector-class">.alias</span>(<span class="hljs-string">'l'</span>)<br><span class="hljs-selector-class">.action</span>(list)<br><br> <span class="hljs-selector-tag">program</span><br><span class="hljs-selector-class">.command</span>(<span class="hljs-string">'init'</span>)<br><span class="hljs-selector-class">.description</span>(<span class="hljs-string">'Generate a new project'</span>)<br><span class="hljs-selector-class">.alias</span>(<span class="hljs-string">'i'</span>)<br><span class="hljs-selector-class">.action</span>(init)<br></code></pre>
+
+<p>command用来配置any命令的参数，alias配置缩写，action配置运行什么函数。其他就不用多说了吧，程序员你懂的。</p>
+
+<pre class="prettyprint hljs-dark"><code class="hljs markdown">commander 的具体使用方法在这里就不展开了，可以直接到 [<span class="hljs-string">官网</span>][<span class="hljs-symbol">2</span>] 去看详细的文档。<br></code></pre>
+
+<p>使用any命令，看到输出如下，证明入口文件已经编写完成了。</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs http">  <span class="hljs-attribute">Usage</span>: any [options] [command]<br><br><span class="vim"><br>  Command<span class="hljs-variable">s:</span><br><br>    <span class="hljs-built_in">add</span>|<span class="hljs-keyword">a</span>    <span class="hljs-built_in">add</span> template<br>    del|d    Delete <span class="hljs-keyword">a</span> template<br>    <span class="hljs-keyword">list</span>|<span class="hljs-keyword">l</span>   List <span class="hljs-keyword">all</span> the templates<br>    init|i   Generate <span class="hljs-keyword">a</span> <span class="hljs-keyword">new</span> project<br><br>  Option<span class="hljs-variable">s:</span><br><br>    -h, --<span class="hljs-keyword">help</span>     output usage information<br>    -V, --<span class="hljs-keyword">version</span>  output the <span class="hljs-keyword">version</span> <span class="hljs-keyword">number</span></span><br></code></pre>
+
+<p>接着，我们创建src/command目录，下面分别创建刚才的4个参数所对应的文件。文件内容是具体业务代码（分别对应增删查初始化），在此不做介绍。请参考<a href="https://github.com/antgod/any-cli/tree/master/src/command" target="_blank">github链接</a>。代码使用了函数式编程，需要有点函数式基础。</p></div></body></html>

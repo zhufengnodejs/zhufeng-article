@@ -1,0 +1,170 @@
+<!DOCTYPE html><html><head><title>Babel</title><meta charset='utf-8'><link href='https://dn-maxiang.qbox.me/res-min/themes/marxico.css' rel='stylesheet'><style></style></head><body><div id='preview-contents' class='note-content'>
+                        
+                    
+
+
+
+<h4 id="babel">Babel</h4>
+
+<p>Babel其实是一个编译JavaScript的平台，它的强大之处表现在可以通过编译帮你达到以下目的：</p>
+
+<ul><li>下一代的JavaScript标准（ES6，ES7），这些标准目前并未被当前的浏览器完全的支持；</li>
+<li>使用基于JavaScript进行了拓展的语言，比如React的JSX</li>
+</ul>
+
+
+
+<h4 id="babel的安装与配置">Babel的安装与配置</h4>
+
+<p>Babel其实是几个模块化的包，其核心功能位于称为babel-core的npm包中，不过webpack把它们整合在一起使用，但是对于每一个你需要的功能或拓展，你都需要安装单独的包（用得最多的是解析Es6的babel-preset-es2015包和解析JSX的babel-preset-react包）。</p>
+
+<p>我们先来一次性安装这些依赖包</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs armasm">// npm一次性安装多个依赖模块，模块之间用空格隔开<br><span class="hljs-symbol">npm</span> install --save-dev <span class="hljs-keyword">babel-core </span><span class="hljs-keyword">babel-loader </span><span class="hljs-keyword">babel-preset-es2015 </span><span class="hljs-keyword">babel-preset-react</span><br></code></pre>
+
+<p>在webpack中配置Babel的方法如下</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs yaml"><span class="hljs-string">module.exports</span> <span class="hljs-string">=</span> <span class="hljs-string">{</span><br><span class="hljs-attr">  devtool:</span> <span class="hljs-string">'eval-source-map'</span><span class="hljs-string">,</span><br><br><span class="hljs-attr">  entry:</span>  <span class="hljs-string">__dirname</span> <span class="hljs-string">+</span> <span class="hljs-string">"/app/main.js"</span><span class="hljs-string">,</span><br><span class="hljs-attr">  output:</span> <span class="hljs-string">{</span><br><span class="hljs-attr">    path:</span> <span class="hljs-string">__dirname</span> <span class="hljs-string">+</span> <span class="hljs-string">"/public"</span><span class="hljs-string">,</span><br><span class="hljs-attr">    filename:</span> <span class="hljs-string">"bundle.js"</span><br>  <span class="hljs-string">},</span><br><br><span class="hljs-attr">  module:</span> <span class="hljs-string">{</span><br><span class="hljs-attr">    loaders:</span> <span class="hljs-string">[</span><br>      <span class="hljs-string">{</span><br><span class="hljs-attr">        test:</span> <span class="hljs-string">/\.json$/,</span><br><span class="hljs-attr">        loader:</span> <span class="hljs-string">"json"</span><br>      <span class="hljs-string">},</span><br>      <span class="hljs-string">{</span><br><span class="hljs-attr">        test:</span> <span class="hljs-string">/\.js$/,</span><br><span class="hljs-attr">        exclude:</span> <span class="hljs-string">/node_modules/,</span><br><span class="hljs-attr">        loader:</span> <span class="hljs-string">'babel'</span><span class="hljs-string">,//在webpack的module部分的loaders里进行配置即可</span><br><span class="hljs-attr">        query:</span> <span class="hljs-string">{</span><br><span class="hljs-attr">          presets:</span> <span class="hljs-string">['es2015','react']</span><br>        <span class="hljs-string">}</span><br>      <span class="hljs-string">}</span><br>    <span class="hljs-string">]</span><br>  <span class="hljs-string">},</span><br><br><span class="hljs-attr">  devServer:</span> <span class="hljs-string">{</span><br><span class="hljs-attr">    contentBase:</span> <span class="hljs-string">"./public"</span><span class="hljs-string">,</span><br><span class="hljs-attr">    colors:</span> <span class="hljs-string">true,</span><br><span class="hljs-attr">    historyApiFallback:</span> <span class="hljs-string">true,</span><br><span class="hljs-attr">    inline:</span> <span class="hljs-string">true</span><br>  <span class="hljs-string">}</span><br><span class="hljs-string">}</span><br></code></pre>
+
+<p>现在你的webpack的配置已经允许你使用ES6以及JSX的语法了。继续用上面的例子进行测试，不过这次我们会使用React，记得先安装 React 和 React-DOM</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs sql">npm <span class="hljs-keyword">install</span> <span class="hljs-comment">--save react react-dom</span><br></code></pre>
+
+<p>使用ES6的语法，更新Greeter.js并返回一个React组件</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs scala"><span class="hljs-comment">//Greeter,js</span><br><span class="hljs-keyword">import</span> <span class="hljs-type">React</span>, {<span class="hljs-type">Component</span>} from <span class="hljs-symbol">'reac</span>t'<br><span class="hljs-keyword">import</span> config from './config.json';<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Greeter</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span></span>{<br>  render() {<br>    <span class="hljs-keyword">return</span> (<br>      &lt;div&gt;<br>        {config.greetText}<br>      &lt;/div&gt;<br>    );<br>  }<br>}<br><br>export <span class="hljs-keyword">default</span> <span class="hljs-type">Greeter</span><br></code></pre>
+
+<p>使用ES6的模块定义和渲染Greeter模块</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs coffeescript"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;<br><span class="hljs-keyword">import</span> {render} <span class="hljs-keyword">from</span> <span class="hljs-string">'react-dom'</span>;<br><span class="hljs-keyword">import</span> Greeter <span class="hljs-keyword">from</span> <span class="hljs-string">'./Greeter'</span>;<br><br>render(&lt;Greeter /&gt;, <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'root'</span>));<br></code></pre>
+
+
+
+<h4 id="babel的配置选项">Babel的配置选项</h4>
+
+<p>Babel其实可以完全在webpack.config.js中进行配置，但是考虑到babel具有非常多的配置选项，在单一的webpack.config.js文件中进行配置往往使得这个文件显得太复杂，因此一些开发者支持把babel的配置选项放在一个单独的名为 “.babelrc” 的配置文件中。我们现在的babel的配置并不算复杂，不过之后我们会再加一些东西，因此现在我们就提取出相关部分，分两个配置文件进行配置（webpack会自动调用.babelrc里的babel配置选项），如下：</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs nimrod">// webpack.config.js<br>module.exports = {<br>  devtool: 'eval-source-map',<br><br>  entry:  __dirname + <span class="hljs-string">"/app/main.js"</span>,<br>  output: {<br>    path: __dirname + <span class="hljs-string">"/public"</span>,<br>    filename: <span class="hljs-string">"bundle.js"</span><br>  },<br><br>  module: {<br>    loaders: [<br>      {<br>        test: /\.json$/,<br>        loader: <span class="hljs-string">"json"</span><br>      },<br>      {<br>        test: /\.js$/,<br>        exclude: /node_modules/,<br>        loader: 'babel'<br>      }<br>    ]<br>  },<br><br>  devServer: <span class="hljs-meta">{...}</span> // <span class="hljs-type">Omitted</span> <span class="hljs-keyword">for</span> brevity<br>}<br></code></pre>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs 1c"><span class="hljs-comment">//.babelrc</span><br>{<br>  <span class="hljs-string">"presets"</span>: [<span class="hljs-string">"react"</span>, <span class="hljs-string">"es2015"</span>]<br>}<br></code></pre>
+
+<p>到目前为止，我们已经知道了，对于模块，Webpack能提供非常强大的处理功能，那那些是模块呢。</p>
+
+
+
+<h3 id="一切皆模块">一切皆模块</h3>
+
+<p>Webpack有一个不可不说的优点，它把所有的文件都可以当做模块处理，包括你的JavaScript代码，也包括CSS和fonts以及图片等等等，只有通过合适的loaders，它们都可以被当做模块被处理。</p>
+
+
+
+<h4 id="css">CSS</h4>
+
+<p>webpack提供两个工具处理样式表，css-loader 和 style-loader，二者处理的任务不同，css-loader使你能够使用类似@import 和 url(…)的方法实现 require()的功能,style-loader将所有的计算后的样式加入页面中，二者组合在一起使你能够把样式表嵌入webpack打包后的JS文件中。</p>
+
+<p>继续上面的例子</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs q"><span class="hljs-comment">//安装</span><br>npm install --<span class="hljs-built_in">save</span>-<span class="hljs-built_in">dev</span> style-loader css-loader<br></code></pre>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs typescript"><span class="hljs-comment">//使用</span><br><span class="hljs-built_in">module</span>.exports = {<br>  devtool: <span class="hljs-string">'eval-source-map'</span>,<br><br>  entry:  __dirname + <span class="hljs-string">"/app/main.js"</span>,<br>  output: {<br>    path: __dirname + <span class="hljs-string">"/build"</span>,<br>    filename: <span class="hljs-string">"bundle.js"</span><br>  },<br><br>  <span class="hljs-keyword">module</span>: {<br>    loaders: [<br>      {<br>        test: <span class="hljs-regexp">/\.json$/</span>,<br>        loader: <span class="hljs-string">"json"</span><br>      },<br>      {<br>        test: <span class="hljs-regexp">/\.js$/</span>,<br>        exclude: <span class="hljs-regexp">/node_modules/</span>,<br>        loader: <span class="hljs-string">'babel'</span><br>      },<br>      {<br>        test: <span class="hljs-regexp">/\.css$/</span>,<br>        loader: <span class="hljs-string">'style!css'</span><span class="hljs-comment">//添加对样式表的处理</span><br>      }<br>    ]<br>  },<br><br>  devServer: {...}<br>}<br></code></pre>
+
+<blockquote>
+  <p>注：感叹号的作用在于使同一文件能够使用不同类型的loader</p>
+</blockquote>
+
+<p>接下来，在app文件夹里创建一个名字为”main.css”的文件，对一些元素设置样式</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs css"><span class="hljs-selector-tag">html</span> {<br>  <span class="hljs-attribute">box-sizing</span>: border-box;<br>  <span class="hljs-attribute">-ms-text-size-adjust</span>: <span class="hljs-number">100%</span>;<br>  <span class="hljs-attribute">-webkit-text-size-adjust</span>: <span class="hljs-number">100%</span>;<br>}<br><br>*, *<span class="hljs-selector-pseudo">:before</span>, *<span class="hljs-selector-pseudo">:after</span> {<br>  <span class="hljs-attribute">box-sizing</span>: inherit;<br>}<br><br><span class="hljs-selector-tag">body</span> {<br>  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;<br>  <span class="hljs-attribute">font-family</span>: <span class="hljs-string">'Helvetica Neue'</span>, Helvetica, Arial, sans-serif;<br>}<br><br><span class="hljs-selector-tag">h1</span>, <span class="hljs-selector-tag">h2</span>, <span class="hljs-selector-tag">h3</span>, <span class="hljs-selector-tag">h4</span>, <span class="hljs-selector-tag">h5</span>, <span class="hljs-selector-tag">h6</span>, <span class="hljs-selector-tag">p</span>, <span class="hljs-selector-tag">ul</span> {<br>  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;<br>  <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;<br>}<br></code></pre>
+
+<p>你还记得吗？webpack只有单一的入口，其它的模块需要通过 import, require, url等导入相关位置，为了让webpack能找到”main.css“文件，我们把它导入”main.js “中，如下</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs typescript"><span class="hljs-comment">//main.js</span><br><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;<br><span class="hljs-keyword">import</span> {render} <span class="hljs-keyword">from</span> <span class="hljs-string">'react-dom'</span>;<br><span class="hljs-keyword">import</span> Greeter <span class="hljs-keyword">from</span> <span class="hljs-string">'./Greeter'</span>;<br><br><span class="hljs-keyword">import</span> <span class="hljs-string">'./main.css'</span>;<span class="hljs-comment">//使用require导入css文件</span><br><br>render(&lt;Greeter /&gt;, <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'root'</span>));<br></code></pre>
+
+<blockquote>
+  <p>通常情况下，css会和js打包到同一个文件中，并不会打包为一个单独的css文件，不过通过合适的配置webpack也可以把css打包为单独的文件的。</p>
+  
+  <p>不过这也只是webpack把css当做模块而已，咱们继续看看一个真的CSS模块的实践。</p>
+</blockquote>
+
+
+
+<h4 id="css-module">CSS module</h4>
+
+<p>在过去的一些年里，JavaScript通过一些新的语言特性，更好的工具以及更好的实践方法（比如说模块化）发展得非常迅速。模块使得开发者把复杂的代码转化为小的，干净的，依赖声明明确的单元，且基于优化工具，依赖管理和加载管理可以自动完成。</p>
+
+<p>不过前端的另外一部分，CSS发展就相对慢一些，大多的样式表却依旧是巨大且充满了全局类名，这使得维护和修改都非常困难和复杂。</p>
+
+<p>最近有一个叫做 CSS modules 的技术就意在把JS的模块化思想带入CSS中来，通过CSS模块，所有的类名，动画名默认都只作用于当前模块。Webpack从一开始就对CSS模块化提供了支持，在CSS loader中进行配置后，你所需要做的一切就是把”modules“传递都所需要的地方，然后就可以直接把CSS的类名传递到组件的代码中，且这样做只对当前组件有效，不必担心在不同的模块中具有相同的类名可能会造成的问题。具体的代码如下</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs nimrod">module.exports = {<br>  devtool: 'eval-source-map',<br><br>  entry:  __dirname + <span class="hljs-string">"/app/main.js"</span>,<br>  output: <span class="hljs-meta">{...}</span>,<br><br>  module: {<br>    loaders: [<br>      {<br>        test: /\.json$/,<br>        loader: <span class="hljs-string">"json"</span><br>      },<br>      {<br>        test: /\.js$/,<br>        exclude: /node_modules/,<br>        loader: 'babel'<br>      },<br>      {<br>        test: /\.css$/,<br>        loader: 'style!css?modules'//跟前面相比就在后面加上了?modules<br>      }<br>    ]<br>  },<br><br>  devServer: <span class="hljs-meta">{...}</span><br>}<br></code></pre>
+
+<p>创建一个Greeter.css文件</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs css"><span class="hljs-selector-class">.root</span> {<br>  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#eee</span>;<br>  <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;<br>  <span class="hljs-attribute">border</span>: <span class="hljs-number">3px</span> solid <span class="hljs-number">#ccc</span>;<br>}<br></code></pre>
+
+<p>导入.root到Greeter.js中</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs javascript"><span class="hljs-keyword">import</span> React, {Component} <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;<br><span class="hljs-keyword">import</span> config <span class="hljs-keyword">from</span> <span class="hljs-string">'./config.json'</span>;<br><span class="hljs-keyword">import</span> styles <span class="hljs-keyword">from</span> <span class="hljs-string">'./Greeter.css'</span>;<span class="hljs-comment">//导入</span><br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Greeter</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span></span>{<br>  render() {<br>    <span class="hljs-keyword">return</span> (<br>      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">{styles.root}</span>&gt;</span>//添加类名<br>        {config.greetText}<br>      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br>    );<br>  }<br>}<br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> Greeter<br></code></pre>
+
+<p>放心使用把，相同的类名也不会造成不同组件之间的污染。</p>
+
+<p>CSS modules 也是一个很大的主题，有兴趣的话可以去官方文档查看更多消息</p>
+
+
+
+<h4 id="css预处理器">CSS预处理器</h4>
+
+<p>Sass 和 Less之类的预处理器是对原生CSS的拓展，它们允许你使用类似于variables, nesting, mixins, inheritance等不存在于CSS中的特性来写CSS，CSS预处理器可以这些特殊类型的语句转化为浏览器可识别的CSS语句，</p>
+
+<p>你现在可能都已经熟悉了，在webpack里使用相关loaders进行配置就可以使用了，以下是常用的CSS 处理loaders</p>
+
+<ul><li>Less Loader</li>
+<li>Sass Loader</li>
+<li>Stylus Loader</li>
+</ul>
+
+<p>不过其实也存在一个CSS的处理平台-PostCSS，它可以帮助你的CSS实现更多的功能，在其CSS官方文档可了解更多相关知识。</p>
+
+<p>举例来说如何使用PostCSS，我们使用PostCSS来为CSS代码自动添加适应不同浏览器的CSS前缀。</p>
+
+<p>首先安装postcss-loader 和 autoprefixer（自动添加前缀的插件）</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs q">npm install --<span class="hljs-built_in">save</span>-<span class="hljs-built_in">dev</span> postcss-loader autoprefixer<br></code></pre>
+
+<p>接下来，在webpack配置文件中进行设置，只需要新建一个postcss关键字，并在里面申明依赖的插件，如下，现在你写的css会自动根据Can i use里的数据添加不同前缀了。</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs nimrod">//webpack配置文件<br>module.exports = {<br>  devtool: 'eval-source-map',<br>  entry: __dirname + <span class="hljs-string">"/app/main.js"</span>,<br>  output: <span class="hljs-meta">{...}</span>,<br><br>  module: {<br>    loaders: [<br>      {<br>        test: /\.json$/,<br>        loader: <span class="hljs-string">"json"</span><br>      },<br>      {<br>        test: /\.js$/,<br>        exclude: /node_modules/,<br>        loader: 'babel'<br>      },<br>      {<br>        test: /\.css$/,<br>        loader: 'style!css?modules!postcss'<br>      }<br>    ]<br>  },<br><br>  postcss: [<br>    require('autoprefixer')//调用autoprefixer插件<br>  ],<br><br>  devServer: <span class="hljs-meta">{...}</span><br>}<br></code></pre>
+
+<p>到现在，本文已经涉及到处理JS的Babel和处理CSS的PostCSS，它们其实也是两个单独的平台，配合Webpack可以很好的发挥它们的作用。接下来介绍Webpack中另一个非常重要的功能-Plugins</p></div></body></html>
